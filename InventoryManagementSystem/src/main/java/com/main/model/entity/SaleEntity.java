@@ -29,6 +29,9 @@ public class SaleEntity {
         this.totalPrice = totalPrice;
     }
 
+    public SaleEntity() {
+    }
+
     public int getIdSale() {
         return idSale;
     }

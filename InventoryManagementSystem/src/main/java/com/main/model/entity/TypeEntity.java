@@ -16,6 +16,9 @@ public class TypeEntity {
         this.title = title;
     }
 
+    public TypeEntity() {
+    }
+
     public int getIdType() {
         return idType;
     }

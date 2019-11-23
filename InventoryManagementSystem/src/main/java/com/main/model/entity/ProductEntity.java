@@ -26,6 +26,9 @@ public class ProductEntity {
         this.description = description;
     }
 
+    public ProductEntity() {
+    }
+
     public int getIdType() {
         return idType;
     }

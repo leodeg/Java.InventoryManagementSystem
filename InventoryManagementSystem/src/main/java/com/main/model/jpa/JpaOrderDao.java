@@ -1,14 +1,14 @@
-package com.main.model.dao;
+package com.main.model.jpa;
 
+import com.main.model.DataAccessObject;
 import com.main.model.entity.OrderEntity;
 
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
-public class OrderDAO implements DataAccessObject<OrderEntity> {
+public class JpaOrderDao implements DataAccessObject<OrderEntity> {
 
     private List<OrderEntity> list = new ArrayList<>();
 
@@ -29,12 +29,17 @@ public class OrderDAO implements DataAccessObject<OrderEntity> {
 
     @Override
     public void update(OrderEntity orderEntity, String[] params) {
-        orderEntity.setIdCustomer(Integer.parseInt(params[0]));
-        orderEntity.setIdProduct(Integer.parseInt(params[1]));
-        orderEntity.setAmount(Integer.parseInt(params[2]));
-        orderEntity.setDate(Date.valueOf(params[3]));
-        orderEntity.setTotalPrice(Double.parseDouble(params[4]));
+        assignEntity(orderEntity, params);
         list.add(orderEntity);
+    }
+
+    @Override
+    public void assignEntity(OrderEntity entity, String[] params) {
+        entity.setIdCustomer(Integer.parseInt(params[0]));
+        entity.setIdProduct(Integer.parseInt(params[1]));
+        entity.setAmount(Integer.parseInt(params[2]));
+        entity.setDate(Date.valueOf(params[3]));
+        entity.setTotalPrice(Double.parseDouble(params[4]));
     }
 
     @Override

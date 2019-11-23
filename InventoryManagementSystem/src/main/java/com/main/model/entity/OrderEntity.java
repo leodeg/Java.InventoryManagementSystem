@@ -30,6 +30,9 @@ public class OrderEntity {
         this.totalPrice = totalPrice;
     }
 
+    public OrderEntity() {
+    }
+
     public int getIdOrder() {
         return idOrder;
     }

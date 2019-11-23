@@ -27,6 +27,9 @@ public class CustomerEntity {
         this.description = description;
     }
 
+    public CustomerEntity() {
+    }
+
     public int getIdAddress() {
         return idAddress;
     }

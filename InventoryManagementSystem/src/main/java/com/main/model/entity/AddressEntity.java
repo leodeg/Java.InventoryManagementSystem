@@ -17,13 +17,15 @@ public class AddressEntity {
     @Column (name = "region")
     private String region;
 
-    public AddressEntity(int idAddress, String address, String address2, String city, String region)
+    public AddressEntity(String address, String address2, String city, String region)
     {
-        this.idAddress = idAddress;
         this.address = address;
         this.address2 = address2;
         this.city = city;
         this.region = region;
+    }
+
+    public AddressEntity() {
     }
 
     public int getIdAddress() {
@@ -64,5 +66,17 @@ public class AddressEntity {
 
     public void setRegion(String region) {
         this.region = region;
+    }
+
+    @Override
+    public String toString ()
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Id: ").append(idAddress);
+        builder.append("Address: ").append(address);
+        builder.append("Address2: ").append(address2);
+        builder.append("City: ").append(city);
+        builder.append("Region: ").append(region);
+        return builder.toString();
     }
 }

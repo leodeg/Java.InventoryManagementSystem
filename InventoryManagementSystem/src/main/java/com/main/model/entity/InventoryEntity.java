@@ -2,9 +2,12 @@ package com.main.model.entity;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.time.format.DateTimeFormatter;
 
 @Entity
+@Table (name = "begin")
+@SecondaryTable(name = "come")
+@SecondaryTable(name = "gone")
+@SecondaryTable(name = "end")
 public class InventoryEntity {
     @Column (name = "idProduct")
     private int idProduct;
@@ -23,6 +26,9 @@ public class InventoryEntity {
         this.id = id;
         this.amount = amount;
         this.date = date;
+    }
+
+    public InventoryEntity() {
     }
 
     public int getIdProduct() {

@@ -1,5 +1,6 @@
-package com.main.model.dao;
+package com.main.model.jpa;
 
+import com.main.model.DataAccessObject;
 import com.main.model.entity.TypeEntity;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-public class TypeDAO implements DataAccessObject<TypeEntity> {
+public class JpaTypeDao implements DataAccessObject<TypeEntity> {
 
     private List<TypeEntity> list = new ArrayList<>();
 
@@ -28,8 +29,13 @@ public class TypeDAO implements DataAccessObject<TypeEntity> {
 
     @Override
     public void update(TypeEntity typeEntity, String[] params) {
-        typeEntity.setTitle(Objects.requireNonNull(params[0], "Title cannot be null"));
+        assignEntity(typeEntity, params);
         list.add(typeEntity);
+    }
+
+    @Override
+    public void assignEntity(TypeEntity entity, String[] params) {
+        entity.setTitle(Objects.requireNonNull(params[0], "Title cannot be null"));
     }
 
     @Override

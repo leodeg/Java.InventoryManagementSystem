@@ -1,5 +1,6 @@
-package com.main.model.dao;
+package com.main.model.jpa;
 
+import com.main.model.DataAccessObject;
 import com.main.model.entity.InventoryEntity;
 
 import java.sql.Date;
@@ -8,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-public class InventoryDAO implements DataAccessObject<InventoryEntity> {
+public class JpaInventoryDao implements DataAccessObject<InventoryEntity> {
 
     private List<InventoryEntity> list = new ArrayList<>();
 
@@ -29,11 +30,16 @@ public class InventoryDAO implements DataAccessObject<InventoryEntity> {
 
     @Override
     public void update(InventoryEntity inventoryEntity, String[] params) {
-        inventoryEntity.setIdProduct(Objects.requireNonNull(Integer.parseInt(params[0]), "idProduct cannot be null"));
-        inventoryEntity.setAmount(Objects.requireNonNull(Integer.parseInt(params[1]), "id cannot be null"));
-        inventoryEntity.setPrice(Objects.requireNonNull(Double.parseDouble(params[2]), "Price cannot be null"));
-        inventoryEntity.setDate(Objects.requireNonNull(Date.valueOf(params[3]), "Date Date be null"));
+        assignEntity(inventoryEntity, params);
         list.add(inventoryEntity);
+    }
+
+    @Override
+    public void assignEntity(InventoryEntity entity, String[] params) {
+        entity.setIdProduct(Objects.requireNonNull(Integer.parseInt(params[0]), "idProduct cannot be null"));
+        entity.setAmount(Objects.requireNonNull(Integer.parseInt(params[1]), "id cannot be null"));
+        entity.setPrice(Objects.requireNonNull(Double.parseDouble(params[2]), "Price cannot be null"));
+        entity.setDate(Objects.requireNonNull(Date.valueOf(params[3]), "Date Date be null"));
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.main.model.dao;
 
+import com.main.model.DataAccessObject;
 import com.main.model.entity.ProductEntity;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-public class ProductDAO implements DataAccessObject<ProductEntity> {
+public class ProductDao implements DataAccessObject<ProductEntity> {
 
     private List<ProductEntity> list = new ArrayList<>();
 
@@ -28,10 +29,15 @@ public class ProductDAO implements DataAccessObject<ProductEntity> {
 
     @Override
     public void update(ProductEntity productEntity, String[] params) {
-        productEntity.setName(Objects.requireNonNull(params[0], "idProduct cannot be null"));
-        productEntity.setPrice(Double.parseDouble(params[1]));
-        productEntity.setDescription(params[2] != null ? params[2] : "Empty");
+        assignEntity(productEntity, params);
         list.add(productEntity);
+    }
+
+    @Override
+    public void assignEntity(ProductEntity entity, String[] params) {
+        entity.setName(Objects.requireNonNull(params[0], "idProduct cannot be null"));
+        entity.setPrice(Double.parseDouble(params[1]));
+        entity.setDescription(params[2] != null ? params[2] : "Empty");
     }
 
     @Override
