@@ -1,16 +1,24 @@
-package com.main.model;
+package com.main.model.entity;
 
+import javax.persistence.*;
 import java.text.DecimalFormat;
 
-public class Product {
+@Entity
+@Table(name = "products")
+public class ProductEntity {
     private int idType;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idProduct;
+    @Column (name = "name")
     private String name;
+    @Column (name = "price")
     private Double price;
+    @Column (name = "description")
     private String description;
 
 
-    public Product(int idType, int idProduct, String name, Double price, String description) {
+    public ProductEntity(int idType, int idProduct, String name, Double price, String description) {
         this.idType = idType;
         this.idProduct = idProduct;
         this.name = name;

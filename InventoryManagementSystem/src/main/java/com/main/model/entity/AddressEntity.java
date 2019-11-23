@@ -1,13 +1,23 @@
-package com.main.model;
+package com.main.model.entity;
 
-public class Address {
+import javax.persistence.*;
+
+@Entity
+@Table (name = "addresses")
+public class AddressEntity {
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
     private int idAddress;
+    @Column (name = "address")
     private String address;
+    @Column (name = "address2")
     private String address2;
+    @Column (name = "city")
     private String city;
+    @Column (name = "region")
     private String region;
 
-    public Address (int idAddress, String address, String address2, String city, String region)
+    public AddressEntity(int idAddress, String address, String address2, String city, String region)
     {
         this.idAddress = idAddress;
         this.address = address;

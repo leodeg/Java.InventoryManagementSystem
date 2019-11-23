@@ -1,6 +1,8 @@
 package com.main.database;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DatabaseWorker {
     private final String URL = "jdbc:mysql://localhost:3306/inventory_management_system";
@@ -9,7 +11,7 @@ public class DatabaseWorker {
 
     private Connection connection;
 
-    public DatabaseWorker () {
+    public DatabaseWorker() {
         try {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException e) {

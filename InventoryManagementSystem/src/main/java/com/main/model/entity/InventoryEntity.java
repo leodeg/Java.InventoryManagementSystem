@@ -1,15 +1,24 @@
-package com.main.model;
+package com.main.model.entity;
 
+import javax.persistence.*;
+import java.sql.Date;
 import java.time.format.DateTimeFormatter;
 
-public class Inventory {
+@Entity
+public class InventoryEntity {
+    @Column (name = "idProduct")
     private int idProduct;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @Column (name = "amount")
     private int amount;
+    @Column (name = "price")
     private Double price;
-    private DateTimeFormatter date;
+    @Temporal(TemporalType.DATE)
+    private Date date;
 
-    public Inventory(int idProduct, int id, int amount, DateTimeFormatter date) {
+    public InventoryEntity(int idProduct, int id, int amount, Date date) {
         this.idProduct = idProduct;
         this.id = id;
         this.amount = amount;
@@ -48,11 +57,11 @@ public class Inventory {
         this.price = price;
     }
 
-    public DateTimeFormatter getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(DateTimeFormatter date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }

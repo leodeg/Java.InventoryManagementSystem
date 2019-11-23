@@ -1,2 +1,11 @@
-E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\java\sample\Controller.java
-E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\java\sample\Main.java
+E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\java\com\main\model\Customer.java
+E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\java\com\main\model\Product.java
+E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\java\com\main\model\Address.java
+E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\java\com\main\model\Inventory.java
+E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\java\com\main\Main.java
+E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\java\com\main\model\Order.java
+E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\java\com\main\model\Type.java
+E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\java\com\main\controller\MainController.java
+E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\java\com\main\database\DatabaseWorker.java
+E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\java\com\main\model\Sale.java
+E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\java\com\main\database\DatabaseConnector.java

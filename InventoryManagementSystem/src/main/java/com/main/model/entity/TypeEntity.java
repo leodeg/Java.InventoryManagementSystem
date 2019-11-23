@@ -1,10 +1,17 @@
-package com.main.model;
+package com.main.model.entity;
 
-public class Type {
+import javax.persistence.*;
+
+@Entity
+@Table(name = "types")
+public class TypeEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idType;
+    @Column (name = "title")
     private String title;
 
-    public Type(int idType, String title) {
+    public TypeEntity(int idType, String title) {
         this.idType = idType;
         this.title = title;
     }

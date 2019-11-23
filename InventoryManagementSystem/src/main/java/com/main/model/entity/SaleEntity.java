@@ -1,16 +1,26 @@
-package com.main.model;
+package com.main.model.entity;
 
-import java.time.format.DateTimeFormatter;
+import javax.persistence.*;
+import java.sql.Date;
 
-public class Sale {
+@Entity
+@Table(name = "sales")
+public class SaleEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idSale;
+    @Column(name = "idCustomer")
     private int idCustomer;
+    @Column(name = "idProduct")
     private int idProduct;
+    @Column(name = "amount")
     private int amount;
-    private DateTimeFormatter date;
+    @Column(name = "date")
+    private Date date;
+    @Column(name = "totalPrice")
     private Double totalPrice;
 
-    public Sale(int idSale, int idProduct, int idCustomer, int amount, DateTimeFormatter date, Double totalPrice) {
+    public SaleEntity(int idSale, int idProduct, int idCustomer, int amount, Date date, Double totalPrice) {
         this.idSale = idSale;
         this.idCustomer = idCustomer;
         this.idProduct = idProduct;
@@ -51,17 +61,15 @@ public class Sale {
         this.amount = amount;
     }
 
-    public DateTimeFormatter getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(DateTimeFormatter date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public Double getTotalPrice() {
-        return totalPrice;
-    }
+    public Double getTotalPrice() { return totalPrice; }
 
     public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;

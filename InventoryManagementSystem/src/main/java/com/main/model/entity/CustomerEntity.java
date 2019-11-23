@@ -1,14 +1,24 @@
-package com.main.model;
+package com.main.model.entity;
 
-public class Customer {
+import javax.persistence.*;
+
+@Entity
+@Table(name = "customers")
+public class CustomerEntity {
     private int idAddress;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idCustomer;
+    @Column (name = "name")
     private  String name;
+    @Column (name = "phone")
     private  String phone;
+    @Column (name = "phone2")
     private  String phone2;
+    @Column (name = "description")
     private  String description;
 
-    public Customer(int idAddress, int idCustomer, String name, String phone, String phone2, String description) {
+    public CustomerEntity(int idAddress, int idCustomer, String name, String phone, String phone2, String description) {
         this.idAddress = idAddress;
         this.idCustomer = idCustomer;
         this.name = name;
