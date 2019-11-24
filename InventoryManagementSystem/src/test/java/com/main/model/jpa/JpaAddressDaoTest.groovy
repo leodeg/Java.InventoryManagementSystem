@@ -22,7 +22,7 @@ class JpaAddressDaoTest extends groovy.util.GroovyTestCase {
         AddressEntity addressEntity = new AddressEntity("some address", "some address", "city", "region");
         addressDao.save(addressEntity);
 
-        AddressEntity entity = addressDao.get(0);
+        AddressEntity entity = addressDao.get(0) as AddressEntity;
         GroovyAssert.assertThat (entity != null);
     }
 

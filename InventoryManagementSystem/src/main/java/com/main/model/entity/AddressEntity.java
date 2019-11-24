@@ -73,10 +73,10 @@ public class AddressEntity {
     {
         StringBuilder builder = new StringBuilder();
         builder.append("Id: ").append(idAddress);
-        builder.append("Address: ").append(address);
-        builder.append("Address2: ").append(address2);
-        builder.append("City: ").append(city);
-        builder.append("Region: ").append(region);
+        builder.append("; Address: ").append(address);
+        builder.append("; Address2: ").append(address2);
+        builder.append("; City: ").append(city);
+        builder.append("; Region: ").append(region);
         return builder.toString();
     }
 }

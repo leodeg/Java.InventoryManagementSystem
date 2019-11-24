@@ -3,11 +3,9 @@ package com.main.model.entity;
 import javax.persistence.*;
 import java.sql.Date;
 
-@Entity
+//@Entity
 @Table (name = "begin")
 @SecondaryTable(name = "come")
-@SecondaryTable(name = "gone")
-@SecondaryTable(name = "end")
 public class InventoryEntity {
     @Column (name = "idProduct")
     private int idProduct;

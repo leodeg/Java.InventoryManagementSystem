@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.time.format.DateTimeFormatter;
 
-@Entity
+//@Entity
 @Table(name = "orders")
 public class OrderEntity {
     @Id

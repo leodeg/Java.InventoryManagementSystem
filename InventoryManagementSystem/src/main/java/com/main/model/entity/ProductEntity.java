@@ -3,7 +3,7 @@ package com.main.model.entity;
 import javax.persistence.*;
 import java.text.DecimalFormat;
 
-@Entity
+//@Entity
 @Table(name = "products")
 public class ProductEntity {
     private int idType;
