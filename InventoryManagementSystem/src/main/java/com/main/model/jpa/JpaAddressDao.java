@@ -6,11 +6,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-public class JpaAddressDao extends JpaBaseEntityDao<AddressEntity> {
-    public JpaAddressDao() {
-        super();
-    }
-
+public class JpaAddressDao extends JpaDataAccessObject<AddressEntity> {
     @Override
     public Optional<AddressEntity> get(int id) {
         return Optional.ofNullable(entityManager.find(AddressEntity.class, id));

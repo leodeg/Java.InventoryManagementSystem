@@ -1,10 +1,9 @@
 package com.main.model.entity;
 
 import javax.persistence.*;
-import java.sql.Date;
-import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
-//@Entity
+@Entity
 @Table(name = "orders")
 public class OrderEntity {
     @Id

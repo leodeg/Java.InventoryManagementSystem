@@ -9,12 +9,12 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <class>com.main.model.entity.AddressEntity</class>
-        <!--<class>com.main.model.entity.CustomerEntity</class>-->
-        <!--<class>com.main.model.entity.InventoryEntity</class>-->
+        <class>com.main.model.entity.CustomerEntity</class>
+        <!--<class>com.main.model.entity.InventoryBaseEntitytity</class>-->
         <!--<class>com.main.model.entity.OrderEntity</class>-->
         <!--<class>com.main.model.entity.ProductEntity</class>-->
         <!--<class>com.main.model.entity.SaleEntity</class>-->
-        <!--<class>com.main.model.entity.TypeEntity</class>-->
+        <class>com.main.model.entity.TypeEntity</class>
 
         <!--<properties>-->
             <!--<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>-->

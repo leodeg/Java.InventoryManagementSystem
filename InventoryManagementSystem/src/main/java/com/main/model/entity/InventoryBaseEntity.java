@@ -1,17 +1,12 @@
 package com.main.model.entity;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
-//@Entity
-@Table (name = "begin")
-@SecondaryTable(name = "come")
-public class InventoryEntity {
+@MappedSuperclass
+public class InventoryBaseEntity {
     @Column (name = "idProduct")
     private int idProduct;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
     @Column (name = "amount")
     private int amount;
     @Column (name = "price")
@@ -19,15 +14,13 @@ public class InventoryEntity {
     @Temporal(TemporalType.DATE)
     private Date date;
 
-    public InventoryEntity(int idProduct, int id, int amount, Date date) {
+    public InventoryBaseEntity(int idProduct, int amount, Double price, Date date) {
         this.idProduct = idProduct;
-        this.id = id;
         this.amount = amount;
+        this.price = price;
         this.date = date;
     }
 
-    public InventoryEntity() {
-    }
 
     public int getIdProduct() {
         return idProduct;
@@ -35,14 +28,6 @@ public class InventoryEntity {
 
     public void setIdProduct(int idProduct) {
         this.idProduct = idProduct;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getAmount() {
@@ -69,3 +54,4 @@ public class InventoryEntity {
         this.date = date;
     }
 }
+

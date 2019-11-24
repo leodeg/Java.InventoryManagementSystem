@@ -3,9 +3,10 @@ package com.main.model.entity;
 import javax.persistence.*;
 import java.text.DecimalFormat;
 
-//@Entity
+@Entity
 @Table(name = "products")
 public class ProductEntity {
+    @Column (name = "idType")
     private int idType;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,10 +18,15 @@ public class ProductEntity {
     @Column (name = "description")
     private String description;
 
-
-    public ProductEntity(int idType, int idProduct, String name, Double price, String description) {
+    public ProductEntity(int idType, String name, Double price) {
         this.idType = idType;
-        this.idProduct = idProduct;
+        this.name = name;
+        this.price = price;
+        this.description = "Empty";
+    }
+
+    public ProductEntity(int idType, String name, Double price, String description) {
+        this.idType = idType;
         this.name = name;
         this.price = price;
         this.description = description;
@@ -67,5 +73,16 @@ public class ProductEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString () {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Id: ").append(idProduct);
+        builder.append("; IdType: ").append(idType);
+        builder.append("; Name: ").append(name);
+        builder.append("; Price: ").append(price);
+        builder.append("; Description: ").append(description);
+        return builder.toString();
     }
 }

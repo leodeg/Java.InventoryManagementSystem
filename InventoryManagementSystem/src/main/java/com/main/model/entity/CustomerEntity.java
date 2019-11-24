@@ -2,7 +2,7 @@ package com.main.model.entity;
 
 import javax.persistence.*;
 
-//@Entity
+@Entity
 @Table(name = "customers")
 public class CustomerEntity {
     private int idAddress;
