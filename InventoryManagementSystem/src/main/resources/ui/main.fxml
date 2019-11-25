@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="uiMainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.controller.MainController">
+   <children>
+      <AnchorPane prefHeight="500.0" prefWidth="171.0" style="-fx-background-color: #524365;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="170.0" spacing="2.0">
+               <children>
+                  <Button fx:id="uiButtonProducts" layoutX="20.0" layoutY="30.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Товар" textFill="#e5e5e5">
+                     <font>
+                        <Font name="Segoe UI Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="uiButtonBegin" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Начало" textFill="#e5e5e5">
+                     <font>
+                        <Font name="Segoe UI Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="uiButtonCome" layoutX="20.0" layoutY="30.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Приход" textFill="#e5e5e5">
+                     <font>
+                        <Font name="Segoe UI Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="uiButtonGone" layoutX="20.0" layoutY="70.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Расход" textFill="#e5e5e5">
+                     <font>
+                        <Font name="Segoe UI Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="uiButtonEnd" layoutX="20.0" layoutY="110.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Конец" textFill="#e5e5e5">
+                     <font>
+                        <Font name="Segoe UI Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="uiButtonCustomers" layoutX="20.0" layoutY="230.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Покупатели" textFill="#e5e5e5">
+                     <font>
+                        <Font name="Segoe UI Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="uiButtonOrders" layoutX="20.0" layoutY="280.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Заказы" textFill="#e5e5e5">
+                     <font>
+                        <Font name="Segoe UI Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="uiButtonSales" layoutX="20.0" layoutY="330.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Продажи" textFill="#e5e5e5">
+                     <font>
+                        <Font name="Segoe UI Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="176.0" prefHeight="400.0" prefWidth="626.0" style="-fx-background-color: #5A5388;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane fx:id="uiPaneProducts" prefHeight="500.0" prefWidth="530.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
