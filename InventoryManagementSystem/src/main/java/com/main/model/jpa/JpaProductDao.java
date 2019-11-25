@@ -19,9 +19,6 @@ public class JpaProductDao extends JpaDataAccessObject<ProductEntity> {
 
     @Override
     public void assignEntity(ProductEntity entity, String[] params) {
-        entity.setIdType(Integer.parseInt(params[0]));
-        entity.setName(Objects.requireNonNull(params[1], "Name cannot be null"));
-        entity.setPrice(Double.parseDouble(params[2]));
-        entity.setDescription(params[2] != null ? params[3] : "Empty");
+        entity.assignEntity(params);
     }
 }

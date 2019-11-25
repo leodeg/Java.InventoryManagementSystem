@@ -1,13 +1,14 @@
 package com.main.model.jpa;
 
 import com.main.model.DataAccessObject;
+import com.main.model.entity.ParentEntity;
 
 import javax.persistence.*;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
 
-public class JpaDataAccessObject<T> implements DataAccessObject<T>{
+public class JpaDataAccessObject<T extends ParentEntity> implements DataAccessObject<T>{
     @PersistenceContext
     protected EntityManager entityManager;
     EntityManagerFactory managerFactory;

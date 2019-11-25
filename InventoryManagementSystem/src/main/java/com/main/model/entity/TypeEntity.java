@@ -1,14 +1,15 @@
 package com.main.model.entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "types")
-public class TypeEntity {
+public class TypeEntity implements ParentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idType;
-    @Column (name = "title")
+    @Column(name = "title")
     private String title;
 
     public TypeEntity(int idType, String title) {
@@ -33,5 +34,10 @@ public class TypeEntity {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    @Override
+    public void assignEntity(String[] params) {
+        setTitle(Objects.requireNonNull(params[0], "Title cannot be null"));
     }
 }

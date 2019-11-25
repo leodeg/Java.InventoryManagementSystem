@@ -19,10 +19,6 @@ public class JpaSaleDao extends JpaDataAccessObject<SaleEntity> {
 
     @Override
     public void assignEntity(SaleEntity entity, String[] params) {
-        entity.setIdCustomer(Integer.parseInt(params[0]));
-        entity.setIdProduct(Integer.parseInt(params[1]));
-        entity.setAmount(Integer.parseInt(params[2]));
-        entity.setDate(Date.valueOf(params[3]));
-        entity.setTotalPrice(Double.parseDouble(params[4]));
+        entity.assignEntity(params);
     }
 }

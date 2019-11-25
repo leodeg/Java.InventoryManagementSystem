@@ -1,10 +1,11 @@
 package com.main.model.entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table (name = "addresses")
-public class AddressEntity {
+public class AddressEntity implements ParentEntity {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     private int idAddress;
@@ -78,5 +79,14 @@ public class AddressEntity {
         builder.append("; City: ").append(city);
         builder.append("; Region: ").append(region);
         return builder.toString();
+    }
+
+
+    @Override
+    public void assignEntity(String[] params) {
+        setAddress(Objects.requireNonNull(params[0], "Address cannot be null"));
+        setAddress2(params[1] != null ? params[1] : "Empty");
+        setCity(Objects.requireNonNull(params[2], "City cannot be null"));
+        setRegion(params[1] != null ? params[3] : "Empty");
     }
 }

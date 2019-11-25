@@ -2,10 +2,11 @@ package com.main.model.entity;
 
 import javax.persistence.*;
 import java.text.DecimalFormat;
+import java.util.Objects;
 
 @Entity
 @Table(name = "products")
-public class ProductEntity {
+public class ProductEntity implements ParentEntity{
     @Column (name = "idType")
     private int idType;
     @Id
@@ -84,5 +85,13 @@ public class ProductEntity {
         builder.append("; Price: ").append(price);
         builder.append("; Description: ").append(description);
         return builder.toString();
+    }
+
+    @Override
+    public void assignEntity(String[] params) {
+        setIdType(Integer.parseInt(params[0]));
+        setName(Objects.requireNonNull(params[1], "Name cannot be null"));
+        setPrice(Double.parseDouble(params[2]));
+        setDescription(params[2] != null ? params[3] : "Empty");
     }
 }

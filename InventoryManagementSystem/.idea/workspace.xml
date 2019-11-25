@@ -6,34 +6,29 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="feat: java persist API base class for save, delete and update methods">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/BeginEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/ComeEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/EndEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/GoneEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaBeginDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaComeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCustomerDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaEndDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaGoneDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaOrderDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaProductDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaSaleDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaTypeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7be5154c-790d-4be9-a3e4-011d760db7ea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7be5154c-790d-4be9-a3e4-011d760db7ea.xml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="feat: java persist API classes for all entities">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderBaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/ParentEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/dao/InventoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/dao/InventoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/entity/AddressEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/AddressEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/entity/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/CustomerEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/entity/InventoryEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/InventoryBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/entity/InventoryBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/InventoryBaseEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/entity/SaleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/SaleEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/entity/TypeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/TypeEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaAddressDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaAddressDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaBaseEntityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/Transaction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaBeginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaBeginDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaComeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaComeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDataAccessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaEndDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaEndDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaGoneDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaGoneDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaOrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaOrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaProductDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaSaleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaSaleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaTypeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaTypeDao.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,13 +72,6 @@
         <item name="inventory_management_system@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="inventory_management_system: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="inventory_management_system@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="inventory_management_system: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="begin: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -131,103 +119,70 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaEndDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaGoneDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/dao/TypeDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/dao/SaleDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <element signature="e#391#392#0" expanded="true" />
-                <element signature="e#447#448#0" expanded="true" />
-                <element signature="e#501#502#0" expanded="true" />
-                <element signature="e#528#529#0" expanded="true" />
-                <element signature="e#589#590#0" expanded="true" />
-                <element signature="e#625#626#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/dao/OrderDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/dao/ProductDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaTypeDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="20" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaBeginDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaComeDao.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/InventoryBaseEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCustomerDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="484">
+              <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderBaseEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="637">
+              <caret line="71" column="47" lean-forward="true" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="688">
+              <caret line="89" column="13" lean-forward="true" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/TypeEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#787#788#0" expanded="true" />
+                <element signature="e#870#871#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://7be5154c-790d-4be9-a3e4-011d760db7ea/schema/inventory_management_system/table/begin">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -237,10 +192,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Tag Library Descriptor" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -268,11 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/AddressEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/database/DatabaseWorker.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/main.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/dao/DataAccessObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/dao/CustomerDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/dao/AddressDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/dao/InventoryDAO.java" />
@@ -283,42 +233,47 @@
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaAddressDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCustomerDaa.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/DataAccessObject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCustomerDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaInventoryDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaTypeDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.fxml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/main/model/jpa/JpaAddressDaoTest.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/DataAccessObject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/AddressEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/Transaction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaBaseEntityDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/CustomerEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/TypeEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/TypeDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaAddressDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/ProductDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/CustomerDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaProductDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/InventoryEntity.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/BeginEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/ComeEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/EndEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/GoneBaseEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/GoneEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/dao/SaleDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/SaleEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaBeginDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaGoneDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/Entity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/ParentEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaAddressDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaComeDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaBeginDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaEndDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/dao/SaleDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaSaleDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaGoneDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCustomerDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaOrderDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaSaleDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaProductDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/TypeEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaTypeDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDataAccessObject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/AddressEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/BeginEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/CustomerEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/InventoryBaseEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderBaseEntity.java" />
       </list>
     </option>
   </component>
@@ -361,7 +316,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -445,36 +400,13 @@
               <item name="InventoryManagementSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="InventoryManagementSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InventoryManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InventoryManagementSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InventoryManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InventoryManagementSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InventoryManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InventoryManagementSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -695,7 +627,8 @@
       <workItem from="1574503696077" duration="1447000" />
       <workItem from="1574513130035" duration="15108000" />
       <workItem from="1574539259641" duration="814000" />
-      <workItem from="1574611763294" duration="18426000" />
+      <workItem from="1574611763294" duration="18930000" />
+      <workItem from="1574690298679" duration="4765000" />
     </task>
     <task id="LOCAL-00001" summary="feat: setup maven">
       <created>1574196934132</created>
@@ -746,7 +679,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574625280060</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: java persist API classes for all entities">
+      <created>1574631788671</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1574631788671</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -782,7 +722,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56342000" />
+    <option name="totallyTimeSpent" value="61611000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -797,12 +737,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.57204765" visible="true" weight="0.19083156" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5709643" visible="true" weight="0.16471216" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info id="Persistence" order="5" sideWeight="0.42795232" side_tool="true" weight="0.19083156" />
+      <window_info id="Persistence" order="5" sideWeight="0.42903575" side_tool="true" weight="0.16471216" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3726977" />
@@ -827,7 +767,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.19349681" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.13059701" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="right" id="Maven" order="7" sideWeight="0.49919224" weight="0.32995737" />
@@ -889,7 +829,8 @@
     <MESSAGE value="feat: data access objects classes for models" />
     <MESSAGE value="feat: add jpa entity classes" />
     <MESSAGE value="feat: java persist API base class for save, delete and update methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: java persist API base class for save, delete and update methods" />
+    <MESSAGE value="feat: java persist API classes for all entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: java persist API classes for all entities" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -908,21 +849,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="226" column="16" selection-start-line="226" selection-start-column="16" selection-end-line="226" selection-end-column="16" />
-          <folding>
-            <element signature="e#2111#2112#0" expanded="true" />
-            <element signature="e#2155#2156#0" expanded="true" />
-            <element signature="e#5951#6086#0" expanded="true" />
-            <element signature="e#6085#6086#0" expanded="true" />
-            <element signature="e#6484#6648#0" expanded="true" />
-            <element signature="e#6647#6648#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="746">
@@ -937,16 +863,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.tld">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaInventoryDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.tld" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaInventoryDao.java" />
     <entry file="uml://Persistence/JavaeeElement:/c05cefb7/jpa/InventoryManagementSystem/jpa/JPA/PersistenceModel">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -963,7 +881,7 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="-248.5" y="192.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-248.0" y="193.0" />
           <SelectedNodes>
             <node>InventoryEntity#file://E:/CODE/REPOS/Java.InventoryManagementSystem/InventoryManagementSystem/src/main/java/com/main/model/entity/InventoryEntity.java</node>
           </SelectedNodes>
@@ -972,6 +890,7 @@
             <Category>Embeddables</Category>
             <Category>Superclasses</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
@@ -979,13 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCustomerDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="49" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -1009,16 +921,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/Transaction.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/DataAccessObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1029,34 +932,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/CustomerEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
           <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/TypeEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDataAccessObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1082,13 +961,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaProductDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="54" lean-forward="true" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -1120,20 +992,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://7be5154c-790d-4be9-a3e4-011d760db7ea/schema/inventory_management_system/table/begin">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://7be5154c-790d-4be9-a3e4-011d760db7ea/schema/inventory_management_system/table/products">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://7be5154c-790d-4be9-a3e4-011d760db7ea/schema/inventory_management_system/table/hibernate_sequence">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1149,50 +1007,6 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/AddressEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/SaleEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ComeEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/BeginEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/GoneEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1204,82 +1018,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaAddressDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaSaleDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaOrderDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-          <folding>
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#425#426#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/EndEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/InventoryBaseEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaEndDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaGoneDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1319,34 +1061,260 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaTypeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="20" />
+    <entry file="das://7be5154c-790d-4be9-a3e4-011d760db7ea/schema/inventory_management_system/table/products">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaBeginDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCustomerDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="416">
+          <caret line="35" column="49" lean-forward="true" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaComeDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/SaleEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ParentEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaAddressDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#617#618#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaGoneDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding>
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaBeginDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+          <folding>
+            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#621#622#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaEndDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding>
+            <element signature="e#646#647#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCustomerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaSaleDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+          <folding>
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaOrderDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding>
+            <element signature="e#699#700#0" expanded="true" />
+            <element signature="e#720#721#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaProductDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+          <folding>
+            <element signature="e#610#611#0" expanded="true" />
+            <element signature="e#631#632#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaTypeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+          <folding>
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDataAccessObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+            <element signature="e#819#820#0" expanded="true" />
+            <element signature="e#846#847#0" expanded="true" />
+            <element signature="e#889#890#0" expanded="true" />
+            <element signature="e#972#973#0" expanded="true" />
+            <element signature="e#1017#1018#0" expanded="true" />
+            <element signature="e#1099#1100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaComeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding>
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/AddressEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="87" column="61" lean-forward="true" selection-start-line="87" selection-start-column="61" selection-end-line="87" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/BeginEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ComeEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/CustomerEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="86" column="59" lean-forward="true" selection-start-line="86" selection-start-column="59" selection-end-line="86" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="89" column="13" lean-forward="true" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/TypeEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
+            <element signature="e#870#871#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderBaseEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="71" column="47" lean-forward="true" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://7be5154c-790d-4be9-a3e4-011d760db7ea/schema/inventory_management_system/table/begin">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/InventoryBaseEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

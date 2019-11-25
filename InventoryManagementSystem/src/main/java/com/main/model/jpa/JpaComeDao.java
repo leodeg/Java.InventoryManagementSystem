@@ -20,9 +20,6 @@ public class JpaComeDao extends JpaDataAccessObject<ComeEntity> {
     }
 
     public void assignEntity(InventoryBaseEntity entity, String[] params) {
-        entity.setIdProduct(Objects.requireNonNull(Integer.parseInt(params[0]), "idProduct cannot be null"));
-        entity.setAmount(Objects.requireNonNull(Integer.parseInt(params[1]), "id cannot be null"));
-        entity.setPrice(Objects.requireNonNull(Double.parseDouble(params[2]), "Price cannot be null"));
-        entity.setDate(Objects.requireNonNull(Date.valueOf(params[3]), "Date Date be null"));
+        entity.assignEntity(params);
     }
 }

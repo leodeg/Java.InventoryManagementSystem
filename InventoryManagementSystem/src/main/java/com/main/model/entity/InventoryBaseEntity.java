@@ -2,9 +2,10 @@ package com.main.model.entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Objects;
 
 @MappedSuperclass
-public class InventoryBaseEntity {
+public class InventoryBaseEntity implements ParentEntity {
     @Column (name = "idProduct")
     private int idProduct;
     @Column (name = "amount")
@@ -52,6 +53,14 @@ public class InventoryBaseEntity {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    @Override
+    public void assignEntity(String[] params) {
+        setIdProduct(Objects.requireNonNull(Integer.parseInt(params[0]), "idProduct cannot be null"));
+        setAmount(Objects.requireNonNull(Integer.parseInt(params[1]), "id cannot be null"));
+        setPrice(Objects.requireNonNull(Double.parseDouble(params[2]), "Price cannot be null"));
+        setDate(Objects.requireNonNull(java.sql.Date.valueOf(params[3]), "Date Date be null"));
     }
 }
 

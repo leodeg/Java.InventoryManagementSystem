@@ -6,6 +6,7 @@ import com.main.model.jpa.JpaBeginDao;
 import com.main.model.jpa.JpaProductDao;
 
 import java.util.Date;
+import java.util.TimeZone;
 
 //public class Main extends Application {
 //    @Override
@@ -23,9 +24,11 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-//        CreateBeginEntity();
+        CreateBeginEntity();
 //        UpdateProduct();
     }
+
+
 
     private static void CreateBeginEntity() {
         JpaBeginDao beginDao = new JpaBeginDao();

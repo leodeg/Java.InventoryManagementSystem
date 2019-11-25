@@ -18,9 +18,6 @@ public class JpaAddressDao extends JpaDataAccessObject<AddressEntity> {
     }
 
     public void assignEntity(AddressEntity entity, String[] params) {
-        entity.setAddress(Objects.requireNonNull(params[0], "Address cannot be null"));
-        entity.setAddress2(Objects.requireNonNull(params[1], "Address2 cannot be null"));
-        entity.setCity(Objects.requireNonNull(params[2], "City cannot be null"));
-        entity.setRegion(Objects.requireNonNull(params[3], "Region cannot be null"));
+        entity.assignEntity(params);
     }
 }

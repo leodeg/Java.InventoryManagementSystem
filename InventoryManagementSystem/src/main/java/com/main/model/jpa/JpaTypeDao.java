@@ -19,6 +19,6 @@ public class JpaTypeDao extends JpaDataAccessObject<TypeEntity> {
 
     @Override
     public void assignEntity(TypeEntity entity, String[] params) {
-        entity.setTitle(Objects.requireNonNull(params[0], "Title cannot be null"));
+        entity.assignEntity(params);
     }
 }

@@ -1,10 +1,11 @@
 package com.main.model.entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "customers")
-public class CustomerEntity {
+public class CustomerEntity implements ParentEntity {
     private int idAddress;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -76,5 +77,14 @@ public class CustomerEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public void assignEntity(String[] params) {
+        setIdAddress(Integer.parseInt(params[0]));
+        setName(Objects.requireNonNull(params[1], "Name cannot be null"));
+        setPhone(params[2] != null ? params[2] : "Empty");
+        setPhone2(params[2] != null ? params[3] : "Empty");
+        setDescription(params[3] != null ? params[4] : "Empty");
     }
 }
