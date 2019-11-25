@@ -2,56 +2,51 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="uiMainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.controller.MainController">
    <children>
-      <AnchorPane prefHeight="500.0" prefWidth="171.0" style="-fx-background-color: #524365;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="uiAnchorPaneMenu" prefHeight="500.0" prefWidth="171.0" style="-fx-background-color: #524365;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="170.0" spacing="2.0">
                <children>
-                  <Button fx:id="uiButtonProducts" layoutX="20.0" layoutY="30.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Товар" textFill="#e5e5e5">
+                  <Button fx:id="uiButtonProducts" layoutX="20.0" layoutY="30.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Products" textFill="#e5e5e5">
                      <font>
                         <Font name="Segoe UI Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="uiButtonBegin" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Начало" textFill="#e5e5e5">
+                  <Button fx:id="uiButtonInventory" layoutX="10.0" layoutY="30.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Inventory" textFill="#e5e5e5">
                      <font>
                         <Font name="Segoe UI Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="uiButtonCome" layoutX="20.0" layoutY="30.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Приход" textFill="#e5e5e5">
+                  <Button fx:id="uiButtonCustomers" layoutX="20.0" layoutY="230.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Customers" textFill="#e5e5e5">
                      <font>
                         <Font name="Segoe UI Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="uiButtonGone" layoutX="20.0" layoutY="70.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Расход" textFill="#e5e5e5">
+                  <Button fx:id="uiButtonOrders" layoutX="20.0" layoutY="280.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Orders" textFill="#e5e5e5">
                      <font>
                         <Font name="Segoe UI Bold" size="14.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                   </Button>
-                  <Button fx:id="uiButtonEnd" layoutX="20.0" layoutY="110.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Конец" textFill="#e5e5e5">
+                  <Button fx:id="uiButtonSales" layoutX="20.0" layoutY="330.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Sales" textFill="#e5e5e5">
                      <font>
                         <Font name="Segoe UI Bold" size="14.0" />
                      </font>
-                  </Button>
-                  <Button fx:id="uiButtonCustomers" layoutX="20.0" layoutY="230.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Покупатели" textFill="#e5e5e5">
-                     <font>
-                        <Font name="Segoe UI Bold" size="14.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="uiButtonOrders" layoutX="20.0" layoutY="280.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Заказы" textFill="#e5e5e5">
-                     <font>
-                        <Font name="Segoe UI Bold" size="14.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="uiButtonSales" layoutX="20.0" layoutY="330.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #5A5388; -fx-background-radius: 0 0 0 0;" text="Продажи" textFill="#e5e5e5">
-                     <font>
-                        <Font name="Segoe UI Bold" size="14.0" />
-                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                   </Button>
                </children>
                <padding>
@@ -60,9 +55,140 @@
             </VBox>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="176.0" prefHeight="400.0" prefWidth="626.0" style="-fx-background-color: #5A5388;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="uiAnchorPaneWindow" layoutX="176.0" prefHeight="400.0" prefWidth="626.0" style="-fx-background-color: #5A5388;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Pane fx:id="uiPaneProducts" prefHeight="500.0" prefWidth="530.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <AnchorPane fx:id="uiAnchorPaneInventory" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="82.0" prefWidth="530.0" spacing="5.0" AnchorPane.bottomAnchor="420.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="uiButtonProducts1" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #524365; -fx-background-radius: 0 0 0 0;" text="Insert Come" textFill="#e5e5e5">
+                           <font>
+                              <Font name="Segoe UI Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="uiButtonProducts11" alignment="CENTER" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #524365; -fx-background-radius: 0 0 0 0;" text="Insert Gone" textFill="#e5e5e5">
+                           <font>
+                              <Font name="Segoe UI Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <TabPane fx:id="uiTabPaneInventory" layoutY="84.0" prefHeight="416.0" prefWidth="530.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+                    <tabs>
+                      <Tab text="Begin">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="uiTableViewBegin" prefHeight="399.0" prefWidth="530.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn prefWidth="75.0" text="idProduct" />
+                                          <TableColumn prefWidth="75.0" text="idBegin" />
+                                          <TableColumn prefWidth="75.0" text="amount" />
+                                          <TableColumn prefWidth="75.0" text="price" />
+                                          <TableColumn prefWidth="125.0" text="date" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Come">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="uiTableViewCome" prefHeight="399.0" prefWidth="530.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn prefWidth="75.0" text="idProduct" />
+                                          <TableColumn prefWidth="75.0" text="idCome" />
+                                          <TableColumn prefWidth="75.0" text="amount" />
+                                          <TableColumn prefWidth="75.0" text="price" />
+                                          <TableColumn prefWidth="125.0" text="date" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Gone">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="uiTableViewGone" prefHeight="399.0" prefWidth="530.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn prefWidth="75.0" text="idProduct" />
+                                          <TableColumn prefWidth="75.0" text="idGone" />
+                                          <TableColumn prefWidth="75.0" text="amount" />
+                                          <TableColumn prefWidth="75.0" text="price" />
+                                          <TableColumn prefWidth="125.0" text="date" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="End">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="uiTableViewEnd" prefHeight="399.0" prefWidth="530.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn prefWidth="75.0" text="idProduct" />
+                                          <TableColumn prefWidth="75.0" text="idEnd" />
+                                          <TableColumn prefWidth="75.0" text="amount" />
+                                          <TableColumn prefWidth="75.0" text="price" />
+                                          <TableColumn prefWidth="125.0" text="date" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="uiAnchorPaneProducts" opacity="0.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="530.0" spacing="5.0" AnchorPane.bottomAnchor="430.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="uiButtonNewProducts" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #524365; -fx-background-radius: 0 0 0 0;" text="New Product" textFill="#e5e5e5">
+                           <font>
+                              <Font name="Segoe UI Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="uiButtonNewType" alignment="CENTER" layoutX="190.0" layoutY="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #524365; -fx-background-radius: 0 0 0 0;" text="New Type" textFill="#e5e5e5">
+                           <font>
+                              <Font name="Segoe UI Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="uiTableViewProducts" layoutY="118.0" prefHeight="382.0" prefWidth="530.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+                     <columns>
+                        <TableColumn prefWidth="75.0" text="idType" />
+                        <TableColumn prefWidth="75.0" text="idBegin" />
+                        <TableColumn prefWidth="75.0" text="name" />
+                        <TableColumn prefWidth="75.0" text="price" />
+                        <TableColumn prefWidth="125.0" text="description" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>
