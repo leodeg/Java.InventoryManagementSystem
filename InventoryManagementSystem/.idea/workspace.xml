@@ -7,7 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="feat: add products and inventory ui interface">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7be5154c-790d-4be9-a3e4-011d760db7ea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7be5154c-790d-4be9-a3e4-011d760db7ea.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/dao/TypeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/dao/CategoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/entity/BeginEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/BeginEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/entity/ComeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/ComeEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/entity/EndEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/EndEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/entity/GoneEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/GoneEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/entity/TypeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/CategoryEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaTypeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCategoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/ui/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/main.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -52,20 +62,6 @@
         <item name="inventory_management_system@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="inventory_management_system: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="inventory_management_system@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="inventory_management_system: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="begin: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="inventory_management_system@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="inventory_management_system: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="products: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -113,35 +109,127 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Main.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/ui/main.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
+            <state relative-caret-position="102">
+              <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/AddressEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="860">
+              <caret line="87" column="61" lean-forward="true" selection-start-line="87" selection-start-column="61" selection-end-line="87" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#256#257#0" expanded="true" />
-                <element signature="e#284#285#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/ui/main.fxml">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+            <state relative-caret-position="136">
+              <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/SaleEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDataAccessObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/EndEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+              <folding>
+                <element signature="e#482#483#0" expanded="true" />
+                <element signature="e#520#521#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/GoneEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+              <folding>
+                <element signature="e#328#329#0" expanded="true" />
+                <element signature="e#382#383#0" expanded="true" />
+                <element signature="e#491#492#0" expanded="true" />
+                <element signature="e#529#530#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/BeginEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#488#489#0" expanded="true" />
+                <element signature="e#526#527#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ComeEntity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="e#489#490#0" expanded="true" />
+                <element signature="e#526#527#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -187,8 +275,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/dao/CustomerDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/dao/AddressDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/dao/InventoryDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/dao/OrderDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/dao/ProductDAO.java" />
@@ -209,10 +295,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/InventoryEntity.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/ComeEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/EndEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/GoneBaseEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/GoneEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/dao/SaleDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/SaleEntity.java" />
@@ -226,18 +309,23 @@
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCustomerDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaOrderDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaSaleDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaProductDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/TypeEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaTypeDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDataAccessObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/AddressEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/BeginEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/CustomerEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/InventoryBaseEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderBaseEntity.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/Main.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/TypeEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/CategoryEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/main.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/ComeEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/GoneEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/EndEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/BeginEntity.java" />
       </list>
     </option>
   </component>
@@ -254,6 +342,16 @@
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="InventoryManagementSystem" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="InventoryManagementSystem" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="InventoryManagementSystem" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
         </path>
       </expand>
       <select />
@@ -323,6 +421,16 @@
               <item name="InventoryManagementSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InventoryManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InventoryManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -361,6 +469,7 @@
     <property name="project.structure.side.proportion" value="0.37816092" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
+    <property name="sql.rename.search.for.storage.occurrences" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -608,7 +717,8 @@
       <workItem from="1574513130035" duration="15108000" />
       <workItem from="1574539259641" duration="814000" />
       <workItem from="1574611763294" duration="18930000" />
-      <workItem from="1574690298679" duration="11401000" />
+      <workItem from="1574690298679" duration="11428000" />
+      <workItem from="1574759725409" duration="6710000" />
     </task>
     <task id="LOCAL-00001" summary="feat: setup maven">
       <created>1574196934132</created>
@@ -680,7 +790,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574702013963</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: add products and inventory ui interface">
+      <created>1574704927033</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1574704927034</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -716,7 +833,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68247000" />
+    <option name="totallyTimeSpent" value="74984000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -729,8 +846,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5709643" visible="true" weight="0.16471216" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5709643" visible="true" weight="0.1663113" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -738,13 +856,13 @@
       <window_info id="Persistence" order="5" sideWeight="0.42903575" side_tool="true" weight="0.16471216" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3726977" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3726977" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39653304" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3261105" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3261105" />
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
@@ -760,7 +878,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.13006397" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.18550107" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="right" id="Maven" order="7" sideWeight="0.49919224" weight="0.32995737" />
@@ -825,7 +943,8 @@
     <MESSAGE value="feat: java persist API classes for all entities" />
     <MESSAGE value="refactor: add assign entity methods" />
     <MESSAGE value="feat: start build user interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: start build user interface" />
+    <MESSAGE value="feat: add products and inventory ui interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add products and inventory ui interface" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -844,13 +963,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/codehaus/groovy/groovy/2.4.11/groovy-2.4.11.jar!/org/codehaus/groovy/runtime/callsite/AbstractCallSite.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.tld" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaInventoryDao.java" />
     <entry file="uml://Persistence/JavaeeElement:/c05cefb7/jpa/InventoryManagementSystem/jpa/JPA/PersistenceModel">
@@ -889,16 +1001,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/main/model/jpa/JpaAddressDaoTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-          <folding>
-            <element signature="e#28#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/main/model/jpa/JpaAddressDaoTest.groovy" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.2.Final/hibernate-jpa-2.1-api-1.0.2.Final.jar!/javax/persistence/EntityManager.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -938,13 +1041,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://7be5154c-790d-4be9-a3e4-011d760db7ea/schema/inventory_management_system/table/types">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/Programs/JAVA JDKs/jdk-11.0.2/lib/src.zip!/java.base/java/util/Optional.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -981,28 +1077,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="52" column="63" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/GoneEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="e#328#329#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/EndEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1020,7 +1098,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/dao/TypeDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/dao/CategoryDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
@@ -1135,31 +1213,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaTypeDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCategoryDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
           <folding>
             <element signature="e#586#587#0" expanded="true" />
             <element signature="e#607#608#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDataAccessObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#735#736#0" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#819#820#0" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-            <element signature="e#889#890#0" expanded="true" />
-            <element signature="e#972#973#0" expanded="true" />
-            <element signature="e#1017#1018#0" expanded="true" />
-            <element signature="e#1099#1100#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1175,51 +1235,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/AddressEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="87" column="61" lean-forward="true" selection-start-line="87" selection-start-column="61" selection-end-line="87" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/BeginEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ComeEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/CustomerEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="722">
           <caret line="86" column="59" lean-forward="true" selection-start-line="86" selection-start-column="59" selection-end-line="86" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/TypeEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#787#788#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1238,40 +1259,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/InventoryBaseEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
           <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/SaleEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1291,30 +1282,230 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="187">
           <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#256#257#0" expanded="true" />
-            <element signature="e#284#285#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://7be5154c-790d-4be9-a3e4-011d760db7ea/schema/inventory_management_system/table/types">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/CategoryEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/7be5154c-790d-4be9-a3e4-011d760db7ea.SCHEMA:inventory_management_system">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>7be5154c-790d-4be9-a3e4-011d760db7ea.SCHEMA:inventory_management_system</OriginalElement>
+          <nodes>
+            <node x="485.99999999999994" y="423.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.begin</node>
+            <node x="630.5" y="201.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.products</node>
+            <node x="0.0" y="619.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.hibernate_sequence</node>
+            <node x="243.0" y="412.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.gone</node>
+            <node x="1146.0" y="412.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.sales</node>
+            <node x="1083.0" y="190.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.customers</node>
+            <node x="1092.5" y="0.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.addresses</node>
+            <node x="972.0" y="412.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.orders</node>
+            <node x="729.0" y="412.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.come</node>
+            <node x="0.0" y="412.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.end</node>
+            <node x="644.0" y="33.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.categories</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.orders" target="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.products">
+              <point x="-38.5" y="-81.0" />
+              <point x="1010.5" y="382.0" />
+              <point x="763.25" y="382.0" />
+              <point x="44.25" y="70.0" />
+            </edge>
+            <edge source="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.end" target="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.products">
+              <point x="0.0" y="-81.0" />
+              <point x="111.5" y="372.0" />
+              <point x="645.25" y="372.0" />
+              <point x="-73.75" y="70.0" />
+            </edge>
+            <edge source="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.gone" target="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.products">
+              <point x="0.0" y="-81.0" />
+              <point x="354.5" y="382.0" />
+              <point x="674.75" y="382.0" />
+              <point x="-44.25" y="70.0" />
+            </edge>
+            <edge source="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.sales" target="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.products">
+              <point x="-38.5" y="-81.0" />
+              <point x="1184.5" y="372.0" />
+              <point x="792.75" y="372.0" />
+              <point x="73.75" y="70.0" />
+            </edge>
+            <edge source="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.sales" target="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.customers">
+              <point x="38.5" y="-81.0" />
+              <point x="1261.5" y="392.0" />
+              <point x="1220.25" y="392.0" />
+              <point x="45.75" y="81.0" />
+            </edge>
+            <edge source="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.come" target="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.products">
+              <point x="0.0" y="-81.0" />
+              <point x="840.5" y="392.0" />
+              <point x="733.75" y="392.0" />
+              <point x="14.75" y="70.0" />
+            </edge>
+            <edge source="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.begin" target="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.products">
+              <point x="0.0" y="-70.0" />
+              <point x="597.5" y="392.0" />
+              <point x="704.25" y="392.0" />
+              <point x="-14.75" y="70.0" />
+            </edge>
+            <edge source="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.customers" target="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.addresses">
+              <point x="0.0" y="-81.0" />
+              <point x="0.0" y="70.0" />
+            </edge>
+            <edge source="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.orders" target="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.customers">
+              <point x="38.5" y="-81.0" />
+              <point x="1087.5" y="392.0" />
+              <point x="1128.75" y="392.0" />
+              <point x="-45.75" y="81.0" />
+            </edge>
+            <edge source="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.products" target="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.categories">
+              <point x="0.0" y="-70.0" />
+              <point x="0.0" y="37.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.3652173913043484" x="502.9405525093656" y="155.79617834394898" />
+          <SelectedNodes>
+            <node>7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.products</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDataAccessObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/AddressEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="860">
+          <caret line="87" column="61" lean-forward="true" selection-start-line="87" selection-start-column="61" selection-end-line="87" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/SaleEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/EndEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#482#483#0" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ComeEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#489#490#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/GoneEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding>
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#529#530#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/BeginEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#488#489#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/ui/main.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+        <state relative-caret-position="102">
+          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
   </component>
   <component name="masterDetails">

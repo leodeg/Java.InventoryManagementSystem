@@ -4,28 +4,28 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "types")
-public class TypeEntity implements ParentEntity {
+@Table(name = "categories")
+public class CategoryEntity implements ParentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idType;
+    private int idCategory;
     @Column(name = "title")
     private String title;
 
-    public TypeEntity(int idType, String title) {
-        this.idType = idType;
+    public CategoryEntity(int idCategory, String title) {
+        this.idCategory = idCategory;
         this.title = title;
     }
 
-    public TypeEntity() {
+    public CategoryEntity() {
     }
 
-    public int getIdType() {
-        return idType;
+    public int getIdCategory() {
+        return idCategory;
     }
 
-    public void setIdType(int idType) {
-        this.idType = idType;
+    public void setIdCategory(int idType) {
+        this.idCategory = idType;
     }
 
     public String getTitle() {

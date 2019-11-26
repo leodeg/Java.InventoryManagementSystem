@@ -8,14 +8,18 @@ import java.util.Date;
 public class EndEntity extends InventoryBaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idBegin;
+    private int idEnd;
 
     public EndEntity(int idProduct, int amount, Double price, Date date) {
-        super (idProduct, amount, price, date);
+        super(idProduct, amount, price, date);
     }
 
-    public int getIdBegin() {
-        return idBegin;
+    public int getIdEnd() {
+        return idEnd;
+    }
+
+    public void setIdEnd(int idBegin) {
+        this.idEnd = idBegin;
     }
 }
 

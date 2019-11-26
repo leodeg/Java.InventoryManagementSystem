@@ -8,13 +8,17 @@ import java.util.Date;
 public class GoneEntity extends InventoryBaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idBegin;
+    private int idGone;
 
     public GoneEntity(int idProduct, int amount, Double price, Date date) {
         super (idProduct, amount, price, date);
     }
 
-    public int getIdBegin() {
-        return idBegin;
+    public int getIdGone() {
+        return idGone;
+    }
+
+    public void setIdGone(int idGone) {
+        this.idGone = idGone;
     }
 }

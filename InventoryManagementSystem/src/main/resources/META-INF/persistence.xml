@@ -14,7 +14,7 @@
         <!--<class>com.main.model.entity.OrderEntity</class>-->
         <!--<class>com.main.model.entity.ProductEntity</class>-->
         <!--<class>com.main.model.entity.SaleEntity</class>-->
-        <class>com.main.model.entity.TypeEntity</class>
+        <class>com.main.model.entity.CategoryEntity</class>
 
         <!--<properties>-->
             <!--<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>-->

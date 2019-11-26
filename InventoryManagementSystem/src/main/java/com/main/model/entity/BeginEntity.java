@@ -11,11 +11,15 @@ public class BeginEntity extends InventoryBaseEntity {
     private int idBegin;
 
     public BeginEntity(int idProduct, int amount, Double price, Date date) {
-        super (idProduct, amount, price, date);
+        super(idProduct, amount, price, date);
     }
 
     public int getIdBegin() {
         return idBegin;
+    }
+
+    public void setIdBegin(int idBegin) {
+        this.idBegin = idBegin;
     }
 }
 
