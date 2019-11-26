@@ -14,7 +14,15 @@ public class JpaAddressDao extends JpaDataAccessObject<AddressEntity> {
 
     @Override
     public List<AddressEntity> getAll() {
-        return entityManager.createQuery("SELECT e FROM AddressEntity e").getResultList();
+        return entityManager.createQuery("SELECT e FROM AddressEntity e", AddressEntity.class).getResultList();
+    }
+
+    public List<AddressEntity> getAll (String address) {
+        return entityManager.createQuery("SELECT e from AddressEntity e WHERE e.address = :address", AddressEntity.class).setParameter("address", address).getResultList();
+    }
+
+    public AddressEntity getFirst (String address) {
+        return getAll(address).get(0);
     }
 
     public void assignEntity(AddressEntity entity, String[] params) {

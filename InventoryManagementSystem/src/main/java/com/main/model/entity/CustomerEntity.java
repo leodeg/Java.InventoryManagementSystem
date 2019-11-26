@@ -19,9 +19,8 @@ public class CustomerEntity implements ParentEntity {
     @Column (name = "description")
     private  String description;
 
-    public CustomerEntity(int idAddress, int idCustomer, String name, String phone, String phone2, String description) {
+    public CustomerEntity(int idAddress, String name, String phone, String phone2, String description) {
         this.idAddress = idAddress;
-        this.idCustomer = idCustomer;
         this.name = name;
         this.phone = phone;
         this.phone2 = phone2;

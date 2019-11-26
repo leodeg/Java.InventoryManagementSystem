@@ -8,27 +8,26 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
 
 public class CategoryController {
     @FXML
-    public TextField uiCategoryTextFieldTitle;
+    public TextField textFieldTitle;
 
     @FXML
-    public Button uiCategoryButtonNew;
+    public Button buttonNew;
     @FXML
-    public Button uiCategoryButtonRefresh;
+    public Button buttonRefresh;
 
     @FXML
-    public TableView uiCategoryTableView;
+    public TableView<CategoryEntity> tableView;
     @FXML
-    public TableColumn uiCategoryTableColumnId;
+    public TableColumn<CategoryEntity, String> tableColumnId;
     @FXML
-    public TableColumn uiCategoryTableColumnTitle;
+    public TableColumn<CategoryEntity, String> tableColumnTitle;
     @FXML
-    public TableColumn uiCategoryTableColumnActions;
+    public TableColumn tableColumnActions;
 
-    JpaCategoryDao categoryDao;
+    private JpaCategoryDao categoryDao;
 
     public CategoryController () {
         categoryDao = new JpaCategoryDao();
@@ -36,50 +35,45 @@ public class CategoryController {
 
     public void OnPress_Button_NewCategory(ActionEvent event) {
         CategoryEntity categoryEntity = getCategoryEntity();
-        if (categoryEntity != null) {
-            try {
-                categoryDao.save(categoryEntity);
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Category added");
-                alert.setContentText("Category was successfully added to database");
-                alert.show();
-                showCategoriesToTableView();
-            } catch (Exception ex) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Category Error");
-                alert.setContentText("Category title duplicate." + "\n" + ex.getMessage());
-                alert.show();
-            }
+        if (categoryEntity != null) try {
+            categoryDao.save(categoryEntity);
+            MainController.showAlert(Alert.AlertType.CONFIRMATION, "Category added", "Category was successfully added to database");
+            showCategoriesToTableView();
+        } catch (Exception ex) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Category Error", ex.getMessage());
         }
     }
 
     private CategoryEntity getCategoryEntity() {
         if (checkCategoryValidation())
-            return new CategoryEntity(uiCategoryTextFieldTitle.getText());
+            return new CategoryEntity(textFieldTitle.getText());
         return null;
     }
 
     private boolean checkCategoryValidation() {
-        if (uiCategoryTextFieldTitle.getText().length() < 1 || uiCategoryTextFieldTitle == null) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setContentText("Category title is empty. Please enter category title.");
-            alert.show();
+        if (textFieldTitle.getText().length() < 1 || textFieldTitle == null) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Error", "Category title is empty. Please enter category title.");
             return false;
         }
         return true;
     }
 
-    public void OnPress_Button_Refresh () {
+    public void OnPress_Button_Refresh (ActionEvent event) {
         showCategoriesToTableView();
     }
 
     private void showCategoriesToTableView () {
         ObservableList<CategoryEntity> data = FXCollections.observableArrayList(categoryDao.getAll());
-        uiCategoryTableColumnId.setCellValueFactory(new PropertyValueFactory<>("idCategory"));
-        uiCategoryTableColumnTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
-        uiCategoryTableView.setItems(data);
+        tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idCategory"));
+        tableColumnTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
+        tableView.setItems(data);
     }
 
-
+    public void OnPress_Button_Delete (ActionEvent event) {
+        if (checkCategoryValidation()) try {
+            categoryDao.delete(categoryDao.get(textFieldTitle.getText()));
+        } catch (Exception ex) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Error", ex.getMessage());
+        }
+    }
 }

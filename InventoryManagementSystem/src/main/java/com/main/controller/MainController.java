@@ -16,6 +16,11 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class MainController {
-
+    public static void showAlert(Alert.AlertType type, String title, String message) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setContentText(message);
+        alert.show();
+    }
 }
 
