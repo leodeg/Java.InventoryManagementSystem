@@ -16,6 +16,14 @@ public class JpaCategoryDao extends JpaDataAccessObject<CategoryEntity> {
         return entityManager.createQuery("SELECT e FROM CategoryEntity e").getResultList();
     }
 
+    public List<CategoryEntity> getByTitle (String title) {
+        return entityManager.createQuery("SELECT e FROM CategoryEntity e WHERE e.title = :title").setParameter("title", title).getResultList();
+    }
+
+    public int getIdByTitle (String title) {
+        return entityManager.createQuery("SELECT e FROM CategoryEntity e WHERE e.title = :title").setParameter("title", title).getFirstResult();
+    }
+
     @Override
     public void assignEntity(CategoryEntity entity, String[] params) {
         entity.assignEntity(params);

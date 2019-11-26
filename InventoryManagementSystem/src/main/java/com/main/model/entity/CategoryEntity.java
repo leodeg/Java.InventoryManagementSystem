@@ -12,8 +12,7 @@ public class CategoryEntity implements ParentEntity {
     @Column(name = "title")
     private String title;
 
-    public CategoryEntity(int idCategory, String title) {
-        this.idCategory = idCategory;
+    public CategoryEntity(String title) {
         this.title = title;
     }
 
@@ -40,4 +39,13 @@ public class CategoryEntity implements ParentEntity {
     public void assignEntity(String[] params) {
         setTitle(Objects.requireNonNull(params[0], "Title cannot be null"));
     }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Id: ").append(idCategory);
+        builder.append("; Title: ").append(title);
+        return builder.toString();
+    }
 }
+
