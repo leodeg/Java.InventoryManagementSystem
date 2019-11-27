@@ -1,9 +1,11 @@
 package com.main;
 
+import com.main.controller.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -13,9 +15,18 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/ui/main.fxml"));
-        primaryStage.setTitle("Inventory management system");
-        primaryStage.setScene(new Scene(root, 1080, 800));
-        primaryStage.show();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/ui/main.fxml"));
+            primaryStage.setTitle("Inventory management system");
+            Scene scene = new Scene(root, 1080, 800);
+            scene.getStylesheets().add(Main.class.getResource("/ui/bootstrap.css").toExternalForm());
+//            scene.getStylesheets().add(Main.class.getResource("/ui/modena_dark.css").toExternalForm());
+//            scene.getStylesheets().add(Main.class.getResource("/ui/flatbee.css").toExternalForm());
+//            scene.getStylesheets().add(Main.class.getResource("/ui/breeze.css").toExternalForm());
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception ex) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Main window error", ex.getMessage());
+        }
     }
 }
