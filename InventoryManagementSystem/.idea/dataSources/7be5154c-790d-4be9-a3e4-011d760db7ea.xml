@@ -1113,587 +1113,504 @@
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
     <table id="279" parent="3" name="addresses"/>
-    <table id="280" parent="3" name="begin"/>
+    <table id="280" parent="3" name="arrival"/>
     <table id="281" parent="3" name="categories"/>
-    <table id="282" parent="3" name="come"/>
+    <table id="282" parent="3" name="consumption"/>
     <table id="283" parent="3" name="customers"/>
-    <table id="284" parent="3" name="end"/>
-    <table id="285" parent="3" name="gone"/>
-    <table id="286" parent="3" name="hibernate_sequence">
+    <table id="284" parent="3" name="fact"/>
+    <table id="285" parent="3" name="hibernate_sequence">
       <Engine>MyISAM</Engine>
     </table>
-    <table id="287" parent="3" name="orders"/>
-    <table id="288" parent="3" name="products"/>
-    <table id="289" parent="3" name="sales"/>
-    <column id="290" parent="279" name="idAddress">
+    <table id="286" parent="3" name="orders"/>
+    <table id="287" parent="3" name="products"/>
+    <table id="288" parent="3" name="sales"/>
+    <column id="289" parent="279" name="idAddress">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="291" parent="279" name="address">
+    <column id="290" parent="279" name="address">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="292" parent="279" name="address2">
+    <column id="291" parent="279" name="address2">
       <Position>3</Position>
       <DataType>varchar(45)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="279" name="city">
+    <column id="292" parent="279" name="city">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;Lugansk&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="294" parent="279" name="region">
+    <column id="293" parent="279" name="region">
       <Position>5</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="295" parent="279" name="idAddresses_UNIQUE">
+    <index id="294" parent="279" name="idAddresses_UNIQUE">
       <ColNames>idAddress</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="296" parent="279" name="PRIMARY">
+    <key id="295" parent="279" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idAddress</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="297" parent="279" name="idAddresses_UNIQUE">
+    <key id="296" parent="279" name="idAddresses_UNIQUE">
       <ColNames>idAddress</ColNames>
       <UnderlyingIndexName>idAddresses_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="298" parent="280" name="idProduct">
+    <column id="297" parent="280" name="idProduct">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="299" parent="280" name="idBegin">
+    <column id="298" parent="280" name="idArrival">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="300" parent="280" name="amount">
-      <Position>3</Position>
-      <DataType>int(10) unsigned zerofill|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="301" parent="280" name="price">
-      <Position>4</Position>
-      <DataType>decimal(13,2 digit)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="302" parent="280" name="date">
-      <Position>5</Position>
-      <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="303" parent="280" name="idBegin_UNIQUE">
-      <ColNames>idBegin</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <index id="304" parent="280" name="idBeginProducts_idx">
-      <ColNames>idProduct</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="305" parent="280" name="idBeginsProducts_idx">
-      <ColNames>idProduct</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="306" parent="280" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>idBegin</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="307" parent="280" name="idBegin_UNIQUE">
-      <ColNames>idBegin</ColNames>
-      <UnderlyingIndexName>idBegin_UNIQUE</UnderlyingIndexName>
-    </key>
-    <foreign-key id="308" parent="280" name="idBeginProducts">
-      <ColNames>idProduct</ColNames>
-      <RefSchemaName>inventory_management_system</RefSchemaName>
-      <RefTableName>products</RefTableName>
-      <RefColNames>idProduct</RefColNames>
-    </foreign-key>
-    <column id="309" parent="281" name="idCategory">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="310" parent="281" name="title">
-      <Position>2</Position>
-      <DataType>varchar(20)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="311" parent="281" name="idType_UNIQUE">
-      <ColNames>idCategory</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <index id="312" parent="281" name="categories_title_uindex">
-      <ColNames>title</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <key id="313" parent="281" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>idCategory</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="314" parent="281" name="idType_UNIQUE">
-      <ColNames>idCategory</ColNames>
-      <UnderlyingIndexName>idType_UNIQUE</UnderlyingIndexName>
-    </key>
-    <key id="315" parent="281" name="categories_title_uindex">
-      <ColNames>title</ColNames>
-      <UnderlyingIndexName>categories_title_uindex</UnderlyingIndexName>
-    </key>
-    <column id="316" parent="282" name="idProduct">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>1</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="317" parent="282" name="idCome">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="318" parent="282" name="amount">
+    <column id="299" parent="280" name="amount">
       <Position>3</Position>
       <DataType>int(10) unsigned zerofill|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="319" parent="282" name="price">
+    <column id="300" parent="280" name="price">
       <Position>4</Position>
       <DataType>decimal(13,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="320" parent="282" name="date">
+    <column id="301" parent="280" name="date">
       <Position>5</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="321" parent="282" name="idBegin">
-      <Position>6</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="322" parent="282" name="idCome_UNIQUE">
-      <ColNames>idCome</ColNames>
+    <index id="302" parent="280" name="idCome_UNIQUE">
+      <ColNames>idArrival</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="323" parent="282" name="idProducts_idx">
+    <index id="303" parent="280" name="idProducts_idx">
       <ColNames>idProduct</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="324" parent="282" name="PRIMARY">
+    <key id="304" parent="280" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>idCome</ColNames>
+      <ColNames>idArrival</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="325" parent="282" name="idCome_UNIQUE">
-      <ColNames>idCome</ColNames>
+    <key id="305" parent="280" name="idCome_UNIQUE">
+      <ColNames>idArrival</ColNames>
       <UnderlyingIndexName>idCome_UNIQUE</UnderlyingIndexName>
     </key>
-    <foreign-key id="326" parent="282" name="idComeProducts">
+    <foreign-key id="306" parent="280" name="idComeProducts">
       <ColNames>idProduct</ColNames>
       <RefSchemaName>inventory_management_system</RefSchemaName>
       <RefTableName>products</RefTableName>
       <RefColNames>idProduct</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="327" parent="283" name="idAddress">
+    <column id="307" parent="281" name="idCategory">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="328" parent="283" name="idCustomer">
+    <column id="308" parent="281" name="title">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="309" parent="281" name="idType_UNIQUE">
+      <ColNames>idCategory</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="310" parent="281" name="categories_title_uindex">
+      <ColNames>title</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="311" parent="281" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idCategory</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="312" parent="281" name="idType_UNIQUE">
+      <ColNames>idCategory</ColNames>
+      <UnderlyingIndexName>idType_UNIQUE</UnderlyingIndexName>
+    </key>
+    <key id="313" parent="281" name="categories_title_uindex">
+      <ColNames>title</ColNames>
+      <UnderlyingIndexName>categories_title_uindex</UnderlyingIndexName>
+    </key>
+    <column id="314" parent="282" name="idConsumption">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="315" parent="282" name="productName">
+      <Position>2</Position>
+      <DataType>varchar(35)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="316" parent="282" name="price">
+      <Position>3</Position>
+      <DataType>decimal(13,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="317" parent="282" name="amount">
+      <Position>4</Position>
+      <DataType>int(10) unsigned zerofill|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>0</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="318" parent="282" name="totalPrice">
+      <Position>5</Position>
+      <DataType>decimal(13,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="319" parent="282" name="date">
+      <Position>6</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="320" parent="282" name="idGone_UNIQUE">
+      <ColNames>idConsumption</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="321" parent="282" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idConsumption</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="322" parent="282" name="idGone_UNIQUE">
+      <ColNames>idConsumption</ColNames>
+      <UnderlyingIndexName>idGone_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="323" parent="283" name="idAddress">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="324" parent="283" name="idCustomer">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="329" parent="283" name="name">
+    <column id="325" parent="283" name="name">
       <Position>3</Position>
       <DataType>varchar(60)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="330" parent="283" name="phone">
+    <column id="326" parent="283" name="phone">
       <Position>4</Position>
       <DataType>varchar(25)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="331" parent="283" name="email">
+    <column id="327" parent="283" name="email">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="332" parent="283" name="description">
+    <column id="328" parent="283" name="description">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="333" parent="283" name="idCustomersAddresses_idx">
+    <index id="329" parent="283" name="idCustomersAddresses_idx">
       <ColNames>idAddress</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="334" parent="283" name="PRIMARY">
+    <key id="330" parent="283" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idCustomer</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="335" parent="283" name="idCustomersAddresses">
+    <foreign-key id="331" parent="283" name="idCustomersAddresses">
       <ColNames>idAddress</ColNames>
       <RefSchemaName>inventory_management_system</RefSchemaName>
       <RefTableName>addresses</RefTableName>
       <RefColNames>idAddress</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="336" parent="284" name="idProduct">
+    <column id="332" parent="284" name="idProduct">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="337" parent="284" name="idEnd">
+    <column id="333" parent="284" name="idFact">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="338" parent="284" name="amount">
+    <column id="334" parent="284" name="amount">
       <Position>3</Position>
       <DataType>int(10) unsigned zerofill|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="339" parent="284" name="price">
+    <column id="335" parent="284" name="price">
       <Position>4</Position>
       <DataType>decimal(13,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="340" parent="284" name="date">
+    <column id="336" parent="284" name="date">
       <Position>5</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="341" parent="284" name="idBegin">
-      <Position>6</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="342" parent="284" name="idEnd_UNIQUE">
-      <ColNames>idEnd</ColNames>
+    <index id="337" parent="284" name="idBegin_UNIQUE">
+      <ColNames>idFact</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="343" parent="284" name="idEndProducts">
+    <index id="338" parent="284" name="idBeginProducts_idx">
       <ColNames>idProduct</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="344" parent="284" name="PRIMARY">
+    <index id="339" parent="284" name="idBeginsProducts_idx">
+      <ColNames>idProduct</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="340" parent="284" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>idEnd</ColNames>
+      <ColNames>idFact</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="345" parent="284" name="idEnd_UNIQUE">
-      <ColNames>idEnd</ColNames>
-      <UnderlyingIndexName>idEnd_UNIQUE</UnderlyingIndexName>
+    <key id="341" parent="284" name="idBegin_UNIQUE">
+      <ColNames>idFact</ColNames>
+      <UnderlyingIndexName>idBegin_UNIQUE</UnderlyingIndexName>
     </key>
-    <foreign-key id="346" parent="284" name="idEndProducts">
+    <foreign-key id="342" parent="284" name="idBeginProducts">
       <ColNames>idProduct</ColNames>
       <RefSchemaName>inventory_management_system</RefSchemaName>
       <RefTableName>products</RefTableName>
       <RefColNames>idProduct</RefColNames>
-      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="347" parent="285" name="idProduct">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>1</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="348" parent="285" name="idGone">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="349" parent="285" name="amount">
-      <Position>3</Position>
-      <DataType>int(10) unsigned zerofill|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>0</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="350" parent="285" name="price">
-      <Position>4</Position>
-      <DataType>decimal(13,2 digit)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="351" parent="285" name="date">
-      <Position>5</Position>
-      <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="352" parent="285" name="idBegin">
-      <Position>6</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="353" parent="285" name="idGone_UNIQUE">
-      <ColNames>idGone</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <index id="354" parent="285" name="idProducts_idx">
-      <ColNames>idProduct</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="355" parent="285" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>idGone</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="356" parent="285" name="idGone_UNIQUE">
-      <ColNames>idGone</ColNames>
-      <UnderlyingIndexName>idGone_UNIQUE</UnderlyingIndexName>
-    </key>
-    <foreign-key id="357" parent="285" name="idGoneProducts">
-      <ColNames>idProduct</ColNames>
-      <RefSchemaName>inventory_management_system</RefSchemaName>
-      <RefTableName>products</RefTableName>
-      <RefColNames>idProduct</RefColNames>
-      <OnUpdate>cascade</OnUpdate>
-    </foreign-key>
-    <column id="358" parent="286" name="next_val">
+    <column id="343" parent="285" name="next_val">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="359" parent="287" name="idProduct">
+    <column id="344" parent="286" name="idProduct">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="360" parent="287" name="idCustomer">
+    <column id="345" parent="286" name="idCustomer">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="361" parent="287" name="idOrder">
+    <column id="346" parent="286" name="idOrder">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="362" parent="287" name="price">
+    <column id="347" parent="286" name="price">
       <Position>4</Position>
       <DataType>double(13,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="363" parent="287" name="amount">
+    <column id="348" parent="286" name="amount">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="364" parent="287" name="totalPrice">
+    <column id="349" parent="286" name="totalPrice">
       <Position>6</Position>
       <DataType>double(13,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="365" parent="287" name="date">
+    <column id="350" parent="286" name="date">
       <Position>7</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="366" parent="287" name="idOrder_UNIQUE">
+    <index id="351" parent="286" name="idOrder_UNIQUE">
       <ColNames>idOrder</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="367" parent="287" name="idOrdersProducts_idx">
+    <index id="352" parent="286" name="idOrdersProducts_idx">
       <ColNames>idProduct</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="368" parent="287" name="idOrdersCustomers_idx">
+    <index id="353" parent="286" name="idOrdersCustomers_idx">
       <ColNames>idCustomer</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="369" parent="287" name="PRIMARY">
+    <key id="354" parent="286" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idOrder</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="370" parent="287" name="idOrder_UNIQUE">
+    <key id="355" parent="286" name="idOrder_UNIQUE">
       <ColNames>idOrder</ColNames>
       <UnderlyingIndexName>idOrder_UNIQUE</UnderlyingIndexName>
     </key>
-    <foreign-key id="371" parent="287" name="idOrdersProducts">
+    <foreign-key id="356" parent="286" name="idOrdersProducts">
       <ColNames>idProduct</ColNames>
       <RefSchemaName>inventory_management_system</RefSchemaName>
       <RefTableName>products</RefTableName>
       <RefColNames>idProduct</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <foreign-key id="372" parent="287" name="idOrdersCustomers">
+    <foreign-key id="357" parent="286" name="idOrdersCustomers">
       <ColNames>idCustomer</ColNames>
       <RefSchemaName>inventory_management_system</RefSchemaName>
       <RefTableName>customers</RefTableName>
       <RefColNames>idCustomer</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="373" parent="288" name="idCategory">
+    <column id="358" parent="287" name="idCategory">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="374" parent="288" name="idProduct">
+    <column id="359" parent="287" name="idProduct">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="375" parent="288" name="name">
+    <column id="360" parent="287" name="name">
       <Position>3</Position>
       <DataType>varchar(35)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="376" parent="288" name="price">
+    <column id="361" parent="287" name="price">
       <Position>4</Position>
       <DataType>decimal(13,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="377" parent="288" name="description">
+    <column id="362" parent="287" name="description">
       <Position>5</Position>
       <DataType>varchar(60)|0s</DataType>
       <DefaultExpression>&apos;Empty&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="378" parent="288" name="idProducts_UNIQUE">
+    <index id="363" parent="287" name="idProducts_UNIQUE">
       <ColNames>idProduct</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="379" parent="288" name="idProductsTypes">
+    <index id="364" parent="287" name="idProductsTypes">
       <ColNames>idCategory</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="380" parent="288" name="PRIMARY">
+    <key id="365" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idProduct</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="381" parent="288" name="idProducts_UNIQUE">
+    <key id="366" parent="287" name="idProducts_UNIQUE">
       <ColNames>idProduct</ColNames>
       <UnderlyingIndexName>idProducts_UNIQUE</UnderlyingIndexName>
     </key>
-    <foreign-key id="382" parent="288" name="idProductsTypes">
+    <foreign-key id="367" parent="287" name="idProductsTypes">
       <ColNames>idCategory</ColNames>
       <RefSchemaName>inventory_management_system</RefSchemaName>
       <RefTableName>categories</RefTableName>
       <RefColNames>idCategory</RefColNames>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="383" parent="289" name="idSale">
+    <column id="368" parent="288" name="idSale">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="384" parent="289" name="productName">
+    <column id="369" parent="288" name="productName">
       <Position>2</Position>
       <DataType>varchar(35)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="385" parent="289" name="customerName">
+    <column id="370" parent="288" name="customerName">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="386" parent="289" name="price">
+    <column id="371" parent="288" name="price">
       <Position>4</Position>
       <DataType>double(13,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="387" parent="289" name="amount">
+    <column id="372" parent="288" name="amount">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="388" parent="289" name="totalPrice">
+    <column id="373" parent="288" name="totalPrice">
       <Position>6</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="389" parent="289" name="date">
+    <column id="374" parent="288" name="date">
       <Position>7</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="390" parent="289" name="idSale_UNIQUE">
+    <index id="375" parent="288" name="idSale_UNIQUE">
       <ColNames>idSale</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="391" parent="289" name="PRIMARY">
+    <key id="376" parent="288" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idSale</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="392" parent="289" name="idSale_UNIQUE">
+    <key id="377" parent="288" name="idSale_UNIQUE">
       <ColNames>idSale</ColNames>
       <UnderlyingIndexName>idSale_UNIQUE</UnderlyingIndexName>
     </key>

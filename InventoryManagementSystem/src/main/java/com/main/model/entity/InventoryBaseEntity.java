@@ -22,6 +22,10 @@ public class InventoryBaseEntity implements ParentEntity {
         this.date = date;
     }
 
+    public InventoryBaseEntity() {
+
+    }
+
 
     public int getIdProduct() {
         return idProduct;
