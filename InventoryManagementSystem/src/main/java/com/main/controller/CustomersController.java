@@ -26,7 +26,7 @@ public class CustomersController {
     @FXML
     public TextField textFieldPhone;
     @FXML
-    public TextField textFieldPhone2;
+    public TextField textFieldEmail;
     @FXML
     public TextField textFieldDescription;
 
@@ -41,7 +41,7 @@ public class CustomersController {
     @FXML
     public TableColumn<CustomerEntity, String> tableColumnPhone;
     @FXML
-    public TableColumn<CustomerEntity, String> tableColumnPhone2;
+    public TableColumn<CustomerEntity, String> tableColumnEmail;
     @FXML
     public TableColumn<CustomerEntity, String> tableColumnDescription;
     @FXML
@@ -84,7 +84,7 @@ public class CustomersController {
     @Nullable
     private CustomerEntity getCustomerEntity() {
         if (isInformationValid())
-            return new CustomerEntity(addressDao.getFirst(choiceBoxAddress.getValue()).getIdAddress(), textFieldName.getText(), textFieldPhone.getText(), textFieldPhone2.getText(), textFieldDescription.getText());
+            return new CustomerEntity(addressDao.getFirst(choiceBoxAddress.getValue()).getIdAddress(), textFieldName.getText(), textFieldPhone.getText(), textFieldEmail.getText(), textFieldDescription.getText());
         return null;
     }
 
@@ -106,7 +106,7 @@ public class CustomersController {
         tableColumnAddress.setCellValueFactory(new PropertyValueFactory<>("idAddress"));
         tableColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));
         tableColumnPhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
-        tableColumnPhone2.setCellValueFactory(new PropertyValueFactory<>("phone2"));
+        tableColumnEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         tableColumnDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         tableView.setItems(data);
     }

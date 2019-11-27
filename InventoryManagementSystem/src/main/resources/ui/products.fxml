@@ -17,9 +17,9 @@
                     <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" spacing="5.0" VBox.vgrow="ALWAYS">
                         <children>
                             <Button fx:id="uiButtonRefreshChoice" mnemonicParsing="false" onAction="#OnPress_Button_RefreshChoice" text="Refresh -&gt;" />
-                            <ChoiceBox fx:id="choiceBoxCategory" prefWidth="150.0" />
+                            <ChoiceBox fx:id="choiceBoxCategory" prefHeight="25.0" prefWidth="89.0" />
                             <TextField fx:id="textFieldName" promptText="Name *" />
-                            <TextField fx:id="textFieldPrice" layoutX="185.0" layoutY="28.0" promptText="Price *" />
+                            <TextField fx:id="textFieldPrice" layoutX="185.0" layoutY="28.0" prefHeight="25.0" prefWidth="80.0" promptText="Price *" />
                             <TextField fx:id="textFieldDescription" layoutX="339.0" layoutY="28.0" promptText="Description" />
                             <Button fx:id="uiButtonNew" mnemonicParsing="false" onAction="#OnPress_Button_NewProduct" text="New" />
                   <Button fx:id="uiButtonRefresh" layoutX="627.0" layoutY="23.0" mnemonicParsing="false" onAction="#OnPress_Button_Refresh" text="Refresh" />

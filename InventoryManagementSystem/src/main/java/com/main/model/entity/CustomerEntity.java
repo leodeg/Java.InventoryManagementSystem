@@ -14,16 +14,16 @@ public class CustomerEntity implements ParentEntity {
     private  String name;
     @Column (name = "phone")
     private  String phone;
-    @Column (name = "phone2")
-    private  String phone2;
+    @Column (name = "email")
+    private  String email;
     @Column (name = "description")
     private  String description;
 
-    public CustomerEntity(int idAddress, String name, String phone, String phone2, String description) {
+    public CustomerEntity(int idAddress, String name, String phone, String email, String description) {
         this.idAddress = idAddress;
         this.name = name;
         this.phone = phone;
-        this.phone2 = phone2;
+        this.email = email;
         this.description = description;
     }
 
@@ -62,12 +62,12 @@ public class CustomerEntity implements ParentEntity {
         this.phone = phone;
     }
 
-    public String getPhone2() {
-        return phone2;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhone2(String phone2) {
-        this.phone2 = phone2;
+    public void setEmail(String phone2) {
+        this.email = phone2;
     }
 
     public String getDescription() {
@@ -83,7 +83,7 @@ public class CustomerEntity implements ParentEntity {
         setIdAddress(Integer.parseInt(params[0]));
         setName(Objects.requireNonNull(params[1], "Name cannot be null"));
         setPhone(params[2] != null ? params[2] : "Empty");
-        setPhone2(params[2] != null ? params[3] : "Empty");
+        setEmail(params[2] != null ? params[3] : "Empty");
         setDescription(params[3] != null ? params[4] : "Empty");
     }
 }

@@ -37,7 +37,7 @@ public class CustomerDao implements DataAccessObject<CustomerEntity> {
     public void assignEntity(CustomerEntity entity, String[] params) {
         entity.setName(Objects.requireNonNull(params[0], "Name cannot be null"));
         entity.setPhone(Objects.requireNonNull(params[1], "Phone cannot be null"));
-        entity.setPhone2(params[2] != null ? params[2] : "Empty");
+        entity.setEmail(params[2] != null ? params[2] : "Empty");
         entity.setDescription(params[3] != null ? params[3] : "Empty");
     }
 
