@@ -9,6 +9,7 @@ public interface DataAccessObject<T> {
 
     void save(T t);
     void delete (T t);
+    void update (T t);
     void update (T t, String[] params);
     void assignEntity (T entity, String[] params);
 }

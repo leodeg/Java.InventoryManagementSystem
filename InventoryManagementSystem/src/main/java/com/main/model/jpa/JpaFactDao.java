@@ -13,7 +13,15 @@ public class JpaFactDao extends JpaDataAccessObject<FactEntity> {
 
     @Override
     public List<FactEntity> getAll() {
-        return entityManager.createQuery("SELECT e FROM FactEntity e").getResultList();
+        return entityManager.createQuery("SELECT e FROM FactEntity e", FactEntity.class).getResultList();
+    }
+
+    public List<FactEntity> getByIdProduct (int id) {
+        return entityManager.createQuery("SELECT e FROM FactEntity e WHERE e.idProduct = :id", FactEntity.class).setParameter("id", id).getResultList();
+    }
+
+    public FactEntity getFirstByIdProduct (int id) {
+        return getByIdProduct(id).get(0);
     }
 
     public void assignEntity(InventoryBaseEntity entity, String[] params) {

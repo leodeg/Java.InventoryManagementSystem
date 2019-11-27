@@ -1,5 +1,7 @@
 package com.main.model.jpa;
 
+import com.main.model.entity.OrderEntity;
+
 import java.util.List;
 import java.util.Optional;
 

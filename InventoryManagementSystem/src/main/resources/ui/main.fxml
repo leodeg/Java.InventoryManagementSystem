@@ -4,45 +4,45 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="uiMainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.controller.MainController">
-    <children>
-        <TabPane tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                 AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <Tab text="Dashboard">
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
-            </Tab>
-            <Tab text="Categories">
-                <fx:include fx:id="categories" source="categories.fxml"/>
-            </Tab>
-            <Tab text="Products">
-                <fx:include fx:id="products" source="products.fxml"/>
-            </Tab>
-            <Tab text="Inventory">
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                    <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE"
-                             AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                             AnchorPane.topAnchor="0.0">
-                        <Tab text="Fact">
-                            <fx:include fx:id="fact" source="fact.fxml"/>
-                        </Tab>
-                        <Tab text="Arrival">
-                            <fx:include fx:id="arrival" source="arrival.fxml"/>
-                        </Tab>
-                        <Tab text="Consumption ">
-                            <fx:include fx:id="consumption" source="consumption.fxml"/>
-                        </Tab>
-                    </TabPane>
-                </AnchorPane>
-            </Tab>
-            <Tab text="Customers">
-                <fx:include fx:id="customers" source="customers.fxml"/>
-            </Tab>
-            <Tab text="Orders">
-                <fx:include fx:id="orders" source="orders.fxml"/>
-            </Tab>
-            <Tab text="Sales">
-                <fx:include fx:id="sales" source="sales.fxml"/>
-            </Tab>
-        </TabPane>
-    </children>
+<AnchorPane fx:id="uiMainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.controller.MainController">
+    <TabPane tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+             AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Tab text="Dashboard">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+        </Tab>
+        <Tab text="Categories">
+            <fx:include fx:id="categories" source="categories.fxml"/>
+        </Tab>
+        <Tab text="Products">
+            <fx:include fx:id="products" source="products.fxml"/>
+        </Tab>
+        <Tab text="Inventory">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE"
+                         AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                         AnchorPane.topAnchor="0.0">
+                    <Tab text="Fact">
+                        <fx:include fx:id="fact" source="fact.fxml"/>
+                    </Tab>
+                    <Tab text="Arrival">
+                        <fx:include fx:id="arrival" source="arrival.fxml"/>
+                    </Tab>
+                    <Tab text="Consumption ">
+                        <fx:include fx:id="consumption" source="consumption.fxml"/>
+                    </Tab>
+                </TabPane>
+            </AnchorPane>
+        </Tab>
+        <Tab text="Customers">
+            <fx:include fx:id="customers" source="customers.fxml"/>
+        </Tab>
+        <Tab text="Orders">
+            <fx:include fx:id="orders" source="orders.fxml"/>
+        </Tab>
+        <Tab text="Sales">
+            <fx:include fx:id="sales" source="sales.fxml"/>
+        </Tab>
+    </TabPane>
 </AnchorPane>

@@ -30,6 +30,11 @@ public class DaoContainer<TInventory extends ParentEntity> implements com.main.m
     }
 
     @Override
+    public void update(TInventory entity) {
+        list.add(entity);
+    }
+
+    @Override
     public void update(TInventory entity, String[] params) {
         assignEntity(entity,params);
         list.add(entity);

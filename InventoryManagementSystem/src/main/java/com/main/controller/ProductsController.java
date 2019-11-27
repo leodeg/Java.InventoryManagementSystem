@@ -1,8 +1,12 @@
 package com.main.controller;
 
+import com.main.model.entity.ArrivalEntity;
 import com.main.model.entity.CategoryEntity;
+import com.main.model.entity.FactEntity;
 import com.main.model.entity.ProductEntity;
+import com.main.model.jpa.JpaArrivalDao;
 import com.main.model.jpa.JpaCategoryDao;
+import com.main.model.jpa.JpaFactDao;
 import com.main.model.jpa.JpaProductDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +15,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.jetbrains.annotations.Nullable;
+
+import java.sql.Date;
 
 public class ProductsController {
     @FXML
@@ -34,20 +40,26 @@ public class ProductsController {
     public TableColumn<ProductEntity, Double> tableColumnPrice;
     @FXML
     public TableColumn<ProductEntity, String> tableColumnDescription;
+
     @FXML
     public TableColumn tableColumnActions;
+    @FXML
+    public TextField textFieldArrivalAmount;
+    @FXML
+    public DatePicker datePickerArrival;
 
     private JpaProductDao productDao;
     private JpaCategoryDao categoryDao;
+    private JpaArrivalDao arrivalDao;
+    private JpaFactDao factDao;
 
     public ProductsController() {
         productDao = new JpaProductDao();
         categoryDao = new JpaCategoryDao();
+        arrivalDao = new JpaArrivalDao();
+        factDao = new JpaFactDao();
     }
 
-    //    -------------------------------
-    //    PRESS NEW PRODUCT
-    //    -------------------------------
     public void OnPress_Button_NewProduct(ActionEvent event) {
         ProductEntity productEntity = getProductEntity();
         if (productEntity != null) {
@@ -77,25 +89,31 @@ public class ProductsController {
             MainController.showAlert(Alert.AlertType.ERROR, "Error", "Name or price is empty. Please enter an information.");
             return false;
         }
-        if (!priceHasOnlyNumbers()) {
+        if (!priceHasOnlyNumbers(textFieldPrice)) {
             MainController.showAlert(Alert.AlertType.ERROR, "Error", "Price contains letters.");
             return false;
         }
         return true;
     }
 
-    private boolean priceHasOnlyNumbers() {
+    private boolean priceHasOnlyNumbers(TextField textField) {
         try {
-            Double.parseDouble(textFieldPrice.getText());
+            Double.parseDouble(textField.getText());
             return true;
         } catch (NumberFormatException ex) {
             return false;
         }
     }
 
-    //    -------------------------------
-    //    PRESS REFRESH TABLE
-    //    -------------------------------
+    private boolean amountHastOnlyNumbers(TextField textField) {
+        try {
+            Integer.parseInt(textField.getText());
+            return true;
+        } catch (NumberFormatException ex) {
+            return false;
+        }
+    }
+
     public void OnPress_Button_Refresh(ActionEvent event) {
         displayInformationToTableView();
     }
@@ -110,9 +128,6 @@ public class ProductsController {
         tableView.setItems(data);
     }
 
-    //    -------------------------------
-    //    PRESS REFRESH CHOICES
-    //    -------------------------------
     public void OnPress_Button_RefreshChoice(ActionEvent event) {
         populateChoiceBox();
     }
@@ -122,5 +137,60 @@ public class ProductsController {
         for (CategoryEntity entity : categoryDao.getAll())
             data.add(entity.getTitle());
         choiceBoxCategory.setItems(data);
+    }
+
+    public void OnPress_Button_AddArrival(ActionEvent event) {
+        saveNewArrivalToDatabase();
+    }
+
+    private void saveNewArrivalToDatabase() {
+        ArrivalEntity entity = getNewArrival();
+        if (entity != null) {
+            arrivalDao.save(entity);
+            updateFactDatabaseTable(entity);
+        }
+    }
+
+    private void updateFactDatabaseTable(ArrivalEntity entity) {
+            FactEntity factEntity = factDao.getFirstByIdProduct(entity.getIdProduct());
+            MainController.showAlert(Alert.AlertType.CONFIRMATION, "ProductEntity", factEntity.toString());
+            if (factEntity == null) {
+                factDao.save(new FactEntity(entity.getIdProduct(), entity.getAmount(), entity.getPrice(), entity.getDate()));
+            } else {
+                factEntity.setAmount(factEntity.getAmount() + entity.getAmount());
+                factEntity.setPrice(entity.getPrice());
+                factEntity.setDate(entity.getDate());
+                factDao.update(factEntity);
+            }
+    }
+
+    @Nullable
+    private ArrivalEntity getNewArrival() {
+        if (checkArrivalInformation()) {
+            ProductEntity entity = tableView.getSelectionModel().getSelectedItem();
+            MainController.showAlert(Alert.AlertType.CONFIRMATION, "ProductEntity", entity.toString());
+            return new ArrivalEntity(entity.getIdProduct(),
+                    Integer.parseInt(textFieldArrivalAmount.getText()),
+                    entity.getPrice(),
+                    Date.valueOf(datePickerArrival.getValue()));
+        }
+        return null;
+    }
+
+    private boolean checkArrivalInformation() {
+        if (tableView.getSelectionModel().getSelectedItem() == null) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Arrival Error", "Please select a product from the table below.");
+            return false;
+        }
+        if (!amountHastOnlyNumbers(textFieldArrivalAmount)) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Arrival Error", "Amount must contain only numbers.");
+            return false;
+        }
+        if (datePickerArrival.getValue() == null) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Arrival Error", "Choose date from date picker.");
+            return false;
+        }
+
+        return true;
     }
 }

@@ -50,6 +50,11 @@ public class JpaDataAccessObject<T extends ParentEntity> implements DataAccessOb
     }
 
     @Override
+    public void update (T t) {
+        executeInsideTransaction(entityManager -> entityManager.merge(t));
+    }
+
+    @Override
     public void assignEntity(T entity, String[] params) {
 
     }

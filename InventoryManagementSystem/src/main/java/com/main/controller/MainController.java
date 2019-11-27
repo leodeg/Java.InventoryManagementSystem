@@ -19,14 +19,23 @@ import java.util.ListIterator;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
+    @FXML
     public AnchorPane uiMainWindow;
+    @FXML
     public AnchorPane categories;
+    @FXML
     public AnchorPane products;
+    @FXML
     public AnchorPane fact;
+    @FXML
     public AnchorPane arrival;
+    @FXML
     public AnchorPane consumption;
+    @FXML
     public AnchorPane customers;
+    @FXML
     public AnchorPane orders;
+    @FXML
     public AnchorPane sales;
 
 
