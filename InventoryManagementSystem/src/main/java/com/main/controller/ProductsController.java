@@ -96,8 +96,6 @@ public class ProductsController {
         return true;
     }
 
-
-
     public void OnPress_Button_Refresh(ActionEvent event) {
         displayInformationToTableView();
     }

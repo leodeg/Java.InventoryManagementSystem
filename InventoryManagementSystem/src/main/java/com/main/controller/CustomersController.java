@@ -6,10 +6,19 @@ import com.main.model.jpa.JpaAddressDao;
 import com.main.model.jpa.JpaCustomerDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.jetbrains.annotations.Nullable;
+
+import java.io.IOException;
 
 public class CustomersController {
     @FXML
@@ -18,6 +27,8 @@ public class CustomersController {
     public Button buttonNew;
     @FXML
     public Button buttonRefresh;
+    @FXML
+    public Button buttonNewAddress;
 
     @FXML
     public ChoiceBox<String> choiceBoxAddress;
@@ -44,8 +55,7 @@ public class CustomersController {
     public TableColumn<CustomerEntity, String> tableColumnEmail;
     @FXML
     public TableColumn<CustomerEntity, String> tableColumnDescription;
-    @FXML
-    public TableColumn tableColumnActions;
+
 
     private JpaCustomerDao customerDao;
     private JpaAddressDao addressDao;
@@ -55,7 +65,7 @@ public class CustomersController {
         addressDao = new JpaAddressDao();
     }
 
-    public void OnPress_Button_RefreshChoices() {
+    public void OnPress_Button_RefreshChoices(ActionEvent event) {
         populateChoiceBox();
     }
 
@@ -66,7 +76,7 @@ public class CustomersController {
         choiceBoxAddress.setItems(data);
     }
 
-    public void OnPress_Button_New() {
+    public void OnPress_Button_New(ActionEvent event) {
         CustomerEntity customerEntity = getCustomerEntity();
         if (customerEntity != null) {
             try {
@@ -96,7 +106,7 @@ public class CustomersController {
         return true;
     }
 
-    public void OnPress_Button_Refresh() {
+    public void OnPress_Button_Refresh(ActionEvent event) {
         displayInformationToTableView();
     }
 
@@ -110,4 +120,25 @@ public class CustomersController {
         tableColumnDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         tableView.setItems(data);
     }
+
+    public void OnPress_Button_NewAddress (ActionEvent event) {
+        Parent root;
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/address.fxml"));
+            fxmlLoader.setController(new AddressController());
+            root = fxmlLoader.load();
+            Scene scene = new Scene(root);
+
+            Stage stage = new Stage();
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initStyle(StageStyle.DECORATED);
+            stage.setTitle("Addresses");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }

@@ -1,7 +1,7 @@
 package com.main;
 
 import com.main.controller.MainController;
-import com.main.model.jpa.EntityManagerConnector;
+import com.main.model.jpa.DatabaseConnector;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -21,11 +21,11 @@ public class Main extends Application {
             Parent root = FXMLLoader.load(getClass().getResource("/ui/main.fxml"));
             primaryStage.setTitle("Inventory management system");
 
-            Scene scene = new Scene(root, 1080, 800);
+            Scene scene = new Scene(root, 1280, 720);
             scene.getStylesheets().add(Main.class.getResource("/ui/themes/bootstrap.css").toExternalForm());
 
             primaryStage.setOnCloseRequest(windowEvent -> {
-                EntityManagerConnector.close();
+                DatabaseConnector.close();
                 Platform.exit();
                 System.exit(0);
             });
@@ -34,7 +34,7 @@ public class Main extends Application {
             primaryStage.show();
         } catch (Exception ex) {
             MainController.showAlert(Alert.AlertType.ERROR, "Main window", "Database is not running.");
-            EntityManagerConnector.close();
+            DatabaseConnector.close();
         }
     }
 }

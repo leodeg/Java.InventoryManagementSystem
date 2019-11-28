@@ -8,7 +8,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 
-public class EntityManagerConnector {
+public class DatabaseConnector {
     @PersistenceContext
     static protected EntityManager entityManager;
     static EntityManagerFactory managerFactory;
