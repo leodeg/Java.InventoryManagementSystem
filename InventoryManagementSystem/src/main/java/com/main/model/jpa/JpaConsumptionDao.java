@@ -9,12 +9,12 @@ import java.util.Optional;
 public class JpaConsumptionDao extends JpaDataAccessObject<ConsumptionEntity> {
     @Override
     public Optional<ConsumptionEntity> get(int id) {
-        return Optional.ofNullable(entityManager.find(ConsumptionEntity.class, id));
+        return Optional.ofNullable(EntityManagerConnector.entityManager.find(ConsumptionEntity.class, id));
     }
 
     @Override
     public List<ConsumptionEntity> getAll() {
-        return entityManager.createQuery("SELECT e FROM ConsumptionEntity e").getResultList();
+        return EntityManagerConnector.entityManager.createQuery("SELECT e FROM ConsumptionEntity e").getResultList();
     }
 
     public void assignEntity(InventoryBaseEntity entity, String[] params) {

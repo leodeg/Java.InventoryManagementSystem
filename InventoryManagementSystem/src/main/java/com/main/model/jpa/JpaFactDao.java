@@ -8,16 +8,16 @@ import java.util.Optional;
 public class JpaFactDao extends JpaDataAccessObject<FactEntity> {
     @Override
     public Optional<FactEntity> get(int id) {
-        return Optional.ofNullable(entityManager.find(FactEntity.class, id));
+        return Optional.ofNullable(EntityManagerConnector.entityManager.find(FactEntity.class, id));
     }
 
     @Override
     public List<FactEntity> getAll() {
-        return entityManager.createQuery("SELECT e FROM FactEntity e", FactEntity.class).getResultList();
+        return EntityManagerConnector.entityManager.createQuery("SELECT e FROM FactEntity e", FactEntity.class).getResultList();
     }
 
     public List<FactEntity> getByIdProduct (int id) {
-        return entityManager.createQuery("SELECT e FROM FactEntity e WHERE e.idProduct = :id", FactEntity.class).setParameter("id", id).getResultList();
+        return EntityManagerConnector.entityManager.createQuery("SELECT e FROM FactEntity e WHERE e.idProduct = :id", FactEntity.class).setParameter("id", id).getResultList();
     }
 
     public FactEntity getFirstByIdProduct (int id) {

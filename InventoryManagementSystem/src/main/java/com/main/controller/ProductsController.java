@@ -89,30 +89,14 @@ public class ProductsController {
             MainController.showAlert(Alert.AlertType.ERROR, "Error", "Name or price is empty. Please enter an information.");
             return false;
         }
-        if (!priceHasOnlyNumbers(textFieldPrice)) {
+        if (!MainController.hasOnlyNumbers(textFieldPrice.getText())) {
             MainController.showAlert(Alert.AlertType.ERROR, "Error", "Price contains letters.");
             return false;
         }
         return true;
     }
 
-    private boolean priceHasOnlyNumbers(TextField textField) {
-        try {
-            Double.parseDouble(textField.getText());
-            return true;
-        } catch (NumberFormatException ex) {
-            return false;
-        }
-    }
 
-    private boolean amountHastOnlyNumbers(TextField textField) {
-        try {
-            Integer.parseInt(textField.getText());
-            return true;
-        } catch (NumberFormatException ex) {
-            return false;
-        }
-    }
 
     public void OnPress_Button_Refresh(ActionEvent event) {
         displayInformationToTableView();
@@ -182,7 +166,7 @@ public class ProductsController {
             MainController.showAlert(Alert.AlertType.ERROR, "Arrival Error", "Please select a product from the table below.");
             return false;
         }
-        if (!amountHastOnlyNumbers(textFieldArrivalAmount)) {
+        if (!MainController.hasOnlyNumbers(textFieldArrivalAmount.getText())) {
             MainController.showAlert(Alert.AlertType.ERROR, "Arrival Error", "Amount must contain only numbers.");
             return false;
         }

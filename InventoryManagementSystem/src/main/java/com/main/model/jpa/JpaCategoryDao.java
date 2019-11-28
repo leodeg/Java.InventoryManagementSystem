@@ -8,24 +8,24 @@ import java.util.Optional;
 public class JpaCategoryDao extends JpaDataAccessObject<CategoryEntity> {
     @Override
     public Optional<CategoryEntity> get(int id) {
-        return Optional.ofNullable(entityManager.find(CategoryEntity.class, id));
+        return Optional.ofNullable(EntityManagerConnector.entityManager.find(CategoryEntity.class, id));
     }
 
     public CategoryEntity get (String title) {
-        return entityManager.createQuery("SELECT e FROM CategoryEntity e WHERE e.title = :title", CategoryEntity.class).setParameter("title", title).getSingleResult();
+        return EntityManagerConnector.entityManager.createQuery("SELECT e FROM CategoryEntity e WHERE e.title = :title", CategoryEntity.class).setParameter("title", title).getSingleResult();
     }
 
     @Override
     public List<CategoryEntity> getAll() {
-        return entityManager.createQuery("SELECT e FROM CategoryEntity e", CategoryEntity.class).getResultList();
+        return EntityManagerConnector.entityManager.createQuery("SELECT e FROM CategoryEntity e", CategoryEntity.class).getResultList();
     }
 
     public List<CategoryEntity> getByTitle (String title) {
-        return entityManager.createQuery("SELECT e FROM CategoryEntity e WHERE e.title = :title", CategoryEntity.class).setParameter("title", title).getResultList();
+        return EntityManagerConnector.entityManager.createQuery("SELECT e FROM CategoryEntity e WHERE e.title = :title", CategoryEntity.class).setParameter("title", title).getResultList();
     }
 
     public void delete (String title) {
-        entityManager.createQuery("DELETE FROM CategoryEntity e WHERE e.title = :title").setParameter("title", title);
+        EntityManagerConnector.entityManager.createQuery("DELETE FROM CategoryEntity e WHERE e.title = :title").setParameter("title", title);
     }
 
     public int getIdByTitle (String title) {

@@ -6,18 +6,41 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="feat: add arrival/fact inventory information to the database tables from the products information">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ui/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ui/breeze.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ui/flatbee.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ui/modena_dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/InventoryManagementSystem.xml" beforeDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="feat: a new themes for the user interface">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/NewOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/EntityManagerConnector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ui/new_order.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/InventoryManagementSystem_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/InventoryManagementSystem_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7be5154c-790d-4be9-a3e4-011d760db7ea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7be5154c-790d-4be9-a3e4-011d760db7ea.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_2_4_11.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventoryManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryManagementSystem.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/InventoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaAddressDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaAddressDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaArrivalDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaArrivalDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCategoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaConsumptionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaConsumptionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDataAccessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaFactDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaFactDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaOrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaOrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaProductDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaSaleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaSaleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/arrival.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/arrival.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/consumption.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/consumption.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/customers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/customers.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/fact.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/fact.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/ui/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/orders.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/orders.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,14 +97,7 @@
         <item name="inventory_management_system@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="inventory_management_system: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="fact: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="inventory_management_system@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="inventory_management_system: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="products: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="consumption: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -130,79 +146,98 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1504">
-              <caret line="116" column="40" selection-start-line="116" selection-start-column="40" selection-end-line="116" selection-end-column="40" />
+            <state relative-caret-position="289">
+              <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/ui/main.fxml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="130" selection-start-line="8" selection-start-column="99" selection-end-line="8" selection-end-column="130" />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/InventoryController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="37">
+              <caret line="78" column="31" lean-forward="true" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4000#4001#0" expanded="true" />
+                <element signature="e#4121#4122#0" expanded="true" />
+                <element signature="e#4248#4249#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/ui/new_order.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/NewOrderController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="586">
+              <caret line="90" column="9" lean-forward="true" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3516#3517#0" expanded="true" />
+                <element signature="e#3586#3587#0" expanded="true" />
+                <element signature="e#3661#3662#0" expanded="true" />
+                <element signature="e#3708#3709#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/ProductsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="22" column="74" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/ui/breeze.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
-              <caret line="279" column="1" selection-start-line="279" selection-start-column="1" selection-end-line="279" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/ui/flatbee.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1993">
-              <caret line="392" column="28" selection-start-line="392" selection-start-column="28" selection-end-line="392" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/ui/modena_dark.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/ui/bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1011">
-              <caret line="929" column="1" selection-start-line="929" selection-start-column="1" selection-end-line="929" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+            <state relative-caret-position="538">
+              <caret line="167" column="9" lean-forward="true" selection-start-line="167" selection-start-column="9" selection-end-line="167" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/ui/consumption.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/ui/fact.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="48" lean-forward="true" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -212,18 +247,20 @@
       <list>
         <option value="Tag Library Descriptor" />
         <option value="Interface" />
+        <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>AddressEntity</find>
+      <find>EntityManagerWrapper.entityManager</find>
     </findStrings>
     <replaceStrings>
       <replace>CustomerEntity</replace>
+      <replace>entityManager</replace>
     </replaceStrings>
   </component>
   <component name="FindManager">
@@ -247,18 +284,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/ComeEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/GoneEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/BeginEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/CategoryEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/ui/categories.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCategoryDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/CategoryController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaAddressDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderBaseEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/OrdeEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/SaleEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/CustomerEntity.java" />
         <option value="$PROJECT_DIR$/src/main/resources/ui/customers.fxml" />
@@ -274,30 +299,42 @@
         <option value="$PROJECT_DIR$/src/main/java/com/main/controller/ConsumptionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/controller/FactController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/controller/ArrivalController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/ui/consumption.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/ui/fact.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/ui/arrival.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/InventoryController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/ui/add_arrival.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/controller/AddArrivalController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/ui/add_inventory_arrival.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaOrderDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/ui/products.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaFactDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/DataAccessObject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDataAccessObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/model/dao/DaoContainer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/ProductsController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/ui/bootstrap.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/ui/main.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/ui/modena_dark.css" />
         <option value="$PROJECT_DIR$/src/main/resources/ui/broome.css" />
         <option value="$PROJECT_DIR$/src/main/resources/ui/flatbee.css" />
         <option value="$PROJECT_DIR$/src/main/resources/ui/breeze.css" />
         <option value="$PROJECT_DIR$/src/main/resources/ui/materialui.css" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/EntityManagerConnector.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDataAccessObject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/EntityManagerWrapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaAddressDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaArrivalDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCategoryDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaConsumptionDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCustomerDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaFactDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaOrderDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaSaleDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaProductDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/ProductsController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/arrival.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/fact.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/consumption.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/main.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/new_order.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/NewOrderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/InventoryController.java" />
       </list>
     </option>
   </component>
@@ -331,8 +368,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="80" />
-    <option name="y" value="62" />
+    <option name="x" value="-8" />
     <option name="width" value="1612" />
     <option name="height" value="876" />
   </component>
@@ -345,6 +381,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -390,6 +428,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InventoryManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InventoryManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -397,7 +444,35 @@
               <item name="InventoryManagementSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InventoryManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InventoryManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="jpa" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InventoryManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InventoryManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InventoryManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InventoryManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="InventoryManagementSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -411,8 +486,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -445,19 +518,19 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.main.model.jpa" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\resources\ui" />
+      <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\resources\META-INF" />
+      <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.main.model.jpa" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="groovy.util.GroovyTestCase" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\java\com\main\model\jpa" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.main.model.jpa" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\resources\ui" />
-      <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\resources\META-INF" />
-      <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -567,7 +640,9 @@
       <workItem from="1574789175548" duration="11107000" />
       <workItem from="1574838268804" duration="16269000" />
       <workItem from="1574882082271" duration="1064000" />
-      <workItem from="1574884794468" duration="1053000" />
+      <workItem from="1574884794468" duration="1756000" />
+      <workItem from="1574925842962" duration="2198000" />
+      <workItem from="1574928091109" duration="9130000" />
     </task>
     <task id="LOCAL-00001" summary="feat: setup maven">
       <created>1574196934132</created>
@@ -681,7 +756,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574855269578</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="feat: a new themes for the user interface">
+      <created>1574885983808</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1574885983808</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -717,7 +799,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114796000" />
+    <option name="totallyTimeSpent" value="126827000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -732,15 +814,15 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5709643" visible="true" weight="0.17270789" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.56988084" visible="true" weight="0.17590618" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info id="Persistence" order="5" sideWeight="0.42903575" side_tool="true" weight="0.16471216" />
+      <window_info id="Persistence" order="5" sideWeight="0.4301192" side_tool="true" weight="0.17430703" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3726977" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3672806" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39653304" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -762,7 +844,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.14552239" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.14552239" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="right" id="Maven" order="7" sideWeight="0.49919224" weight="0.17270789" />
@@ -833,7 +915,8 @@
     <MESSAGE value="refactor: change database tables" />
     <MESSAGE value="feat: added inventory user interface" />
     <MESSAGE value="feat: add arrival/fact inventory information to the database tables from the products information" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add arrival/fact inventory information to the database tables from the products information" />
+    <MESSAGE value="feat: a new themes for the user interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: a new themes for the user interface" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -852,321 +935,270 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/OrdeEntity.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/SaleEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1249#1250#0" expanded="true" />
-            <element signature="e#1284#1285#0" expanded="true" />
-            <element signature="e#1340#1341#0" expanded="true" />
-            <element signature="e#1388#1389#0" expanded="true" />
-            <element signature="e#1426#1427#0" expanded="true" />
-            <element signature="e#1460#1461#0" expanded="true" />
-            <element signature="e#1514#1515#0" expanded="true" />
-            <element signature="e#1560#1561#0" expanded="true" />
-            <element signature="e#1592#1593#0" expanded="true" />
-            <element signature="e#1620#1621#0" expanded="true" />
-            <element signature="e#1662#1663#0" expanded="true" />
-            <element signature="e#1696#1697#0" expanded="true" />
-            <element signature="e#1726#1727#0" expanded="true" />
-            <element signature="e#1755#1756#0" expanded="true" />
-            <element signature="e#1796#1797#0" expanded="true" />
-            <element signature="e#1832#1833#0" expanded="true" />
-            <element signature="e#1869#1870#0" expanded="true" />
-            <element signature="e#1902#1903#0" expanded="true" />
-            <element signature="e#1954#1955#0" expanded="true" />
-            <element signature="e#1998#1999#0" expanded="true" />
-            <element signature="e#2027#2028#0" expanded="true" />
-            <element signature="e#2054#2055#0" expanded="true" />
-            <element signature="e#2092#2093#0" expanded="true" />
-            <element signature="e#2124#2125#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1011">
+          <caret line="929" column="1" selection-start-line="929" selection-start-column="1" selection-end-line="929" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/CustomerEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/modena_dark.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="935">
+          <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/CustomersController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/broome.css" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/flatbee.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3379#3380#0" expanded="true" />
-            <element signature="e#3426#3427#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1993">
+          <caret line="392" column="28" selection-start-line="392" selection-start-column="28" selection-end-line="392" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/OrdersController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/materialui.css" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/categories.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/SalesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/orders.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/sales.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="165" selection-start-line="12" selection-start-column="165" selection-end-line="12" selection-end-column="165" />
+        <state relative-caret-position="187">
+          <caret line="11" column="109" selection-start-line="11" selection-start-column="108" selection-end-line="11" selection-end-column="109" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderEntity.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2-sources.jar!/javax/persistence/Persistence.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="909">
-          <caret line="96" column="46" lean-forward="true" selection-start-line="96" selection-start-column="46" selection-end-line="96" selection-end-column="46" />
+        <state relative-caret-position="325">
+          <caret line="72" column="40" lean-forward="true" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.2.Final/hibernate-jpa-2.1-api-1.0.2.Final.jar!/javax/persistence/Persistence.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="78" column="39" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/breeze.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="773">
+          <caret line="279" column="1" selection-start-line="279" selection-start-column="1" selection-end-line="279" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="19" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/CategoryEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/DatabaseConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/DatabaseWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Programs/JAVA JDKs/jdk-11.0.2/lib/src.zip!/java.base/java/util/function/Consumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ConsumptionEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-230">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="89" column="21" lean-forward="true" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/DataAccessObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDataAccessObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="89" lean-forward="true" selection-start-line="11" selection-start-column="89" selection-end-line="11" selection-end-column="89" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1034#1035#0" expanded="true" />
-            <element signature="e#1072#1073#0" expanded="true" />
-            <element signature="e#1418#1419#0" expanded="true" />
-            <element signature="e#1446#1447#0" expanded="true" />
-            <element signature="e#1488#1489#0" expanded="true" />
-            <element signature="e#1522#1523#0" expanded="true" />
+            <element signature="e#678#679#0" expanded="true" />
+            <element signature="e#717#718#0" expanded="true" />
+            <element signature="e#762#763#0" expanded="true" />
+            <element signature="e#789#790#0" expanded="true" />
+            <element signature="e#832#833#0" expanded="true" />
+            <element signature="e#915#916#0" expanded="true" />
+            <element signature="e#960#961#0" expanded="true" />
+            <element signature="e#1042#1043#0" expanded="true" />
+            <element signature="e#1263#1264#0" expanded="true" />
+            <element signature="e#1344#1345#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/EntityManagerConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaAddressDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="51" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaArrivalDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCategoryDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaConsumptionDao.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaCustomerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaFactDao.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ConsumptionEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaOrderDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding>
-            <element signature="e#1306#1307#0" expanded="true" />
-            <element signature="e#1340#1341#0" expanded="true" />
-            <element signature="e#1394#1395#0" expanded="true" />
-            <element signature="e#1440#1441#0" expanded="true" />
-            <element signature="e#1472#1473#0" expanded="true" />
-            <element signature="e#1500#1501#0" expanded="true" />
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1576#1577#0" expanded="true" />
-            <element signature="e#1606#1607#0" expanded="true" />
-            <element signature="e#1635#1636#0" expanded="true" />
-            <element signature="e#1676#1677#0" expanded="true" />
-            <element signature="e#1712#1713#0" expanded="true" />
-            <element signature="e#1749#1750#0" expanded="true" />
-            <element signature="e#1782#1783#0" expanded="true" />
-            <element signature="e#1834#1835#0" expanded="true" />
-            <element signature="e#1878#1879#0" expanded="true" />
-            <element signature="e#1907#1908#0" expanded="true" />
-            <element signature="e#1934#1935#0" expanded="true" />
-            <element signature="e#1972#1973#0" expanded="true" />
-            <element signature="e#2004#2005#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="10" column="58" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/EndEntity.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/customers.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/AddressEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="966">
-          <caret line="77" column="56" selection-start-line="77" selection-start-column="56" selection-end-line="77" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/dao/AddressDao.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/dao/SaleDao.java" />
-    <entry file="uml://DATABASE/7be5154c-790d-4be9-a3e4-011d760db7ea">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>7be5154c-790d-4be9-a3e4-011d760db7ea</OriginalElement>
-          <nodes>
-            <node x="0.0" y="424.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.arrival</node>
-            <node x="266.0" y="201.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.products</node>
-            <node x="279.5" y="33.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.categories</node>
-            <node x="243.00000000000003" y="424.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.fact</node>
-            <node x="526.5" y="190.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.customers</node>
-            <node x="520.0" y="631.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.hibernate_sequence</node>
-            <node x="252.0" y="631.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.consumption</node>
-            <node x="536.0" y="0.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.addresses</node>
-            <node x="0.0" y="631.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.sales</node>
-            <node x="486.0" y="402.0">7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.orders</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.arrival" target="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.products">
-              <point x="0.0" y="-70.0" />
-              <point x="111.5" y="377.0" />
-              <point x="295.5" y="377.0" />
-              <point x="-59.0" y="70.0" />
-            </edge>
-            <edge source="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.orders" target="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.products">
-              <point x="-44.0" y="-92.0" />
-              <point x="530.0" y="377.0" />
-              <point x="413.5" y="377.0" />
-              <point x="59.0" y="70.0" />
-            </edge>
-            <edge source="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.fact" target="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.products">
-              <point x="0.0" y="-70.0" />
-              <point x="0.0" y="70.0" />
-            </edge>
-            <edge source="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.customers" target="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.addresses">
-              <point x="0.0" y="-81.0" />
-              <point x="0.0" y="70.0" />
-            </edge>
-            <edge source="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.orders" target="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.customers">
-              <point x="44.0" y="-92.0" />
-              <point x="0.0" y="81.0" />
-            </edge>
-            <edge source="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.products" target="7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.categories">
-              <point x="0.0" y="-70.0" />
-              <point x="0.0" y="37.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="112.0" y="212.0" />
-          <SelectedNodes>
-            <node>7be5154c-790d-4be9-a3e4-011d760db7ea.TABLE:inventory_management_system.fact</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Key columns</Category>
-            <Category>Columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/InventoryBaseEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1029#1030#0" expanded="true" />
-            <element signature="e#1056#1057#0" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
-            <element signature="e#1126#1127#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/categories.fxml">
-      <provider editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/FactController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaSaleDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/ArrivalController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaProductDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="21" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/ConsumptionController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/customers.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PATH_TO_FX$/javafx.controls.jar!/javafx/scene/control/TableColumn.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/arrival.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
+        <state relative-caret-position="255">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/consumption.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/products.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        <state relative-caret-position="816">
+          <caret line="58" selection-start-line="58" selection-end-line="59" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/fact.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/OrdersController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/InventoryController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/CustomersController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+        <state relative-caret-position="144">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="45" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/AddArrivalController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/add_inventory_arrival.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/OrderEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-94">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ArrivalEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1178,83 +1210,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/FactEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/arrival.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#327#328#0" expanded="true" />
-            <element signature="e#380#381#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="15" column="111" selection-start-line="15" selection-start-column="111" selection-end-line="15" selection-end-column="111" />
         </state>
       </provider>
-    </entry>
-    <entry file="jar://E:/Programs/JAVA JDKs/jdk-11.0.2/lib/src.zip!/java.sql/java/sql/Date.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="289" column="23" selection-start-line="289" selection-start-column="23" selection-end-line="289" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaOrderDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/products.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/DataAccessObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaFactDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#755#756#0" expanded="true" />
-            <element signature="e#801#802#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/dao/DaoContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#741#742#0" expanded="true" />
-            <element signature="e#766#767#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDataAccessObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#901#902#0" expanded="true" />
-            <element signature="e#984#985#0" expanded="true" />
-            <element signature="e#1319#1320#0" expanded="true" />
-            <element signature="e#1400#1401#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="das://7be5154c-790d-4be9-a3e4-011d760db7ea/schema/inventory_management_system/table/arrival">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1263,99 +1225,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://7be5154c-790d-4be9-a3e4-011d760db7ea/schema/inventory_management_system/table/fact">
+    <entry file="jar://$PATH_TO_FX$/javafx.controls.jar!/javafx/scene/control/cell/PropertyValueFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/fact.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="48" lean-forward="true" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/consumption.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="jar://$PATH_TO_FX$/javafx.controls.jar!/javafx/scene/control/ButtonBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="91" column="22" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
+          <folding>
+            <element signature="e#2616#2617#0" expanded="true" />
+            <element signature="e#2665#2666#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/main.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="130" selection-start-line="8" selection-start-column="99" selection-end-line="8" selection-end-column="130" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="jar://$PATH_TO_FX$/javafx.base.jar!/javafx/event/EventHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/new_order.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="jar://E:/Programs/JAVA JDKs/jdk-11.0.2/lib/src.zip!/java.base/java/util/Objects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="220" selection-start-line="220" selection-end-line="220" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://7be5154c-790d-4be9-a3e4-011d760db7ea/schema/inventory_management_system/table/orders">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/ProductsController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="37" column="62" lean-forward="true" selection-start-line="37" selection-start-column="62" selection-end-line="37" selection-end-column="62" />
-          <folding>
-            <element signature="e#3419#3420#0" expanded="true" />
-            <element signature="e#3466#3467#0" expanded="true" />
-            <element signature="e#4169#4170#0" expanded="true" />
-            <element signature="e#4204#4205#0" expanded="true" />
-            <element signature="e#5095#5096#0" expanded="true" />
-            <element signature="e#5137#5138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        <state relative-caret-position="289">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/bootstrap.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/InventoryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1011">
-          <caret line="929" column="1" selection-start-line="929" selection-start-column="1" selection-end-line="929" selection-end-column="1" />
+        <state relative-caret-position="37">
+          <caret line="78" column="31" lean-forward="true" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4000#4001#0" expanded="true" />
+            <element signature="e#4121#4122#0" expanded="true" />
+            <element signature="e#4248#4249#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/NewOrderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1504">
-          <caret line="116" column="40" selection-start-line="116" selection-start-column="40" selection-end-line="116" selection-end-column="40" />
+        <state relative-caret-position="586">
+          <caret line="90" column="9" lean-forward="true" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3516#3517#0" expanded="true" />
+            <element signature="e#3586#3587#0" expanded="true" />
+            <element signature="e#3661#3662#0" expanded="true" />
+            <element signature="e#3708#3709#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/main.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/modena_dark.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/ProductsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/broome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="24" column="28" selection-end-line="116" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/flatbee.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1993">
-          <caret line="392" column="28" selection-start-line="392" selection-start-column="28" selection-end-line="392" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/breeze.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="279" column="1" selection-start-line="279" selection-start-column="1" selection-end-line="279" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/materialui.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="296" column="1" selection-start-line="296" selection-start-column="1" selection-end-line="296" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="22" column="74" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="74" />
+        <state relative-caret-position="538">
+          <caret line="167" column="9" lean-forward="true" selection-start-line="167" selection-start-column="9" selection-end-line="167" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

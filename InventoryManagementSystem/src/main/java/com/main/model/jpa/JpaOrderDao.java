@@ -8,12 +8,12 @@ import java.util.Optional;
 public class JpaOrderDao extends JpaDataAccessObject<OrderEntity> {
     @Override
     public Optional<OrderEntity> get(int id) {
-        return Optional.ofNullable(entityManager.find(OrderEntity.class, id));
+        return Optional.ofNullable(EntityManagerConnector.entityManager.find(OrderEntity.class, id));
     }
 
     @Override
     public List<OrderEntity> getAll() {
-        return entityManager.createQuery("SELECT e FROM OrderEntity e").getResultList();
+        return EntityManagerConnector.entityManager.createQuery("SELECT e FROM OrderEntity e").getResultList();
     }
 
     @Override

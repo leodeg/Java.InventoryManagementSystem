@@ -3,24 +3,14 @@ package com.main.model.jpa;
 import com.main.model.DataAccessObject;
 import com.main.model.entity.ParentEntity;
 
-import javax.persistence.*;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
 
-public class JpaDataAccessObject<T extends ParentEntity> implements DataAccessObject<T>{
-    @PersistenceContext
-    protected EntityManager entityManager;
-    EntityManagerFactory managerFactory;
-
+public class JpaDataAccessObject<T extends ParentEntity> implements DataAccessObject<T> {
     public JpaDataAccessObject() {
-        managerFactory = Persistence.createEntityManagerFactory("jpa");
-        entityManager = managerFactory.createEntityManager();
-    }
-
-    public void close() {
-        entityManager.close();
-        managerFactory.close();
     }
 
     @Override
@@ -50,7 +40,7 @@ public class JpaDataAccessObject<T extends ParentEntity> implements DataAccessOb
     }
 
     @Override
-    public void update (T t) {
+    public void update(T t) {
         executeInsideTransaction(entityManager -> entityManager.merge(t));
     }
 
@@ -59,19 +49,18 @@ public class JpaDataAccessObject<T extends ParentEntity> implements DataAccessOb
 
     }
 
-    public void executeInsideTransaction(Consumer<EntityManager> action ) throws NullPointerException {
-        if (entityManager == null) {
+    public void executeInsideTransaction(Consumer<EntityManager> action) throws NullPointerException {
+        if (EntityManagerConnector.entityManager == null) {
             System.err.print("\nError::Transaction::executeInsideTransaction::Entity manager is null pointer.");
             return;
         }
 
-        EntityTransaction transaction = entityManager.getTransaction();
+        EntityTransaction transaction = EntityManagerConnector.entityManager.getTransaction();
         try {
             transaction.begin();
-            action.accept(entityManager);
+            action.accept(EntityManagerConnector.entityManager);
             transaction.commit();
-        }
-        catch (RuntimeException e) {
+        } catch (RuntimeException e) {
             transaction.rollback();
             throw e;
         }

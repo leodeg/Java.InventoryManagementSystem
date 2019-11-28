@@ -3,6 +3,7 @@ package com.main.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
@@ -34,6 +35,15 @@ public class MainController implements Initializable {
         alert.setContentText(message);
         alert.show();
 
+    }
+
+    public static boolean hasOnlyNumbers(String text) {
+        try {
+            Double.parseDouble(text);
+            return true;
+        } catch (NumberFormatException ex) {
+            return false;
+        }
     }
 
     @Override

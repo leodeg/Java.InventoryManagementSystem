@@ -3,16 +3,18 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="603.0" prefWidth="683.0"
-            xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.main.controller.InventoryController">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="603.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.controller.InventoryController">
     <children>
         <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="5.0">
                     <children>
-                        <Button fx:id="buttonFactRefreshTable" mnemonicParsing="false" text="Refresh Table"/>
+                        <Button fx:id="buttonFactRefreshTable" onAction="#OnPress_Button_RefreshFactTable"
+                                mnemonicParsing="false" text="Refresh Table"/>
+                        <Button fx:id="buttonNewOrder" onAction="#OnPress_Button_NewOrder" layoutX="10.0" layoutY="23.0"
+                                mnemonicParsing="false" text="New Order"/>
                     </children>
                     <opaqueInsets>
                     </opaqueInsets>
