@@ -22,7 +22,7 @@ public class Main extends Application {
             primaryStage.setTitle("Inventory management system");
 
             Scene scene = new Scene(root, 1080, 800);
-            scene.getStylesheets().add(Main.class.getResource("/ui/bootstrap.css").toExternalForm());
+            scene.getStylesheets().add(Main.class.getResource("/ui/themes/bootstrap.css").toExternalForm());
 
             primaryStage.setOnCloseRequest(windowEvent -> {
                 EntityManagerConnector.close();

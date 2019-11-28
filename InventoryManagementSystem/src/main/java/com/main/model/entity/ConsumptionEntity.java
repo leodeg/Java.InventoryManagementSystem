@@ -9,7 +9,7 @@ import java.util.Objects;
 public class ConsumptionEntity implements ParentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idGone;
+    private int idConsumption;
     @Column(name = "productName")
     private String productName;
     @Column (name = "price")
@@ -41,12 +41,12 @@ public class ConsumptionEntity implements ParentEntity {
         setTotalPrice(getPrice() * getAmount());
     }
 
-    public int getIdGone() {
-        return idGone;
+    public int getIdConsumption() {
+        return idConsumption;
     }
 
-    public void setIdGone(int idGone) {
-        this.idGone = idGone;
+    public void setIdConsumption(int idGone) {
+        this.idConsumption = idGone;
     }
 
     public String getProductName() {

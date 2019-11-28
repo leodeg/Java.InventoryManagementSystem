@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Date;
@@ -51,8 +52,6 @@ public class NewOrderController implements Initializable {
         this.factEntity = factEntity;
         customerDao = new JpaCustomerDao();
         orderDao = new JpaOrderDao();
-
-
     }
 
     @FXML
@@ -60,6 +59,7 @@ public class NewOrderController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         buttonNewOrder.setOnAction(this::OnPress_Button_NewOrder);
         buttonRefresh.setOnAction(this::OnPress_Button_RefreshCustomerTable);
+        displayInformationToTableView();
     }
 
     @FXML
@@ -67,6 +67,9 @@ public class NewOrderController implements Initializable {
         OrderEntity orderEntity = getOrderEntity();
         if (orderEntity != null) try {
             orderDao.save(getOrderEntity());
+            MainController.showAlert(Alert.AlertType.CONFIRMATION, "New Order", "Order was successfully added.");
+            Stage stage = (Stage) buttonNewOrder.getScene().getWindow();
+            stage.close();
         } catch (Exception ex) {
             MainController.showAlert(Alert.AlertType.ERROR, "New Order", ex.getMessage());
         }

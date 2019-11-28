@@ -31,7 +31,6 @@
                             <TableColumn prefWidth="363.0" text="Amount" />
                             <TableColumn prefWidth="363.0" text="Total Price" />
                             <TableColumn prefWidth="363.0" text="Date" />
-                            <TableColumn prefWidth="75.0" text="Actions" />
                         </columns>
                         <columnResizePolicy>
                             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

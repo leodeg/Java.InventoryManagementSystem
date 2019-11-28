@@ -6,7 +6,7 @@
 
 <AnchorPane fx:id="uiMainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.controller.MainController" stylesheets="/ui/bootstrap.css">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.controller.MainController" stylesheets="/ui/themes/bootstrap.css">
     <TabPane tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <Tab text="Dashboard">

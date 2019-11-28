@@ -1,5 +1,8 @@
 package com.main.model.jpa;
 
+import com.main.controller.MainController;
+import javafx.scene.control.Alert;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -11,8 +14,12 @@ public class EntityManagerConnector {
     static EntityManagerFactory managerFactory;
 
     static {
-        managerFactory = Persistence.createEntityManagerFactory("jpa");
-        entityManager = managerFactory.createEntityManager();
+        try {
+            managerFactory = Persistence.createEntityManagerFactory("jpa");
+            entityManager = managerFactory.createEntityManager();
+        } catch (Exception ex) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Database", "Can't create connection to the database. \nError: " + ex.getMessage());
+        }
     }
 
     public static void close() {

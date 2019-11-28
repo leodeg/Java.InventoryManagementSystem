@@ -27,7 +27,6 @@
                         <columns>
                             <TableColumn fx:id="tableColumnId" prefWidth="103.0" text="Id" />
                             <TableColumn fx:id="tableColumnTitle" prefWidth="363.0" text="Title" />
-                            <TableColumn fx:id="tableColumnActions" prefWidth="75.0" text="Actions" />
                         </columns>
                         <columnResizePolicy>
                             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

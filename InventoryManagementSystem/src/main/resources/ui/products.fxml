@@ -48,7 +48,6 @@
                         <TableColumn fx:id="tableColumnName" prefWidth="363.0" text="Name" />
                         <TableColumn fx:id="tableColumnPrice" prefWidth="363.0" text="Price" />
                         <TableColumn fx:id="tableColumnDescription" prefWidth="363.0" text="Description" />
-                        <TableColumn fx:id="tableColumnActions" prefWidth="75.0" text="Actions" />
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
