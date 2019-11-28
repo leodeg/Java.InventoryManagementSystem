@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="659.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/11.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.controller.OrdersController">
-    <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="659.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.controller.OrdersController">
+    <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <padding>
-            <Insets left="5.0" right="5.0"/>
+            <Insets left="5.0" right="5.0" />
         </padding>
-        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0"
-              spacing="5.0" VBox.vgrow="ALWAYS">
+        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" spacing="5.0" VBox.vgrow="ALWAYS">
             <VBox.margin>
             </VBox.margin>
             <padding>
             </padding>
-            <Button fx:id="buttonNewOrder" mnemonicParsing="false" text="New"/>
-            <Button fx:id="buttonRefreshTable" layoutX="573.0" layoutY="23.0" mnemonicParsing="false"
-                    text="Refresh Table"/>
+            <Button fx:id="buttonNewOrder" mnemonicParsing="false" text="New Order" />
+            <Button fx:id="buttonRefreshTable" layoutX="573.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Refresh Table" />
+            <Button fx:id="buttonToSales" layoutX="573.0" layoutY="23.0" mnemonicParsing="false" text="To Sales" />
         </HBox>
         <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
             <columns>
-                <TableColumn fx:id="tableColumnId" prefWidth="363.0" text="Id"/>
-                <TableColumn fx:id="tableColumnProductId" prefWidth="103.0" text="Id Product"/>
-                <TableColumn fx:id="tableColumnCustomerId" prefWidth="103.0" text="Id Customer"/>
-                <TableColumn fx:id="tableColumnPrice" prefWidth="363.0" text="Price"/>
-                <TableColumn fx:id="tableColumnAmount" prefWidth="363.0" text="Amount"/>
-                <TableColumn fx:id="tableColumnTotalPrice" prefWidth="363.0" text="Total Price"/>
-                <TableColumn fx:id="tableColumnDate" prefWidth="363.0" text="Date"/>
+                <TableColumn fx:id="tableColumnId" prefWidth="363.0" text="Id" />
+                <TableColumn fx:id="tableColumnProductId" prefWidth="103.0" text="Id Product" />
+                <TableColumn fx:id="tableColumnCustomerId" prefWidth="103.0" text="Id Customer" />
+                <TableColumn fx:id="tableColumnPrice" prefWidth="363.0" text="Price" />
+                <TableColumn fx:id="tableColumnAmount" prefWidth="363.0" text="Amount" />
+                <TableColumn fx:id="tableColumnTotalPrice" prefWidth="363.0" text="Total Price" />
+                <TableColumn fx:id="tableColumnDate" prefWidth="363.0" text="Date" />
             </columns>
             <columnResizePolicy>
-                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
             </columnResizePolicy>
         </TableView>
     </VBox>

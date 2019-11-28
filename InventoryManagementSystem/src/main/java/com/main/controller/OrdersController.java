@@ -1,13 +1,17 @@
 package com.main.controller;
 
-import com.main.model.entity.ConsumptionEntity;
 import com.main.model.entity.OrderEntity;
+import com.main.model.entity.SaleEntity;
+import com.main.model.jpa.JpaCustomerDao;
 import com.main.model.jpa.JpaOrderDao;
+import com.main.model.jpa.JpaProductDao;
+import com.main.model.jpa.JpaSaleDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -22,6 +26,8 @@ public class OrdersController implements Initializable {
     public Button buttonNewOrder;
     @FXML
     public Button buttonRefreshTable;
+    @FXML
+    public Button buttonToSales;
 
     @FXML
     public TableView<OrderEntity> tableView;
@@ -41,28 +47,55 @@ public class OrdersController implements Initializable {
     public TableColumn<OrderEntity, Date> tableColumnDate;
 
     private JpaOrderDao orderDao;
+    private JpaProductDao productDao;
+    private JpaCustomerDao customerDao;
+    private JpaSaleDao saleDao;
 
-    public OrdersController () {
+    public OrdersController() {
         orderDao = new JpaOrderDao();
+        productDao = new JpaProductDao();
+        customerDao = new JpaCustomerDao();
+        saleDao = new JpaSaleDao();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         buttonNewOrder.setOnAction(this::OnPress_Button_NewOrder);
         buttonRefreshTable.setOnAction(this::OnPress_Button_RefreshTable);
+        buttonToSales.setOnAction(this::OnPress_Button_ToSales);
     }
 
     @FXML
-    public void OnPress_Button_NewOrder (ActionEvent event) {
+    private void OnPress_Button_NewOrder(ActionEvent event) {
 
     }
 
     @FXML
-    public void OnPress_Button_RefreshTable (ActionEvent event) {
-        displayInformationToTableView ();
+    private void OnPress_Button_RefreshTable(ActionEvent event) {
+        displayInformationToTableView();
     }
 
-    private void displayInformationToTableView () {
+    @FXML
+    private void OnPress_Button_ToSales(ActionEvent event) {
+        OrderEntity selectedItem = tableView.getSelectionModel().getSelectedItem();
+        if (selectedItem == null) {
+            MainController.showAlert(Alert.AlertType.ERROR, "To Sale", "Please choose order from table below.");
+            return;
+        }
+
+        SaleEntity saleEntity = getSaleEntity(selectedItem);
+        try {
+            saleDao.save(saleEntity);
+            OrderEntity orderEntity = orderDao.get(selectedItem.getIdOrder()).get();
+            orderDao.delete(orderEntity);
+            MainController.showAlert(Alert.AlertType.CONFIRMATION, "To Sale", "Complete");
+            displayInformationToTableView();
+        } catch (Exception ex) {
+            MainController.showAlert(Alert.AlertType.ERROR, "To Sale", ex.getMessage());
+        }
+    }
+
+    private void displayInformationToTableView() {
         ObservableList<OrderEntity> data = FXCollections.observableArrayList(orderDao.getAll());
         if (data.size() > 0) {
             tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idOrder"));
@@ -74,5 +107,11 @@ public class OrdersController implements Initializable {
             tableColumnDate.setCellValueFactory(new PropertyValueFactory<>("date"));
             tableView.setItems(data);
         }
+    }
+
+    private SaleEntity getSaleEntity(OrderEntity selectedItem) {
+        String productName = productDao.get(selectedItem.getIdProduct()).get().getName();
+        String customerName = customerDao.get(selectedItem.getIdCustomer()).get().getName();
+        return new SaleEntity(productName, customerName, selectedItem.getPrice(), selectedItem.getAmount(), selectedItem.getDate());
     }
 }

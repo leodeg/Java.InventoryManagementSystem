@@ -24,9 +24,9 @@
                     <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
                         <columns>
                             <TableColumn fx:id="tableColumnId" prefWidth="363.0" text="Id" />
-                            <TableColumn fx:id="tableColumnProduct" prefWidth="103.0" text="Product" />
-                            <TableColumn fx:id="tableColumnCustomer" prefWidth="103.0" text="Customer" />
-                            <TableColumn fx:id="tableColumnCustomer1" prefWidth="103.0" text="Price" />
+                            <TableColumn fx:id="tableColumnProductName" prefWidth="103.0" text="Product" />
+                            <TableColumn fx:id="tableColumnCustomerName" prefWidth="103.0" text="Customer" />
+                            <TableColumn fx:id="tableColumnPrice" prefWidth="103.0" text="Price" />
                             <TableColumn fx:id="tableColumnAmount" prefWidth="363.0" text="Amount" />
                             <TableColumn fx:id="tableColumnTotalPrice" prefWidth="363.0" text="Total Price" />
                             <TableColumn fx:id="tableColumnDate" prefWidth="363.0" text="Date" />

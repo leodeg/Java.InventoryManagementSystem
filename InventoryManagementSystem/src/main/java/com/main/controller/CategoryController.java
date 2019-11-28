@@ -6,12 +6,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class CategoryController {
     @FXML
@@ -28,8 +24,6 @@ public class CategoryController {
     public TableColumn<CategoryEntity, String> tableColumnId;
     @FXML
     public TableColumn<CategoryEntity, String> tableColumnTitle;
-    @FXML
-    public TableColumn tableColumnActions;
 
     private JpaCategoryDao categoryDao;
 
@@ -42,7 +36,7 @@ public class CategoryController {
         if (categoryEntity != null) try {
             categoryDao.save(categoryEntity);
             MainController.showAlert(Alert.AlertType.CONFIRMATION, "Category added", "Category was successfully added to database");
-            showCategoriesToTableView();
+            displayInformationToTableView();
         } catch (Exception ex) {
             MainController.showAlert(Alert.AlertType.ERROR, "Category Error", ex.getMessage());
         }
@@ -63,10 +57,10 @@ public class CategoryController {
     }
 
     public void OnPress_Button_Refresh (ActionEvent event) {
-        showCategoriesToTableView();
+        displayInformationToTableView();
     }
 
-    private void showCategoriesToTableView () {
+    private void displayInformationToTableView() {
         ObservableList<CategoryEntity> data = FXCollections.observableArrayList(categoryDao.getAll());
         tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idCategory"));
         tableColumnTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
@@ -74,8 +68,16 @@ public class CategoryController {
     }
 
     public void OnPress_Button_Delete (ActionEvent event) {
-        if (checkCategoryValidation()) try {
-            categoryDao.delete(categoryDao.get(textFieldTitle.getText()));
+        CategoryEntity selectedItem = tableView.getSelectionModel().getSelectedItem();
+        if (selectedItem == null) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Error", "Please select item from table below.");
+            return;
+        }
+
+        try {
+            CategoryEntity entity = categoryDao.get(selectedItem.getIdCategory()).get();
+            categoryDao.delete(entity);
+            displayInformationToTableView();
         } catch (Exception ex) {
             MainController.showAlert(Alert.AlertType.ERROR, "Error", ex.getMessage());
         }

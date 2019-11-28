@@ -19,7 +19,7 @@
                     <children>
                         <TextField fx:id="textFieldArrivalAmount" layoutX="10.0" layoutY="23.0" prefHeight="25.0" prefWidth="80.0" promptText="Amount *" />
                         <DatePicker fx:id="datePickerArrival" promptText="Arrival Date *" />
-                        <Button fx:id="buttonArrivalNewArrival" mnemonicParsing="false" onAction="#OnPress_Button_AddArrival" text="New" />
+                        <Button fx:id="buttonArrivalNewArrival" mnemonicParsing="false" onAction="#OnPress_Button_AddArrival" text="New Arrival" />
                     </children>
                     <VBox.margin>
                     </VBox.margin>
@@ -33,8 +33,8 @@
                         <TextField fx:id="textFieldName" promptText="Name *" />
                         <TextField fx:id="textFieldPrice" layoutX="185.0" layoutY="28.0" prefHeight="25.0" prefWidth="80.0" promptText="Price *" />
                         <TextField fx:id="textFieldDescription" layoutX="339.0" layoutY="28.0" promptText="Description" />
-                        <Button fx:id="uiButtonNew" mnemonicParsing="false" onAction="#OnPress_Button_NewProduct" text="New" />
-                        <Button fx:id="uiButtonRefresh" layoutX="627.0" layoutY="23.0" mnemonicParsing="false" onAction="#OnPress_Button_Refresh" text="Refresh" />
+                        <Button fx:id="uiButtonNew" mnemonicParsing="false" onAction="#OnPress_Button_NewProduct" text="New Product" />
+                        <Button fx:id="uiButtonRefresh" layoutX="627.0" layoutY="23.0" mnemonicParsing="false" onAction="#OnPress_Button_Refresh" text="Refresh Table" />
                     </children>
                     <VBox.margin>
                     </VBox.margin>
