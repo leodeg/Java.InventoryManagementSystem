@@ -1,4 +1,4 @@
-package com.main.model.jpa;
+package com.main.database.jpa;
 
 import com.main.model.entity.ProductEntity;
 
@@ -8,12 +8,12 @@ import java.util.Optional;
 public class JpaProductDao extends JpaDataAccessObject<ProductEntity> {
     @Override
     public Optional<ProductEntity> get(int id) {
-        return Optional.ofNullable(DatabaseConnector.entityManager.find(ProductEntity.class, id));
+        return Optional.ofNullable(EntityManagerConnector.entityManager.find(ProductEntity.class, id));
     }
 
     @Override
     public List<ProductEntity> getAll() {
-        return DatabaseConnector.entityManager.createQuery("SELECT e FROM ProductEntity e", ProductEntity.class).getResultList();
+        return EntityManagerConnector.entityManager.createQuery("SELECT e FROM ProductEntity e", ProductEntity.class).getResultList();
     }
 
     @Override

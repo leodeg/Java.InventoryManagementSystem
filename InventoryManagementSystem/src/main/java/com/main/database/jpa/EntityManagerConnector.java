@@ -1,4 +1,4 @@
-package com.main.model.jpa;
+package com.main.database.jpa;
 
 import com.main.controller.MainController;
 import javafx.scene.control.Alert;
@@ -8,7 +8,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 
-public class DatabaseConnector {
+public class EntityManagerConnector {
     @PersistenceContext
     static protected EntityManager entityManager;
     static EntityManagerFactory managerFactory;

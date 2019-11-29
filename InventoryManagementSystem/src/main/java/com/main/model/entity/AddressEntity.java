@@ -4,22 +4,21 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table (name = "addresses")
+@Table(name = "addresses")
 public class AddressEntity implements ParentEntity {
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idAddress;
-    @Column (name = "address")
+    @Column(name = "address")
     private String address;
-    @Column (name = "address2")
+    @Column(name = "address2")
     private String address2;
-    @Column (name = "city")
+    @Column(name = "city")
     private String city;
-    @Column (name = "region")
+    @Column(name = "region")
     private String region;
 
-    public AddressEntity(String address, String address2, String city, String region)
-    {
+    public AddressEntity(String address, String address2, String city, String region) {
         this.address = address;
         this.address2 = address2;
         this.city = city;
@@ -70,8 +69,7 @@ public class AddressEntity implements ParentEntity {
     }
 
     @Override
-    public String toString ()
-    {
+    public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("Id: ").append(idAddress);
         builder.append("; Address: ").append(address);

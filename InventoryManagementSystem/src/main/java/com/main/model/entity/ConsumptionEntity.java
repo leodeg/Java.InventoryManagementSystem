@@ -12,11 +12,11 @@ public class ConsumptionEntity implements ParentEntity {
     private int idConsumption;
     @Column(name = "productName")
     private String productName;
-    @Column (name = "price")
+    @Column(name = "price")
     private Double price;
-    @Column (name = "amount")
+    @Column(name = "amount")
     private int amount;
-    @Column (name = "totalPrice")
+    @Column(name = "totalPrice")
     private Double totalPrice;
     @Temporal(TemporalType.DATE)
     private Date date;

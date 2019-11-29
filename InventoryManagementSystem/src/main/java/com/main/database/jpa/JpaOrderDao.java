@@ -1,4 +1,4 @@
-package com.main.model.jpa;
+package com.main.database.jpa;
 
 import com.main.model.entity.OrderEntity;
 
@@ -8,12 +8,12 @@ import java.util.Optional;
 public class JpaOrderDao extends JpaDataAccessObject<OrderEntity> {
     @Override
     public Optional<OrderEntity> get(int id) {
-        return Optional.ofNullable(DatabaseConnector.entityManager.find(OrderEntity.class, id));
+        return Optional.ofNullable(EntityManagerConnector.entityManager.find(OrderEntity.class, id));
     }
 
     @Override
     public List<OrderEntity> getAll() {
-        return DatabaseConnector.entityManager.createQuery("SELECT e FROM OrderEntity e").getResultList();
+        return EntityManagerConnector.entityManager.createQuery("SELECT e FROM OrderEntity e", OrderEntity.class).getResultList();
     }
 
     @Override

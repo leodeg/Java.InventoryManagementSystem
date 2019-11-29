@@ -11,15 +11,15 @@ public class OrderEntity implements ParentEntity {
     private int idOrder;
     @Column(name = "idCustomer")
     private int idCustomer;
-    @Column (name = "idProduct")
+    @Column(name = "idProduct")
     private int idProduct;
-    @Column (name = "price")
+    @Column(name = "price")
     private double price;
-    @Column (name = "amount")
+    @Column(name = "amount")
     private int amount;
-    @Column (name = "totalPrice")
+    @Column(name = "totalPrice")
     private Double totalPrice;
-    @Column (name = "date")
+    @Column(name = "date")
     private Date date;
 
     public OrderEntity(int idProduct, int idCustomer, double price, int amount, Date date) {

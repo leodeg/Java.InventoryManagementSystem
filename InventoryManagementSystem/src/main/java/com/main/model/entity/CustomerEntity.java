@@ -10,14 +10,14 @@ public class CustomerEntity implements ParentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idCustomer;
-    @Column (name = "name")
-    private  String name;
-    @Column (name = "phone")
-    private  String phone;
-    @Column (name = "email")
-    private  String email;
-    @Column (name = "description")
-    private  String description;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "phone")
+    private String phone;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "description")
+    private String description;
 
     public CustomerEntity(int idAddress, String name, String phone, String email, String description) {
         this.idAddress = idAddress;

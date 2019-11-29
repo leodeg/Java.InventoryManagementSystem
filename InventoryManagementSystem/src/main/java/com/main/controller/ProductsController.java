@@ -4,10 +4,7 @@ import com.main.model.entity.ArrivalEntity;
 import com.main.model.entity.CategoryEntity;
 import com.main.model.entity.FactEntity;
 import com.main.model.entity.ProductEntity;
-import com.main.model.jpa.JpaArrivalDao;
-import com.main.model.jpa.JpaCategoryDao;
-import com.main.model.jpa.JpaFactDao;
-import com.main.model.jpa.JpaProductDao;
+import com.main.database.jpa.JpaConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -48,23 +45,12 @@ public class ProductsController {
     @FXML
     public DatePicker datePickerArrival;
 
-    private JpaProductDao productDao;
-    private JpaCategoryDao categoryDao;
-    private JpaArrivalDao arrivalDao;
-    private JpaFactDao factDao;
-
-    public ProductsController() {
-        productDao = new JpaProductDao();
-        categoryDao = new JpaCategoryDao();
-        arrivalDao = new JpaArrivalDao();
-        factDao = new JpaFactDao();
-    }
 
     public void OnPress_Button_NewProduct(ActionEvent event) {
         ProductEntity productEntity = getProductEntity();
         if (productEntity != null) {
             try {
-                productDao.save(productEntity);
+                JpaConnector.getProduct().save(productEntity);
                 MainController.showAlert(Alert.AlertType.CONFIRMATION, "Product added", "Product was successfully added to database");
                 displayInformationToTableView();
             } catch (Exception ex) {
@@ -77,7 +63,7 @@ public class ProductsController {
     private ProductEntity getProductEntity() {
         try {
             if (checkInformationValidation())
-                return new ProductEntity(categoryDao.getIdByTitle(choiceBoxCategory.getValue()), textFieldName.getText(), Double.parseDouble(textFieldPrice.getText()), textFieldDescription.getText());
+                return new ProductEntity(JpaConnector.getCategory().getIdByTitle(choiceBoxCategory.getValue()), textFieldName.getText(), Double.parseDouble(textFieldPrice.getText()), textFieldDescription.getText());
         } catch (Exception ex) {
             MainController.showAlert(Alert.AlertType.ERROR, "Product Error", ex.getMessage());
         }
@@ -101,7 +87,7 @@ public class ProductsController {
     }
 
     private void displayInformationToTableView() {
-        ObservableList<ProductEntity> data = FXCollections.observableArrayList(productDao.getAll());
+        ObservableList<ProductEntity> data = FXCollections.observableArrayList(JpaConnector.getProduct().getAll());
         tableColumnIdProduct.setCellValueFactory(new PropertyValueFactory<>("idProduct"));
         tableColumnIdCategory.setCellValueFactory(new PropertyValueFactory<>("idCategory"));
         tableColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -116,7 +102,7 @@ public class ProductsController {
 
     private void populateChoiceBox() {
         ObservableList<String> data = FXCollections.observableArrayList();
-        for (CategoryEntity entity : categoryDao.getAll())
+        for (CategoryEntity entity : JpaConnector.getCategory().getAll())
             data.add(entity.getTitle());
         choiceBoxCategory.setItems(data);
     }
@@ -126,28 +112,28 @@ public class ProductsController {
     }
 
     private void saveNewArrivalToDatabase() {
-        ArrivalEntity entity = getNewArrival();
+        ArrivalEntity entity = getArrivalEntity();
         if (entity != null) {
-            arrivalDao.save(entity);
+            JpaConnector.getArrival().save(entity);
             updateFactDatabaseTable(entity);
         }
     }
 
     private void updateFactDatabaseTable(ArrivalEntity entity) {
-            FactEntity factEntity = factDao.getFirstByIdProduct(entity.getIdProduct());
-            MainController.showAlert(Alert.AlertType.CONFIRMATION, "ProductEntity", factEntity.toString());
-            if (factEntity == null) {
-                factDao.save(new FactEntity(entity.getIdProduct(), entity.getAmount(), entity.getPrice(), entity.getDate()));
-            } else {
-                factEntity.setAmount(factEntity.getAmount() + entity.getAmount());
-                factEntity.setPrice(entity.getPrice());
-                factEntity.setDate(entity.getDate());
-                factDao.update(factEntity);
-            }
+        FactEntity factEntity = JpaConnector.getFact().getFirstByIdProduct(entity.getIdProduct());
+        MainController.showAlert(Alert.AlertType.CONFIRMATION, "ProductEntity", factEntity.toString());
+        if (factEntity == null) {
+            JpaConnector.getFact().save(new FactEntity(entity.getIdProduct(), entity.getAmount(), entity.getPrice(), entity.getDate()));
+        } else {
+            factEntity.setAmount(factEntity.getAmount() + entity.getAmount());
+            factEntity.setPrice(entity.getPrice());
+            factEntity.setDate(entity.getDate());
+            JpaConnector.getFact().update(factEntity);
+        }
     }
 
     @Nullable
-    private ArrivalEntity getNewArrival() {
+    private ArrivalEntity getArrivalEntity() {
         if (checkArrivalInformation()) {
             ProductEntity entity = tableView.getSelectionModel().getSelectedItem();
             MainController.showAlert(Alert.AlertType.CONFIRMATION, "ProductEntity", entity.toString());
@@ -172,7 +158,6 @@ public class ProductsController {
             MainController.showAlert(Alert.AlertType.ERROR, "Arrival Error", "Choose date from date picker.");
             return false;
         }
-
         return true;
     }
 }

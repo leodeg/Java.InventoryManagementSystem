@@ -3,8 +3,7 @@ package com.main.controller;
 import com.main.model.entity.CustomerEntity;
 import com.main.model.entity.FactEntity;
 import com.main.model.entity.OrderEntity;
-import com.main.model.jpa.JpaCustomerDao;
-import com.main.model.jpa.JpaOrderDao;
+import com.main.database.jpa.JpaConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -45,13 +44,9 @@ public class NewOrderController implements Initializable {
     public TableColumn<CustomerEntity, String> tableColumnDescription;
 
     private FactEntity factEntity;
-    private JpaCustomerDao customerDao;
-    private JpaOrderDao orderDao;
 
     public NewOrderController(FactEntity factEntity) {
         this.factEntity = factEntity;
-        customerDao = new JpaCustomerDao();
-        orderDao = new JpaOrderDao();
     }
 
     @FXML
@@ -66,7 +61,7 @@ public class NewOrderController implements Initializable {
     private void OnPress_Button_NewOrder(ActionEvent event) {
         OrderEntity orderEntity = getOrderEntity();
         if (orderEntity != null) try {
-            orderDao.save(getOrderEntity());
+            JpaConnector.getOrder().save(getOrderEntity());
             MainController.showAlert(Alert.AlertType.CONFIRMATION, "New Order", "Order was successfully added.");
             Stage stage = (Stage) buttonNewOrder.getScene().getWindow();
             stage.close();
@@ -92,12 +87,11 @@ public class NewOrderController implements Initializable {
             MainController.showAlert(Alert.AlertType.ERROR, "Validation", "Please select a customer from the table below.");
             return false;
         }
-        boolean hasOnlyNumbers = MainController.hasOnlyNumbers(textFieldAmount.getText());
-        if (!hasOnlyNumbers) {
+        if (MainController.hasOnlyNumbers(textFieldAmount.getText())) {
             MainController.showAlert(Alert.AlertType.ERROR, "Validation", "Amount must has only numbers.");
             return false;
         }
-        if (hasOnlyNumbers && Integer.parseInt(textFieldAmount.getText()) > factEntity.getAmount()) {
+        if (Integer.parseInt(textFieldAmount.getText()) > factEntity.getAmount()) {
             MainController.showAlert(Alert.AlertType.ERROR, "Validation", "Inventory has only: " + factEntity.getAmount());
             return false;
         }
@@ -119,7 +113,7 @@ public class NewOrderController implements Initializable {
     }
 
     private void displayInformationToTableView() {
-        ObservableList<CustomerEntity> data = FXCollections.observableArrayList(customerDao.getAll());
+        ObservableList<CustomerEntity> data = FXCollections.observableArrayList(JpaConnector.getCustomer().getAll());
         tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idCustomer"));
         tableColumnAddress.setCellValueFactory(new PropertyValueFactory<>("idAddress"));
         tableColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));

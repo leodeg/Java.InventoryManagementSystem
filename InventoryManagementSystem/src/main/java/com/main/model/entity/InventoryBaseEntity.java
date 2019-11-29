@@ -1,17 +1,22 @@
 package com.main.model.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.util.Date;
 import java.util.Objects;
 
 @MappedSuperclass
 public class InventoryBaseEntity implements ParentEntity {
-    @Column (name = "idProduct")
+    @Column(name = "idProduct")
     private int idProduct;
-    @Column (name = "amount")
+    @Column(name = "amount")
     private int amount;
-    @Column (name = "price")
+    @Column(name = "price")
     private Double price;
+    @Column(name = "totalPrice")
+    private Double totalPrice;
     @Temporal(TemporalType.DATE)
     private Date date;
 
@@ -20,6 +25,7 @@ public class InventoryBaseEntity implements ParentEntity {
         this.amount = amount;
         this.price = price;
         this.date = date;
+        this.totalPrice = amount * price;
     }
 
     public InventoryBaseEntity() {

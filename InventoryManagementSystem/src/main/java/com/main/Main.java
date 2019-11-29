@@ -1,7 +1,7 @@
 package com.main;
 
 import com.main.controller.MainController;
-import com.main.model.jpa.DatabaseConnector;
+import com.main.database.jpa.EntityManagerConnector;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -25,7 +25,7 @@ public class Main extends Application {
             scene.getStylesheets().add(Main.class.getResource("/ui/themes/bootstrap.css").toExternalForm());
 
             primaryStage.setOnCloseRequest(windowEvent -> {
-                DatabaseConnector.close();
+                EntityManagerConnector.close();
                 Platform.exit();
                 System.exit(0);
             });
@@ -34,7 +34,7 @@ public class Main extends Application {
             primaryStage.show();
         } catch (Exception ex) {
             MainController.showAlert(Alert.AlertType.ERROR, "Main window", "Database is not running.");
-            DatabaseConnector.close();
+            EntityManagerConnector.close();
         }
     }
 }

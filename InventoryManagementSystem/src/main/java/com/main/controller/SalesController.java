@@ -1,7 +1,7 @@
 package com.main.controller;
 
 import com.main.model.entity.SaleEntity;
-import com.main.model.jpa.JpaSaleDao;
+import com.main.database.jpa.JpaConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -36,12 +36,6 @@ public class SalesController implements Initializable {
     @FXML
     public TableColumn<SaleEntity, Date> tableColumnDate;
 
-    private JpaSaleDao saleDao;
-
-    public SalesController() {
-        saleDao = new JpaSaleDao();
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         buttonRefreshTable.setOnAction(this::OnPress_Button_RefreshTable);
@@ -53,7 +47,7 @@ public class SalesController implements Initializable {
     }
 
     private void displayInformationToTableView() {
-        ObservableList<SaleEntity> data = FXCollections.observableArrayList(saleDao.getAll());
+        ObservableList<SaleEntity> data = FXCollections.observableArrayList(JpaConnector.getSale().getAll());
         if (data.size() > 0) {
             tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idSale"));
             tableColumnProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));

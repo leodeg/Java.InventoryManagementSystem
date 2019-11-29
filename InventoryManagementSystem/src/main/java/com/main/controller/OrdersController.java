@@ -2,10 +2,7 @@ package com.main.controller;
 
 import com.main.model.entity.OrderEntity;
 import com.main.model.entity.SaleEntity;
-import com.main.model.jpa.JpaCustomerDao;
-import com.main.model.jpa.JpaOrderDao;
-import com.main.model.jpa.JpaProductDao;
-import com.main.model.jpa.JpaSaleDao;
+import com.main.database.jpa.JpaConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -46,18 +43,6 @@ public class OrdersController implements Initializable {
     @FXML
     public TableColumn<OrderEntity, Date> tableColumnDate;
 
-    private JpaOrderDao orderDao;
-    private JpaProductDao productDao;
-    private JpaCustomerDao customerDao;
-    private JpaSaleDao saleDao;
-
-    public OrdersController() {
-        orderDao = new JpaOrderDao();
-        productDao = new JpaProductDao();
-        customerDao = new JpaCustomerDao();
-        saleDao = new JpaSaleDao();
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         buttonNewOrder.setOnAction(this::OnPress_Button_NewOrder);
@@ -85,9 +70,9 @@ public class OrdersController implements Initializable {
 
         SaleEntity saleEntity = getSaleEntity(selectedItem);
         try {
-            saleDao.save(saleEntity);
-            OrderEntity orderEntity = orderDao.get(selectedItem.getIdOrder()).get();
-            orderDao.delete(orderEntity);
+            JpaConnector.getSale().save(saleEntity);
+            OrderEntity orderEntity = JpaConnector.getOrder().get(selectedItem.getIdOrder()).get();
+            JpaConnector.getOrder().delete(orderEntity);
             MainController.showAlert(Alert.AlertType.CONFIRMATION, "To Sale", "Complete");
             displayInformationToTableView();
         } catch (Exception ex) {
@@ -96,7 +81,7 @@ public class OrdersController implements Initializable {
     }
 
     private void displayInformationToTableView() {
-        ObservableList<OrderEntity> data = FXCollections.observableArrayList(orderDao.getAll());
+        ObservableList<OrderEntity> data = FXCollections.observableArrayList(JpaConnector.getOrder().getAll());
         if (data.size() > 0) {
             tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idOrder"));
             tableColumnProductId.setCellValueFactory(new PropertyValueFactory<>("idProduct"));
@@ -110,8 +95,8 @@ public class OrdersController implements Initializable {
     }
 
     private SaleEntity getSaleEntity(OrderEntity selectedItem) {
-        String productName = productDao.get(selectedItem.getIdProduct()).get().getName();
-        String customerName = customerDao.get(selectedItem.getIdCustomer()).get().getName();
+        String productName = JpaConnector.getProduct().get(selectedItem.getIdProduct()).get().getName();
+        String customerName = JpaConnector.getCustomer().get(selectedItem.getIdCustomer()).get().getName();
         return new SaleEntity(productName, customerName, selectedItem.getPrice(), selectedItem.getAmount(), selectedItem.getDate());
     }
 }

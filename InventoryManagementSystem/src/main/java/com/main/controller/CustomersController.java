@@ -2,21 +2,15 @@ package com.main.controller;
 
 import com.main.model.entity.AddressEntity;
 import com.main.model.entity.CustomerEntity;
-import com.main.model.jpa.JpaAddressDao;
-import com.main.model.jpa.JpaCustomerDao;
+import com.main.database.jpa.JpaConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 
@@ -24,7 +18,7 @@ public class CustomersController {
     @FXML
     public Button buttonRefreshChoices;
     @FXML
-    public Button buttonNew;
+    public Button buttonNewCustomer;
     @FXML
     public Button buttonRefresh;
     @FXML
@@ -57,61 +51,47 @@ public class CustomersController {
     public TableColumn<CustomerEntity, String> tableColumnDescription;
 
 
-    private JpaCustomerDao customerDao;
-    private JpaAddressDao addressDao;
-
-    public CustomersController() {
-        customerDao = new JpaCustomerDao();
-        addressDao = new JpaAddressDao();
-    }
-
     public void OnPress_Button_RefreshChoices(ActionEvent event) {
         populateChoiceBox();
     }
 
     private void populateChoiceBox() {
         ObservableList<String> data = FXCollections.observableArrayList();
-        for (AddressEntity entity : addressDao.getAll())
+        for (AddressEntity entity : JpaConnector.getAddress().getAll())
             data.add(entity.getAddress());
         choiceBoxAddress.setItems(data);
     }
 
-    public void OnPress_Button_New(ActionEvent event) {
-        CustomerEntity customerEntity = getCustomerEntity();
-        if (customerEntity != null) {
-            try {
-                customerDao.save(customerEntity);
-                MainController.showAlert(Alert.AlertType.CONFIRMATION, "Customer added", "Customer was successfully added to database");
-                displayInformationToTableView();
-            } catch (Exception ex) {
-                MainController.showAlert(Alert.AlertType.ERROR, "Customer Error", ex.getMessage());
-            }
-        } else {
-            MainController.showAlert(Alert.AlertType.CONFIRMATION, "Customer is null", "Customer is null");
+    public void OnPress_Button_NewCustomer(ActionEvent event) {
+        Parent root;
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/new_customer.fxml"));
+            fxmlLoader.setController(new NewCustomerController());
+            root = fxmlLoader.load();
+            MainController.showModalWindow("New Customer", root);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    }
-
-    @Nullable
-    private CustomerEntity getCustomerEntity() {
-        if (isInformationValid())
-            return new CustomerEntity(addressDao.getFirst(choiceBoxAddress.getValue()).getIdAddress(), textFieldName.getText(), textFieldPhone.getText(), textFieldEmail.getText(), textFieldDescription.getText());
-        return null;
-    }
-
-    private boolean isInformationValid() {
-        if (textFieldName.getText().length() < 1 || choiceBoxAddress.getSelectionModel().getSelectedIndex() < 0) {
-            MainController.showAlert(Alert.AlertType.ERROR, "Customer Error", "Name or address is empty.");
-            return false;
-        }
-        return true;
     }
 
     public void OnPress_Button_Refresh(ActionEvent event) {
         displayInformationToTableView();
     }
 
+    public void OnPress_Button_NewAddress(ActionEvent event) {
+        Parent root;
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/address.fxml"));
+            fxmlLoader.setController(new AddressController());
+            root = fxmlLoader.load();
+            MainController.showModalWindow("Addresses", root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void displayInformationToTableView() {
-        ObservableList<CustomerEntity> data = FXCollections.observableArrayList(customerDao.getAll());
+        ObservableList<CustomerEntity> data = FXCollections.observableArrayList(JpaConnector.getCustomer().getAll());
         tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idCustomer"));
         tableColumnAddress.setCellValueFactory(new PropertyValueFactory<>("idAddress"));
         tableColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -120,25 +100,4 @@ public class CustomersController {
         tableColumnDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         tableView.setItems(data);
     }
-
-    public void OnPress_Button_NewAddress (ActionEvent event) {
-        Parent root;
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/address.fxml"));
-            fxmlLoader.setController(new AddressController());
-            root = fxmlLoader.load();
-            Scene scene = new Scene(root);
-
-            Stage stage = new Stage();
-            stage.initModality(Modality.WINDOW_MODAL);
-            stage.initStyle(StageStyle.DECORATED);
-            stage.setTitle("Addresses");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
 }

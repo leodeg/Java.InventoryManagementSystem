@@ -1,12 +1,13 @@
 package com.main.model.dao;
 
+import com.main.DataAccessObject;
 import com.main.model.entity.ParentEntity;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class DaoContainer<TInventory extends ParentEntity> implements com.main.model.DataAccessObject<TInventory> {
+public class DaoEntityContainer<TInventory extends ParentEntity> implements DataAccessObject<TInventory> {
     private List<TInventory> list = new ArrayList<>();
 
     @Override
@@ -36,7 +37,7 @@ public class DaoContainer<TInventory extends ParentEntity> implements com.main.m
 
     @Override
     public void update(TInventory entity, String[] params) {
-        assignEntity(entity,params);
+        assignEntity(entity, params);
         list.add(entity);
     }
 

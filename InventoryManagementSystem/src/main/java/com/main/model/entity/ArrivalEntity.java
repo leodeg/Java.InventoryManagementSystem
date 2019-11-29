@@ -11,7 +11,7 @@ public class ArrivalEntity extends InventoryBaseEntity {
     private int idArrival;
 
     public ArrivalEntity(int idProduct, int amount, Double price, Date date) {
-        super (idProduct, amount, price, date);
+        super(idProduct, amount, price, date);
     }
 
     public ArrivalEntity() {

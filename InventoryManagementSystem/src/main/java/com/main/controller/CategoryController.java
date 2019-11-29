@@ -1,7 +1,7 @@
 package com.main.controller;
 
 import com.main.model.entity.CategoryEntity;
-import com.main.model.jpa.JpaCategoryDao;
+import com.main.database.jpa.JpaConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,16 +25,10 @@ public class CategoryController {
     @FXML
     public TableColumn<CategoryEntity, String> tableColumnTitle;
 
-    private JpaCategoryDao categoryDao;
-
-    public CategoryController () {
-        categoryDao = new JpaCategoryDao();
-    }
-
     public void OnPress_Button_NewCategory(ActionEvent event) {
         CategoryEntity categoryEntity = getCategoryEntity();
         if (categoryEntity != null) try {
-            categoryDao.save(categoryEntity);
+            JpaConnector.getCategory().save(categoryEntity);
             MainController.showAlert(Alert.AlertType.CONFIRMATION, "Category added", "Category was successfully added to database");
             displayInformationToTableView();
         } catch (Exception ex) {
@@ -56,18 +50,18 @@ public class CategoryController {
         return true;
     }
 
-    public void OnPress_Button_Refresh (ActionEvent event) {
+    public void OnPress_Button_Refresh(ActionEvent event) {
         displayInformationToTableView();
     }
 
     private void displayInformationToTableView() {
-        ObservableList<CategoryEntity> data = FXCollections.observableArrayList(categoryDao.getAll());
+        ObservableList<CategoryEntity> data = FXCollections.observableArrayList(JpaConnector.getCategory().getAll());
         tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idCategory"));
         tableColumnTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         tableView.setItems(data);
     }
 
-    public void OnPress_Button_Delete (ActionEvent event) {
+    public void OnPress_Button_Delete(ActionEvent event) {
         CategoryEntity selectedItem = tableView.getSelectionModel().getSelectedItem();
         if (selectedItem == null) {
             MainController.showAlert(Alert.AlertType.ERROR, "Error", "Please select item from table below.");
@@ -75,8 +69,8 @@ public class CategoryController {
         }
 
         try {
-            CategoryEntity entity = categoryDao.get(selectedItem.getIdCategory()).get();
-            categoryDao.delete(entity);
+            CategoryEntity entity = JpaConnector.getCategory().get(selectedItem.getIdCategory()).get();
+            JpaConnector.getCategory().delete(entity);
             displayInformationToTableView();
         } catch (Exception ex) {
             MainController.showAlert(Alert.AlertType.ERROR, "Error", ex.getMessage());

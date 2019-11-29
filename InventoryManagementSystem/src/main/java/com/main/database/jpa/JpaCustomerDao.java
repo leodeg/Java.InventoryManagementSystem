@@ -1,4 +1,4 @@
-package com.main.model.jpa;
+package com.main.database.jpa;
 
 import com.main.model.entity.CustomerEntity;
 
@@ -8,12 +8,12 @@ import java.util.Optional;
 public class JpaCustomerDao extends JpaDataAccessObject<CustomerEntity> {
     @Override
     public Optional<CustomerEntity> get(int id) {
-        return Optional.ofNullable(DatabaseConnector.entityManager.find(CustomerEntity.class, id));
+        return Optional.ofNullable(EntityManagerConnector.entityManager.find(CustomerEntity.class, id));
     }
 
     @Override
     public List<CustomerEntity> getAll() {
-        return DatabaseConnector.entityManager.createQuery("SELECT e FROM CustomerEntity e").getResultList();
+        return EntityManagerConnector.entityManager.createQuery("SELECT e FROM CustomerEntity e", CustomerEntity.class).getResultList();
     }
 
     @Override

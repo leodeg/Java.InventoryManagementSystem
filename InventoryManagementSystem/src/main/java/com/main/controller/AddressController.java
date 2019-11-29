@@ -1,7 +1,7 @@
 package com.main.controller;
 
 import com.main.model.entity.AddressEntity;
-import com.main.model.jpa.JpaAddressDao;
+import com.main.database.jpa.JpaConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -42,12 +42,6 @@ public class AddressController implements Initializable {
     @FXML
     public TableColumn<AddressEntity, String> tableColumnRegion;
 
-    private JpaAddressDao addressDao;
-
-    public AddressController() {
-        addressDao = new JpaAddressDao();
-    }
-
     @FXML
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -60,7 +54,7 @@ public class AddressController implements Initializable {
     private void OnPress_Button_New(ActionEvent event) {
         AddressEntity addressEntity = getAddressEntity();
         if (addressEntity != null) try {
-            addressDao.save(addressEntity);
+            JpaConnector.getAddress().save(addressEntity);
             MainController.showAlert(Alert.AlertType.INFORMATION, "New Address", "Address successfully added.");
             displayInformationToTableView();
         } catch (Exception ex) {
@@ -98,7 +92,7 @@ public class AddressController implements Initializable {
     }
 
     private void displayInformationToTableView() {
-        ObservableList<AddressEntity> data = FXCollections.observableArrayList(addressDao.getAll());
+        ObservableList<AddressEntity> data = FXCollections.observableArrayList(JpaConnector.getAddress().getAll());
         if (data.size() > 0) {
             tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idAddress"));
             tableColumnAddress.setCellValueFactory(new PropertyValueFactory<>("address"));

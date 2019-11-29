@@ -1,12 +1,9 @@
 package com.main.controller;
 
+import com.main.database.jpa.JpaConnector;
 import com.main.model.entity.ArrivalEntity;
 import com.main.model.entity.ConsumptionEntity;
 import com.main.model.entity.FactEntity;
-import com.main.model.jpa.JpaArrivalDao;
-import com.main.model.jpa.JpaConsumptionDao;
-import com.main.model.jpa.JpaFactDao;
-import com.main.model.jpa.JpaProductDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -39,6 +36,8 @@ public class InventoryController {
     @FXML
     public TableColumn<FactEntity, Double> tableFactColumnPrice;
     @FXML
+    public TableColumn tableFactColumnTotalPrice;
+    @FXML
     public TableColumn<FactEntity, Date> tableFactColumnDate;
 
     @FXML
@@ -53,6 +52,8 @@ public class InventoryController {
     public TableColumn<ArrivalEntity, Integer> tableArrivalColumnAmount;
     @FXML
     public TableColumn<ArrivalEntity, Double> tableArrivalColumnPrice;
+    @FXML
+    public TableColumn tableArrivalColumnTotalPrice;
     @FXML
     public TableColumn<ArrivalEntity, Date> tableArrivalColumnDate;
 
@@ -80,18 +81,6 @@ public class InventoryController {
     @FXML
     public Button buttonNewConsumption;
 
-
-    private JpaFactDao factDao;
-    private JpaArrivalDao arrivalDao;
-    private JpaConsumptionDao consumptionDao;
-    private JpaProductDao productDao;
-
-    public InventoryController() {
-        factDao = new JpaFactDao();
-        arrivalDao = new JpaArrivalDao();
-        consumptionDao = new JpaConsumptionDao();
-        productDao = new JpaProductDao();
-    }
 
     public void OnPress_Button_NewOrder(ActionEvent event) {
         FactEntity factEntity = getSelectedItem();
@@ -131,11 +120,11 @@ public class InventoryController {
 
         ConsumptionEntity consumptionEntity = getConsumptionEntity(selectedItem);
         if (consumptionEntity != null) try {
-            consumptionDao.save(consumptionEntity);
+            JpaConnector.getConsumption().save(consumptionEntity);
 
-            FactEntity factEntity = factDao.get(selectedItem.getIdFact()).get();
+            FactEntity factEntity = JpaConnector.getFact().get(selectedItem.getIdFact()).get();
             factEntity.setAmount(factEntity.getAmount() - Integer.parseInt(textFieldConsumptionAmount.getText()));
-            factDao.update(factEntity);
+            JpaConnector.getFact().update(factEntity);
 
             MainController.showAlert(Alert.AlertType.INFORMATION, "New Consumption", "Consumption was successfully added.");
         } catch (Exception ex) {
@@ -145,7 +134,7 @@ public class InventoryController {
 
     private ConsumptionEntity getConsumptionEntity(FactEntity selectedItem) {
         if (isInformationValid(selectedItem)) {
-            String productName = productDao.get(selectedItem.getIdProduct()).get().getName();
+            String productName = JpaConnector.getProduct().get(selectedItem.getIdProduct()).get().getName();
             return new ConsumptionEntity(
                     productName,
                     selectedItem.getPrice(),
@@ -187,43 +176,46 @@ public class InventoryController {
     }
 
     private void displayInformationToFactTableView() {
-        displayInventory(FXCollections.observableArrayList(factDao.getAll()),
+        displayInventory(FXCollections.observableArrayList(JpaConnector.getFact().getAll()),
                 tableFactView,
                 "idFact",
                 tableFactColumnId,
                 tableFactColumnIdProduct,
-                tableFactColumnAmount,
                 tableFactColumnPrice,
+                tableFactColumnAmount,
+                tableFactColumnTotalPrice,
                 tableFactColumnDate);
     }
 
     private void displayInformationToArrivalTableView() {
-        displayInventory(FXCollections.observableArrayList(arrivalDao.getAll()),
+        displayInventory(FXCollections.observableArrayList(JpaConnector.getArrival().getAll()),
                 tableArrivalView,
                 "idArrival",
                 tableArrivalColumnId,
                 tableArrivalColumnIdProduct,
-                tableArrivalColumnAmount,
                 tableArrivalColumnPrice,
+                tableArrivalColumnAmount,
+                tableArrivalColumnTotalPrice,
                 tableArrivalColumnDate);
     }
 
-    private void displayInventory(ObservableList list, TableView tableView, String columnIdName, TableColumn id, TableColumn idProductm, TableColumn amount, TableColumn price, TableColumn date) {
+    private void displayInventory(ObservableList list, TableView tableView, String columnIdName, TableColumn id, TableColumn idProductm, TableColumn price, TableColumn amount, TableColumn totalPrice, TableColumn date) {
         if (tableView.getItems().size() > 0)
             tableView.getItems().clear();
 
         if (list != null && list.size() > 0) {
             id.setCellValueFactory(new PropertyValueFactory<>(columnIdName));
             idProductm.setCellValueFactory(new PropertyValueFactory<>("idProduct"));
-            amount.setCellValueFactory(new PropertyValueFactory<>("amount"));
             price.setCellValueFactory(new PropertyValueFactory<>("price"));
+            amount.setCellValueFactory(new PropertyValueFactory<>("amount"));
+            totalPrice.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
             date.setCellValueFactory(new PropertyValueFactory<>("date"));
             tableView.setItems(list);
         }
     }
 
     private void displayInformationToConsumptionTableView() {
-        ObservableList<ConsumptionEntity> data = FXCollections.observableArrayList(consumptionDao.getAll());
+        ObservableList<ConsumptionEntity> data = FXCollections.observableArrayList(JpaConnector.getConsumption().getAll());
         if (data != null && data.size() > 0) {
             tableConsumptionColumnId.setCellValueFactory(new PropertyValueFactory<>("idConsumption"));
             tableConsumptionColumnProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));

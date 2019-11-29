@@ -1,6 +1,6 @@
-package com.main.model.jpa;
+package com.main.database.jpa;
 
-import com.main.model.DataAccessObject;
+import com.main.DataAccessObject;
 import com.main.model.entity.ParentEntity;
 
 import javax.persistence.EntityManager;
@@ -49,16 +49,20 @@ public class JpaDataAccessObject<T extends ParentEntity> implements DataAccessOb
 
     }
 
+    public boolean isExists (int id) {
+        return this.get(id).isPresent();
+    }
+
     public void executeInsideTransaction(Consumer<EntityManager> action) throws NullPointerException {
-        if (DatabaseConnector.entityManager == null) {
+        if (EntityManagerConnector.entityManager == null) {
             System.err.print("\nError::Transaction::executeInsideTransaction::Entity manager is null pointer.");
             return;
         }
 
-        EntityTransaction transaction = DatabaseConnector.entityManager.getTransaction();
+        EntityTransaction transaction = EntityManagerConnector.entityManager.getTransaction();
         try {
             transaction.begin();
-            action.accept(DatabaseConnector.entityManager);
+            action.accept(EntityManagerConnector.entityManager);
             transaction.commit();
         } catch (RuntimeException e) {
             transaction.rollback();

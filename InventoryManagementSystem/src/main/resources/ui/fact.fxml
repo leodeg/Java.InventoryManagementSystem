@@ -32,8 +32,9 @@
                     <columns>
                         <TableColumn fx:id="tableFactColumnId" prefWidth="75.0" text="Id" />
                         <TableColumn fx:id="tableFactColumnIdProduct" prefWidth="75.0" text="Id Product" />
-                        <TableColumn fx:id="tableFactColumnAmount" prefWidth="75.0" text="Amount" />
                         <TableColumn fx:id="tableFactColumnPrice" prefWidth="75.0" text="Price" />
+                        <TableColumn fx:id="tableFactColumnAmount" prefWidth="75.0" text="Amount" />
+                        <TableColumn fx:id="tableFactColumnTotalPrice" prefWidth="75.0" text="Total Price" />
                         <TableColumn fx:id="tableFactColumnDate" prefWidth="75.0" text="Update Date" />
                     </columns>
                     <columnResizePolicy>

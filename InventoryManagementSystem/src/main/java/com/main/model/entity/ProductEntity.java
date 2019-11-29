@@ -5,17 +5,17 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "products")
-public class ProductEntity implements ParentEntity{
-    @Column (name = "idCategory")
+public class ProductEntity implements ParentEntity {
+    @Column(name = "idCategory")
     private int idCategory;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idProduct;
-    @Column (name = "name")
+    @Column(name = "name")
     private String name;
-    @Column (name = "price")
+    @Column(name = "price")
     private Double price;
-    @Column (name = "description")
+    @Column(name = "description")
     private String description;
 
     public ProductEntity(int idCategory, String name, Double price) {
@@ -76,7 +76,7 @@ public class ProductEntity implements ParentEntity{
     }
 
     @Override
-    public String toString () {
+    public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("Id: ").append(idProduct);
         builder.append("; IdType: ").append(idCategory);
