@@ -5,7 +5,6 @@ import com.main.database.JpaConnector;
 import com.main.model.entity.CustomerEntity;
 import com.main.model.entity.FactEntity;
 import com.main.model.entity.OrderEntity;
-import com.main.model.entity.ProductEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -60,6 +59,16 @@ public class NewOrderController implements Initializable {
     @FXML
     public TableColumn<FactEntity, Date> tableFactColumnDate;
 
+    private OrderEntity entityToChange;
+
+    public NewOrderController() {
+
+    }
+
+    public NewOrderController(OrderEntity entityToChange) {
+        this.entityToChange = entityToChange;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         buttonRefresh.setOnAction(this::OnPress_Button_RefreshTable);
@@ -67,27 +76,52 @@ public class NewOrderController implements Initializable {
     }
 
     private void OnPress_Button_NewOrder(ActionEvent event) {
-        OrderEntity orderEntity = getOrderEntity();
-        if (orderEntity != null) try {
-            JpaConnector.getOrder().save(getOrderEntity());
-            MainController.showAlert(Alert.AlertType.CONFIRMATION, "New Order", "Order was successfully added.");
-            Stage stage = (Stage) buttonNewOrder.getScene().getWindow();
-            stage.close();
-        } catch (Exception ex) {
-            MainController.showAlert(Alert.AlertType.ERROR, "New Order", ex.getMessage());
+        if (entityToChange == null)
+            createNewOrder();
+        else changeOldOrder();
+    }
+
+    private void createNewOrder() {
+        if (checkValidation()) {
+            OrderEntity orderEntity = getOrderEntity();
+            if (orderEntity != null) try {
+                JpaConnector.getOrder().save(getOrderEntity());
+                MainController.showAlert(Alert.AlertType.CONFIRMATION, "New Order", "Order was successfully added.");
+                Stage stage = (Stage) buttonNewOrder.getScene().getWindow();
+                stage.close();
+            } catch (Exception ex) {
+                MainController.showAlert(Alert.AlertType.ERROR, "New Order", ex.getMessage());
+            }
+        }
+    }
+
+    private void changeOldOrder() {
+        if (checkValidation()) {
+            OrderEntity changedEntity = getOrderEntity();
+            try {
+                entityToChange.setIdCustomer(changedEntity.getIdCustomer());
+                entityToChange.setIdProduct(changedEntity.getIdProduct());
+                entityToChange.setPrice(changedEntity.getPrice());
+                entityToChange.setAmount(changedEntity.getAmount());
+                entityToChange.setTotalPrice(entityToChange.getPrice() * entityToChange.getAmount());
+
+                JpaConnector.getOrder().update(entityToChange);
+                MainController.showAlert(Alert.AlertType.CONFIRMATION, "Change Order", "Order was successfully changed.");
+                Stage stage = (Stage) buttonNewOrder.getScene().getWindow();
+                stage.close();
+            } catch (Exception ex) {
+                MainController.showAlert(Alert.AlertType.ERROR, "Change Order", ex.getMessage());
+            }
         }
     }
 
     private OrderEntity getOrderEntity() {
-        if (checkValidation()) {
-            CustomerEntity customerEntity = getCustomerSelectedItem();
-            return new OrderEntity(getFactSelectedEntity().getIdProduct(),
-                    customerEntity.getIdCustomer(),
-                    getFactSelectedEntity().getPrice(),
-                    Integer.parseInt(textFieldAmount.getText()),
-                    Date.valueOf(datePicker.getValue()));
-        }
-        return null;
+        CustomerEntity customerEntity = getCustomerSelectedItem();
+        return new OrderEntity(getFactSelectedEntity().getIdProduct(),
+                customerEntity.getIdCustomer(),
+                getFactSelectedEntity().getPrice(),
+                Integer.parseInt(textFieldAmount.getText()),
+                Date.valueOf(datePicker.getValue()));
     }
 
     private boolean checkValidation() {
@@ -119,19 +153,19 @@ public class NewOrderController implements Initializable {
         return tableCustomerView.getSelectionModel().getSelectedItem();
     }
 
-    private boolean customerSelectedItemsIsEmpty () {
+    private boolean customerSelectedItemsIsEmpty() {
         return tableCustomerView.getSelectionModel().isEmpty();
     }
 
-    private FactEntity getFactSelectedEntity () {
+    private FactEntity getFactSelectedEntity() {
         return tableFactView.getSelectionModel().getSelectedItem();
     }
 
-    private boolean factSelectedItemsIsEmpty () {
+    private boolean factSelectedItemsIsEmpty() {
         return tableFactView.getSelectionModel().isEmpty();
     }
 
-    public void OnPress_Button_RefreshTable (ActionEvent event) {
+    public void OnPress_Button_RefreshTable(ActionEvent event) {
         displayCustomerInformationToTableView();
         displayFactInformationToFactTableView();
     }

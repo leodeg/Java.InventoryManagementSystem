@@ -1,6 +1,5 @@
 package com.main.controller.menu;
 
-import com.main.controller.modalWindow.NewCustomerController;
 import com.main.controller.modalWindow.NewOrderController;
 import com.main.database.JpaConnector;
 import com.main.model.entity.OrderEntity;
@@ -29,6 +28,8 @@ public class OrdersController implements Initializable {
     @FXML
     public Button buttonRefreshTable;
     @FXML
+    public Button buttonChangeOrder;
+    @FXML
     public Button buttonToSales;
 
     @FXML
@@ -48,24 +49,53 @@ public class OrdersController implements Initializable {
     @FXML
     public TableColumn<OrderEntity, Date> tableColumnDate;
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         buttonNewOrder.setOnAction(this::OnPress_Button_NewOrder);
         buttonRefreshTable.setOnAction(this::OnPress_Button_RefreshTable);
         buttonToSales.setOnAction(this::OnPress_Button_ToSales);
+        buttonChangeOrder.setOnAction(this::OnPress_Button_ChangeOrder);
     }
 
     @FXML
     private void OnPress_Button_NewOrder(ActionEvent event) {
+        createOrderModalWindow("New Order", new NewOrderController());
+    }
+
+    @FXML
+    private void OnPress_Button_ChangeOrder(ActionEvent event) {
+        if (!informationIsValid()) return;
+
+        createOrderModalWindow("Change Order", new NewOrderController(getSelectedOrderEntity()));
+    }
+
+    private void createOrderModalWindow(String title, NewOrderController controller) {
         Parent root;
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/modalWindow/new_order.fxml"));
-            fxmlLoader.setController(new NewOrderController());
+            fxmlLoader.setController(controller);
             root = fxmlLoader.load();
-            MainController.showModalWindow("New Order", root);
+            MainController.showModalWindow(title, root);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private boolean informationIsValid() {
+        if (selectedItemsIsEmpty()) {
+            MainController.showAlert(Alert.AlertType.ERROR, "To Sale", "Please choose order from table below.");
+            return false;
+        }
+        return true;
+    }
+
+    private OrderEntity getSelectedOrderEntity () {
+        return tableView.getSelectionModel().getSelectedItem();
+    }
+
+    private boolean selectedItemsIsEmpty() {
+        return tableView.getSelectionModel().isEmpty();
     }
 
     @FXML
