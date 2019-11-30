@@ -104,11 +104,14 @@ public class NewCustomerController implements Initializable {
         return true;
     }
 
-    private AddressEntity getSelectedAddress () {
+    private AddressEntity getSelectedAddress() {
         return tableView.getSelectionModel().getSelectedItem();
     }
 
     private void displayInformationToTableView() {
+        if (tableView.getItems().size() > 0)
+            tableView.getItems().clear();
+
         ObservableList<AddressEntity> data = FXCollections.observableArrayList(JpaConnector.getAddress().getAll());
         if (data.size() > 0) {
             tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idAddress"));

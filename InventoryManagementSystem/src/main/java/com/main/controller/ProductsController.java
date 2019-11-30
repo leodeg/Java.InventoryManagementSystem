@@ -1,21 +1,25 @@
 package com.main.controller;
 
+import com.main.database.jpa.JpaConnector;
 import com.main.model.entity.ArrivalEntity;
 import com.main.model.entity.CategoryEntity;
 import com.main.model.entity.FactEntity;
 import com.main.model.entity.ProductEntity;
-import com.main.database.jpa.JpaConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.net.URL;
 import java.sql.Date;
+import java.util.ResourceBundle;
 
-public class ProductsController {
+public class ProductsController implements Initializable {
     @FXML
     public ChoiceBox<String> choiceBoxCategory;
     @FXML
@@ -24,6 +28,15 @@ public class ProductsController {
     public TextField textFieldPrice;
     @FXML
     public TextField textFieldDescription;
+
+    @FXML
+    public Button buttonRefreshChoice;
+    @FXML
+    public Button buttonNewProduct;
+    @FXML
+    public Button buttonChangeProduct;
+    @FXML
+    public Button buttonRefreshTable;
 
     @FXML
     public TableView<ProductEntity> tableView;
@@ -38,14 +51,15 @@ public class ProductsController {
     @FXML
     public TableColumn<ProductEntity, String> tableColumnDescription;
 
-    @FXML
-    public TableColumn tableColumnActions;
-    @FXML
-    public TextField textFieldArrivalAmount;
-    @FXML
-    public DatePicker datePickerArrival;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        buttonChangeProduct.setOnAction(this::OnPress_Button_ChangeInformation);
+        buttonNewProduct.setOnAction(this::OnPress_Button_NewProduct);
+        buttonRefreshChoice.setOnAction(this::OnPress_Button_RefreshChoice);
+        buttonRefreshTable.setOnAction(this::OnPress_Button_RefreshTable);
+    }
 
-
+    @FXML
     public void OnPress_Button_NewProduct(ActionEvent event) {
         ProductEntity productEntity = getProductEntity();
         if (productEntity != null) {
@@ -82,11 +96,45 @@ public class ProductsController {
         return true;
     }
 
-    public void OnPress_Button_Refresh(ActionEvent event) {
+    @FXML
+    public void OnPress_Button_ChangeInformation (ActionEvent event) {
+        if (isSelectedItemsEmpty()) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Change Information Error", "Please select product from the table below.");
+            return;
+        }
+
+        try {
+            JpaConnector.getProduct().update(getChangedProductEntity());
+            MainController.showAlert(Alert.AlertType.INFORMATION, "Change Information", "Product information was changed.");
+            displayInformationToTableView();
+        } catch (Exception ex) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Change Information Error", ex.getMessage());
+        }
+    }
+
+    private boolean isSelectedItemsEmpty() {
+        return tableView.getSelectionModel().isEmpty();
+    }
+
+    @NotNull
+    private ProductEntity getChangedProductEntity() {
+        ProductEntity selectedItem = tableView.getSelectionModel().getSelectedItem();
+        selectedItem.setIdCategory(JpaConnector.getCategory().getIdByTitle(choiceBoxCategory.getValue()));
+        selectedItem.setName(textFieldName.getText());
+        selectedItem.setPrice(Double.parseDouble(textFieldPrice.getText()));
+        selectedItem.setDescription(textFieldDescription.getText());
+        return selectedItem;
+    }
+
+    @FXML
+    public void OnPress_Button_RefreshTable(ActionEvent event) {
         displayInformationToTableView();
     }
 
     private void displayInformationToTableView() {
+        if (tableView.getItems().size() > 0)
+            tableView.getItems().clear();
+
         ObservableList<ProductEntity> data = FXCollections.observableArrayList(JpaConnector.getProduct().getAll());
         tableColumnIdProduct.setCellValueFactory(new PropertyValueFactory<>("idProduct"));
         tableColumnIdCategory.setCellValueFactory(new PropertyValueFactory<>("idCategory"));
@@ -96,6 +144,7 @@ public class ProductsController {
         tableView.setItems(data);
     }
 
+    @FXML
     public void OnPress_Button_RefreshChoice(ActionEvent event) {
         populateChoiceBox();
     }
@@ -105,59 +154,5 @@ public class ProductsController {
         for (CategoryEntity entity : JpaConnector.getCategory().getAll())
             data.add(entity.getTitle());
         choiceBoxCategory.setItems(data);
-    }
-
-    public void OnPress_Button_AddArrival(ActionEvent event) {
-        saveNewArrivalToDatabase();
-    }
-
-    private void saveNewArrivalToDatabase() {
-        ArrivalEntity entity = getArrivalEntity();
-        if (entity != null) {
-            JpaConnector.getArrival().save(entity);
-            updateFactDatabaseTable(entity);
-        }
-    }
-
-    private void updateFactDatabaseTable(ArrivalEntity entity) {
-        FactEntity factEntity = JpaConnector.getFact().getFirstByIdProduct(entity.getIdProduct());
-        MainController.showAlert(Alert.AlertType.CONFIRMATION, "ProductEntity", factEntity.toString());
-        if (factEntity == null) {
-            JpaConnector.getFact().save(new FactEntity(entity.getIdProduct(), entity.getAmount(), entity.getPrice(), entity.getDate()));
-        } else {
-            factEntity.setAmount(factEntity.getAmount() + entity.getAmount());
-            factEntity.setPrice(entity.getPrice());
-            factEntity.setDate(entity.getDate());
-            JpaConnector.getFact().update(factEntity);
-        }
-    }
-
-    @Nullable
-    private ArrivalEntity getArrivalEntity() {
-        if (checkArrivalInformation()) {
-            ProductEntity entity = tableView.getSelectionModel().getSelectedItem();
-            MainController.showAlert(Alert.AlertType.CONFIRMATION, "ProductEntity", entity.toString());
-            return new ArrivalEntity(entity.getIdProduct(),
-                    Integer.parseInt(textFieldArrivalAmount.getText()),
-                    entity.getPrice(),
-                    Date.valueOf(datePickerArrival.getValue()));
-        }
-        return null;
-    }
-
-    private boolean checkArrivalInformation() {
-        if (tableView.getSelectionModel().getSelectedItem() == null) {
-            MainController.showAlert(Alert.AlertType.ERROR, "Arrival Error", "Please select a product from the table below.");
-            return false;
-        }
-        if (!MainController.hasOnlyNumbers(textFieldArrivalAmount.getText())) {
-            MainController.showAlert(Alert.AlertType.ERROR, "Arrival Error", "Amount must contain only numbers.");
-            return false;
-        }
-        if (datePickerArrival.getValue() == null) {
-            MainController.showAlert(Alert.AlertType.ERROR, "Arrival Error", "Choose date from date picker.");
-            return false;
-        }
-        return true;
     }
 }

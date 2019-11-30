@@ -49,7 +49,7 @@ public class JpaDataAccessObject<T extends ParentEntity> implements DataAccessOb
 
     }
 
-    public boolean isExists (int id) {
+    public boolean isExists(int id) {
         return this.get(id).isPresent();
     }
 

@@ -1,7 +1,7 @@
 package com.main.controller;
 
-import com.main.model.entity.SaleEntity;
 import com.main.database.jpa.JpaConnector;
+import com.main.model.entity.SaleEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -47,6 +47,9 @@ public class SalesController implements Initializable {
     }
 
     private void displayInformationToTableView() {
+        if (tableView.getItems().size() > 0)
+            tableView.getItems().clear();
+
         ObservableList<SaleEntity> data = FXCollections.observableArrayList(JpaConnector.getSale().getAll());
         if (data.size() > 0) {
             tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idSale"));

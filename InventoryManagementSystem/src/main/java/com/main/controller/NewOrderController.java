@@ -1,9 +1,9 @@
 package com.main.controller;
 
+import com.main.database.jpa.JpaConnector;
 import com.main.model.entity.CustomerEntity;
 import com.main.model.entity.FactEntity;
 import com.main.model.entity.OrderEntity;
-import com.main.database.jpa.JpaConnector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -113,6 +113,9 @@ public class NewOrderController implements Initializable {
     }
 
     private void displayInformationToTableView() {
+        if (tableView.getItems().size() > 0)
+            tableView.getItems().clear();
+
         ObservableList<CustomerEntity> data = FXCollections.observableArrayList(JpaConnector.getCustomer().getAll());
         tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idCustomer"));
         tableColumnAddress.setCellValueFactory(new PropertyValueFactory<>("idAddress"));

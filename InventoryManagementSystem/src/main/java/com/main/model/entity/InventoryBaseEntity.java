@@ -72,5 +72,13 @@ public class InventoryBaseEntity implements ParentEntity {
         setPrice(Objects.requireNonNull(Double.parseDouble(params[2]), "Price cannot be null"));
         setDate(Objects.requireNonNull(java.sql.Date.valueOf(params[3]), "Date Date be null"));
     }
+
+    public Double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
 }
 

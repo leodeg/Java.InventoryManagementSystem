@@ -1,7 +1,7 @@
 package com.main.controller;
 
-import com.main.model.entity.CategoryEntity;
 import com.main.database.jpa.JpaConnector;
+import com.main.model.entity.CategoryEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -55,6 +55,9 @@ public class CategoryController {
     }
 
     private void displayInformationToTableView() {
+        if (tableView.getItems().size() > 0)
+            tableView.getItems().clear();
+
         ObservableList<CategoryEntity> data = FXCollections.observableArrayList(JpaConnector.getCategory().getAll());
         tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idCategory"));
         tableColumnTitle.setCellValueFactory(new PropertyValueFactory<>("title"));

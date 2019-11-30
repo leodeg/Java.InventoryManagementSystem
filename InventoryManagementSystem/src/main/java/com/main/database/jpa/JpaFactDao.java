@@ -25,6 +25,10 @@ public class JpaFactDao extends JpaDataAccessObject<FactEntity> {
         return getByIdProduct(id).get(0);
     }
 
+    public boolean isExists (int idProduct) {
+        return !getByIdProduct(idProduct).isEmpty();
+    }
+
     public void assignEntity(InventoryBaseEntity entity, String[] params) {
         entity.assignEntity(params);
     }
