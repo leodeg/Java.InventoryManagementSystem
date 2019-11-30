@@ -14,11 +14,11 @@
         <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="908.0"
               spacing="5.0" VBox.vgrow="ALWAYS">
             <children>
-                <Button fx:id="buttonRefresh" mnemonicParsing="false" text="Refresh"/>
+                <Button fx:id="buttonRefresh" mnemonicParsing="false" text="Обновить таблицу"/>
                 <TextField fx:id="textFieldAmount" layoutX="10.0" layoutY="23.0" prefHeight="25.0"
-                           promptText="Amount *"/>
-                <DatePicker fx:id="datePicker" promptText="Order Date *"/>
-                <Button fx:id="buttonNewOrder" mnemonicParsing="false" text="New"/>
+                           promptText="Кол-во *"/>
+                <DatePicker fx:id="datePicker" promptText="Дата заказа *"/>
+                <Button fx:id="buttonNewOrder" mnemonicParsing="false" text="Добавить"/>
             </children>
             <VBox.margin>
             </VBox.margin>

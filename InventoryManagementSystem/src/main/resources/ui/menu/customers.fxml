@@ -15,10 +15,10 @@
             </VBox.margin>
             <padding>
             </padding>
-            <Button fx:id="buttonRefresh" layoutX="715.0" layoutY="23.0" mnemonicParsing="false" onAction="#OnPress_Button_Refresh" prefHeight="25.0" text="Refresh Table" />
-            <Button fx:id="buttonNewCustomer" mnemonicParsing="false" onAction="#OnPress_Button_NewCustomer" prefHeight="25.0" text="New Customer" />
-            <Button fx:id="buttonChangeCustomer" mnemonicParsing="false" onAction="#OnPress_Button_NewCustomer" prefHeight="25.0" text="Change Customer" />
-            <Button fx:id="buttonNewAddress" mnemonicParsing="false" onAction="#OnPress_Button_NewAddress" prefHeight="25.0" text="New Address" />
+            <Button fx:id="buttonRefresh" layoutX="715.0" layoutY="23.0" mnemonicParsing="false" onAction="#OnPress_Button_Refresh" prefHeight="25.0" text="Обновить таблицу" />
+            <Button fx:id="buttonNewCustomer" mnemonicParsing="false" onAction="#OnPress_Button_NewCustomer" prefHeight="25.0" text="Добавить покупателя" />
+            <Button fx:id="buttonChangeCustomer" mnemonicParsing="false" onAction="#OnPress_Button_NewCustomer" prefHeight="25.0" text="Изменить информацию" />
+            <Button fx:id="buttonNewAddress" mnemonicParsing="false" onAction="#OnPress_Button_NewAddress" prefHeight="25.0" text="Новый адрес" />
         </HBox>
         <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
             <columns>

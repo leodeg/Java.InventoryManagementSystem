@@ -18,11 +18,11 @@
                 <VBox.margin>
                 </VBox.margin>
                 <Button fx:id="buttonArrivalRefreshTable" mnemonicParsing="false"
-                        onAction="#OnPress_Button_RefreshArrivalTable" text="Refresh Table"/>
-                <TextField fx:id="textFieldArrivalAmount" layoutX="10.0" layoutY="23.0" prefHeight="25.0" prefWidth="80.0" promptText="Amount *" />
-                <DatePicker fx:id="datePickerArrival" promptText="Arrival Date *" />
-                <Button fx:id="buttonArrivalChange" mnemonicParsing="false" text="Change Arrival"/>
-                <Button fx:id="buttonArrivalNew" mnemonicParsing="false" text="New Arrival"/>
+                        onAction="#OnPress_Button_RefreshArrivalTable" text="Обновить таблицу"/>
+                <TextField fx:id="textFieldArrivalAmount" layoutX="10.0" layoutY="23.0" prefHeight="25.0" prefWidth="80.0" promptText="Кол-во *" />
+                <DatePicker fx:id="datePickerArrival" promptText="Дата прихода *" />
+                <Button fx:id="buttonArrivalChange" mnemonicParsing="false" text="Изменить приход"/>
+                <Button fx:id="buttonArrivalNew" mnemonicParsing="false" text="Новый приход"/>
             </HBox>
             <TableView fx:id="tableArrivalView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                 <columns>

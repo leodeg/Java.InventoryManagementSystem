@@ -18,10 +18,10 @@
             <padding>
             </padding>
             <Button fx:id="buttonRefreshTable" layoutX="573.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0"
-                    text="Refresh Table"/>
-            <Button fx:id="buttonNewOrder" mnemonicParsing="false" text="New Order"/>
-            <Button fx:id="buttonChangeOrder" mnemonicParsing="false" text="Change Order"/>
-            <Button fx:id="buttonToSales" layoutX="573.0" layoutY="23.0" mnemonicParsing="false" text="To Sales"/>
+                    text="Обновить таблицу"/>
+            <Button fx:id="buttonNewOrder" mnemonicParsing="false" text="Новый заказ"/>
+            <Button fx:id="buttonChangeOrder" mnemonicParsing="false" text="Изменить информацию"/>
+            <Button fx:id="buttonToSales" layoutX="573.0" layoutY="23.0" mnemonicParsing="false" text="Продано"/>
         </HBox>
         <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
             <columns>

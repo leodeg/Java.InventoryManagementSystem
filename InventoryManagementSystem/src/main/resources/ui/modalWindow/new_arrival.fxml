@@ -20,10 +20,10 @@
             </VBox.margin>
             <padding>
             </padding>
-            <Button fx:id="buttonRefreshTable" layoutX="627.0" layoutY="23.0" mnemonicParsing="false" text="Refresh Table" />
-            <TextField fx:id="textFieldArrivalAmount" layoutX="10.0" layoutY="23.0" prefHeight="25.0" promptText="Amount *" />
-            <DatePicker fx:id="datePickerArrival" promptText="Arrival Date *" />
-            <Button fx:id="buttonArrivalNewArrival" mnemonicParsing="false" text="New" />
+            <Button fx:id="buttonRefreshTable" layoutX="627.0" layoutY="23.0" mnemonicParsing="false" text="Обновить таблицу" />
+            <TextField fx:id="textFieldArrivalAmount" layoutX="10.0" layoutY="23.0" prefHeight="25.0" promptText="Кол-во *" />
+            <DatePicker fx:id="datePickerArrival" promptText="Дата прихода *" />
+            <Button fx:id="buttonArrivalNewArrival" mnemonicParsing="false" text="Добавить" />
         </HBox>
        
         <TableView fx:id="tableView" prefWidth="614.0" VBox.vgrow="ALWAYS">

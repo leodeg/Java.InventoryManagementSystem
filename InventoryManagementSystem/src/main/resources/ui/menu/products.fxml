@@ -18,18 +18,18 @@
             <padding>
             </padding>
             <Button fx:id="buttonRefreshTable" layoutX="627.0" layoutY="23.0" mnemonicParsing="false"
-                    onAction="#OnPress_Button_RefreshTable" text="Refresh Table"/>
+                    onAction="#OnPress_Button_RefreshTable" text="Обновить таблицу"/>
             <Button fx:id="buttonRefreshChoice" mnemonicParsing="false" onAction="#OnPress_Button_RefreshChoice"
-                    text="Refresh -&gt;"/>
+                    text="Обновить категории"/>
             <ChoiceBox fx:id="choiceBoxCategory" prefHeight="25.0" prefWidth="89.0"/>
-            <TextField fx:id="textFieldName" promptText="Name *"/>
+            <TextField fx:id="textFieldName" promptText="Имя *"/>
             <TextField fx:id="textFieldPrice" layoutX="185.0" layoutY="28.0" prefHeight="25.0"
-                       promptText="Price *"/>
-            <TextField fx:id="textFieldDescription" layoutX="339.0" layoutY="28.0" promptText="Description"/>
+                       promptText="Цена *"/>
+            <TextField fx:id="textFieldDescription" layoutX="339.0" layoutY="28.0" promptText="Описание"/>
             <Button fx:id="buttonNewProduct" mnemonicParsing="false" onAction="#OnPress_Button_NewProduct"
-                    text="New Product"/>
+                    text="Добавить"/>
             <Button fx:id="buttonChangeProduct" mnemonicParsing="false" onAction="#OnPress_Button_NewProduct"
-                    text="Change Product"/>
+                    text="Изменить информацию"/>
         </HBox>
         <TableView fx:id="tableView" prefWidth="614.0" VBox.vgrow="ALWAYS">
             <columns>

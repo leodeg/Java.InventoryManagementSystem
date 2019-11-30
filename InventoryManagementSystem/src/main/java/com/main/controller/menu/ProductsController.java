@@ -1,7 +1,6 @@
 package com.main.controller.menu;
 
 import com.main.database.JpaConnector;
-import com.main.model.entity.AddressEntity;
 import com.main.model.entity.CategoryEntity;
 import com.main.model.entity.ProductEntity;
 import javafx.collections.FXCollections;
@@ -63,7 +62,7 @@ public class ProductsController implements Initializable {
         });
     }
 
-    private void displaySelectedInfo (ProductEntity entity) {
+    private void displaySelectedInfo(ProductEntity entity) {
         textFieldName.setText(entity.getName());
         textFieldPrice.setText(String.valueOf(entity.getPrice()));
         textFieldDescription.setText(entity.getDescription());

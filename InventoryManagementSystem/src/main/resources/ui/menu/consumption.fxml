@@ -13,7 +13,7 @@
         </padding>
         <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="5.0">
             <Button fx:id="buttonConsumptionRefreshTable" onAction="#OnPress_Button_RefreshConsumptionTable"
-                    mnemonicParsing="false" text="Refresh Table"/>
+                    mnemonicParsing="false" text="Обновить таблицу"/>
         </HBox>
         <TableView fx:id="tableConsumptionView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
             <columns>

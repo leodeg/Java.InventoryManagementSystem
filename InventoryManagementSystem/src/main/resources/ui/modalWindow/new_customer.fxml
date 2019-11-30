@@ -18,11 +18,11 @@
                 <Insets left="5.0" right="5.0"/>
             </padding>
             <Button fx:id="buttonRefresh" layoutX="715.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0"
-                   text="Refresh Table"/>
-            <TextField fx:id="textFieldName" promptText="Name *"/>
-            <TextField fx:id="textFieldPhone" layoutX="185.0" layoutY="28.0" promptText="Phone"/>
+                   text="Обновить таблицу"/>
+            <TextField fx:id="textFieldName" promptText="Имя *"/>
+            <TextField fx:id="textFieldPhone" layoutX="185.0" layoutY="28.0" promptText="Телефон"/>
             <TextField fx:id="textFieldEmail" layoutX="339.0" layoutY="28.0" promptText="Email"/>
-            <TextField fx:id="textFieldDescription" layoutX="339.0" layoutY="28.0" promptText="Description"/>
+            <TextField fx:id="textFieldDescription" layoutX="339.0" layoutY="28.0" promptText="Описание"/>
             <Button fx:id="buttonNew" mnemonicParsing="false" prefHeight="25.0" text="New"/>
             <Button fx:id="buttonNewAddress" layoutX="715.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0"
                     text="New Address"/>

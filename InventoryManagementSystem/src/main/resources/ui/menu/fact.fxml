@@ -17,16 +17,16 @@
             <VBox.margin>
             </VBox.margin>
             <Button fx:id="buttonFactRefreshTable" mnemonicParsing="false"
-                    onAction="#OnPress_Button_RefreshFactTable" text="Refresh Table"/>
+                    onAction="#OnPress_Button_RefreshFactTable" text="Обновить таблицу"/>
             <Button fx:id="buttonFactClearTable" mnemonicParsing="false"
-                    onAction="#OnPress_Button_ClearFactTable" text="Clear Table"/>
+                    onAction="#OnPress_Button_ClearFactTable" text="Очистить таблицу"/>
             <TextField fx:id="textFieldConsumptionAmount" layoutX="10.0" layoutY="23.0" prefHeight="25.0"
-                        promptText="Amount *"/>
-            <DatePicker fx:id="datePickerConsumption" promptText="Consumption Date *"/>
+                        promptText="Кол-во *"/>
+            <DatePicker fx:id="datePickerConsumption" promptText="Дата расхода *"/>
             <Button fx:id="buttonNewConsumption" layoutX="10.0" layoutY="23.0" mnemonicParsing="false"
-                    onAction="#OnPress_Button_NewConsumption" text="New Consumption"/>
+                    onAction="#OnPress_Button_NewConsumption" text="Добавить расход"/>
             <Button fx:id="buttonNewOrder" layoutX="10.0" layoutY="23.0" mnemonicParsing="false"
-                    onAction="#OnPress_Button_NewOrder" text="New Order"/>
+                    onAction="#OnPress_Button_NewOrder" text="Новый заказ"/>
         </HBox>
         <TableView fx:id="tableFactView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
             <columns>
