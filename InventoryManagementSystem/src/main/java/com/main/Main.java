@@ -1,7 +1,7 @@
 package com.main;
 
-import com.main.controller.MainController;
-import com.main.database.jpa.EntityManagerConnector;
+import com.main.controller.menu.MainController;
+import com.main.database.EntityManagerConnector;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +18,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/ui/main.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/ui/menu/main.fxml"));
             primaryStage.setTitle("Inventory management system");
 
             Scene scene = new Scene(root, 1280, 720);

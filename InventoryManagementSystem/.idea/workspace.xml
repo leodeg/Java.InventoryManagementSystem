@@ -6,32 +6,49 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="feat: add new customer in a separate modal window">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/NewArrivalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ui/new_arrival.fxml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="feat: change a product and an inventory arrival information">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/modalWindow/NewOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ui/modalWindow/new_order.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/AddressController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/ArrivalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/ArrivalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/ConsumptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/ConsumptionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/CustomersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/CustomersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/FactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/FactController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/InventoryController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/NewCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/NewCustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/NewOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/NewOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/OrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/ProductsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/SalesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/SalesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaFactDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaFactDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/model/entity/InventoryBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/model/entity/InventoryBaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/arrival.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/arrival.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/consumption.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/consumption.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/customers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/customers.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/fact.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/fact.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/orders.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/orders.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/products.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/products.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/menu/AddressController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/ArrivalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/menu/ArrivalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/menu/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/ConsumptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/menu/ConsumptionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/CustomersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/menu/CustomersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/FactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/menu/FactController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/menu/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/NewArrivalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/modalWindow/NewArrivalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/NewCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/modalWindow/NewCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/NewOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/modalWindow/NewOrderFromInventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/menu/OrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/menu/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/controller/SalesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/controller/menu/SalesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/database/jpa/EntityManagerConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/database/EntityManagerConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaAddressDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/database/JpaAddressDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaArrivalDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/database/JpaArrivalDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaCategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/database/JpaCategoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/database/JpaConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaConsumptionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/database/JpaConsumptionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaCustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/database/JpaCustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/database/JpaDataAccessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaFactDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/database/JpaFactDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaOrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/database/JpaOrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/database/JpaProductDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaSaleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/main/database/JpaSaleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/address.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/menu/address.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/arrival.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/menu/arrival.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/categories.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/menu/categories.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/consumption.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/menu/consumption.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/customers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/menu/customers.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/fact.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/menu/fact.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/menu/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/new_arrival.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/modalWindow/new_arrival.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/new_customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/modalWindow/new_customer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/new_order.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/modalWindow/new_order_from_inventory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/orders.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/menu/orders.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/products.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/menu/products.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/sales.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/menu/sales.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,13 +92,6 @@
         <item name="inventory_management_system@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="inventory_management_system: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="inventory_management_system@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="inventory_management_system: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="customers: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -137,52 +147,119 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/NewArrivalController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/ui/modalWindow/new_order.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="671">
-              <caret line="80" column="16" lean-forward="true" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
+            <state relative-caret-position="20">
+              <caret line="19" column="86" selection-start-line="19" selection-start-column="86" selection-end-line="19" selection-end-column="86" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/menu/FactController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1215">
+              <caret line="144" selection-start-line="144" selection-end-line="161" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/menu/OrdersController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="63" column="37" lean-forward="true" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
               <folding>
-                <element signature="e#1696#1697#0" expanded="true" />
-                <element signature="e#1738#1739#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/ui/menu/fact.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="8" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="42" selection-end-column="20" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/ArrivalController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/modalWindow/NewOrderController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="109" column="28" selection-start-line="109" selection-start-column="28" selection-end-line="109" selection-end-column="28" />
+            <state relative-caret-position="297">
+              <caret line="65" column="66" selection-start-line="65" selection-start-column="66" selection-end-line="65" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4477#4478#0" expanded="true" />
-                <element signature="e#4531#4532#0" expanded="true" />
+                <element signature="e#4074#4075#0" expanded="true" />
+                <element signature="e#4144#4145#0" expanded="true" />
+                <element signature="e#4504#4505#0" expanded="true" />
+                <element signature="e#4574#4575#0" expanded="true" />
+                <element signature="e#4258#4259#0" expanded="true" />
+                <element signature="e#4336#4337#0" expanded="true" />
+                <element signature="e#4383#4384#0" expanded="true" />
+                <element signature="e#4449#4450#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaFactDao.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/menu/CustomersController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="586">
+              <caret line="74" column="9" lean-forward="true" selection-start-line="66" selection-start-column="8" selection-end-line="74" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/ui/menu/products.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="533">
+              <caret line="33" column="8" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="44" selection-end-column="20" />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/menu/ProductsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="147" column="5" lean-forward="true" selection-start-line="130" selection-start-column="4" selection-end-line="147" selection-end-column="5" />
               <folding>
-                <element signature="e#884#885#0" expanded="true" />
-                <element signature="e#932#933#0" expanded="true" />
-                <element signature="e#979#980#0" expanded="true" />
-                <element signature="e#1017#1018#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1911#1912#0" expanded="true" />
+                <element signature="e#1973#1974#0" expanded="true" />
+                <element signature="e#4878#4879#0" expanded="true" />
+                <element signature="e#4925#4926#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaDataAccessObject.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/ui/modalWindow/new_order_from_inventory.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+            <state relative-caret-position="244">
+              <caret line="17" column="98" selection-start-line="17" selection-start-column="98" selection-end-line="17" selection-end-column="98" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/modalWindow/NewOrderFromInventoryController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -232,34 +309,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaOrderDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaSaleDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaProductDao.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/ui/main.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/Statics.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/Statics.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/ui/categories.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/ConsumptionEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/ui/address.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaAddressDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaDatabaseConnector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/ui/sales.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/DatabaseConnector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/EntityManagerConnector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/jpa/JpaConnector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/dao/DaoContainer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/entity/DaoContainer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/DaoContainer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/DaoEntityContainer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/dao/DaoEntityContainer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaCustomerDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaOrderDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaDataAccessObject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaProductDao.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/ui/new_order.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/ui/new_customer.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/controller/InventoryController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/ui/fact.fxml" />
@@ -283,6 +332,34 @@
         <option value="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaFactDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/controller/NewArrivalController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/controller/ArrivalController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/Const.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaConsumptionDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaArrivalDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/menu/ConsumptionController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/menu/CategoryController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/menu/AddressController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/menu/CustomersController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/menu/FactController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/menu/SalesController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/menu/ArrivalController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/modalWindow/new_order_2.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/menu/address.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/menu/arrival.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/menu/categories.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/menu/consumption.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/menu/customers.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/menu/orders.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/menu/sales.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/modalWindow/new_order_from_inventory.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/modalWindow/new_customer.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/modalWindow/new_arrival.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/menu/products.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/menu/fact.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/menu/ProductsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/modalWindow/NewOrder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/menu/OrdersController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/modalWindow/new_order.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/controller/modalWindow/NewOrderController.java" />
       </list>
     </option>
   </component>
@@ -379,7 +456,8 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="InventoryManagementSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -388,8 +466,8 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="jpa" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="modalWindow" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="InventoryManagementSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -399,16 +477,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InventoryManagementSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="InventoryManagementSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="InventoryManagementSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -432,6 +500,24 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InventoryManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InventoryManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InventoryManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InventoryManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="modalWindow" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -470,20 +556,21 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.main.model.jpa" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\resources\ui\themes" />
-      <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\resources\ui" />
-      <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\resources\META-INF" />
-      <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\resources" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.main.model.jpa" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="groovy.util.GroovyTestCase" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\java\com\main\model\jpa" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.main.model.jpa" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\resources\ui\menu" />
+      <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\resources\ui\modalWindow" />
+      <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\resources\ui\themes" />
+      <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\resources\ui" />
+      <recent name="E:\CODE\REPOS\Java.InventoryManagementSystem\InventoryManagementSystem\src\main\resources\META-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -599,7 +686,8 @@
       <workItem from="1574964327329" duration="12226000" />
       <workItem from="1575044940838" duration="10139000" />
       <workItem from="1575107982747" duration="3955000" />
-      <workItem from="1575111976765" duration="3914000" />
+      <workItem from="1575111976765" duration="4195000" />
+      <workItem from="1575121975730" duration="8858000" />
     </task>
     <task id="LOCAL-00001" summary="feat: setup maven">
       <created>1574196934132</created>
@@ -762,7 +850,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575058998399</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="feat: change a product and an inventory arrival information">
+      <created>1575118357296</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1575118357296</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -798,7 +893,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160067000" />
+    <option name="totallyTimeSpent" value="169206000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -813,7 +908,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.56988084" visible="true" weight="0.18230277" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.56988084" visible="true" weight="0.18443497" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -959,7 +1054,8 @@
     <MESSAGE value="feat: table with orders' information" />
     <MESSAGE value="feat: move an order to the sales table" />
     <MESSAGE value="feat: add new customer in a separate modal window" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add new customer in a separate modal window" />
+    <MESSAGE value="feat: change a product and an inventory arrival information" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: change a product and an inventory arrival information" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -978,52 +1074,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/sales.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/DataAccessObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/dao/DaoEntityContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/AddressEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ArrivalEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/CategoryEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
@@ -1052,76 +1102,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/jpa/EntityManagerConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaAddressDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaConsumptionDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ParentEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaArrivalDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaCategoryDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaOrderDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="112" selection-start-line="15" selection-start-column="112" selection-end-line="15" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaCustomerDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaProductDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1132,129 +1116,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/new_order.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/address.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="80" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="80" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/new_customer.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/consumption.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/fact.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/AddressController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="94" column="8" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="95" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/CategoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/ConsumptionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="47" column="6" lean-forward="true" selection-start-line="47" selection-start-column="6" selection-end-line="48" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/CustomersController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/NewCustomerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="113" selection-start-line="113" selection-end-line="113" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/NewOrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="117" selection-start-line="117" selection-end-line="117" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/OrdersController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="84" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/InventoryController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/SalesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-111">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#1447#1448#0" expanded="true" />
-            <element signature="e#1494#1495#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/ProductEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-323">
@@ -1269,56 +1131,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/customers.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="125" selection-start-line="18" selection-start-column="125" selection-end-line="18" selection-end-column="125" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/orders.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/main.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="99" selection-start-line="8" selection-start-column="99" selection-end-line="8" selection-end-column="137" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/products.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/ProductsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="126" column="5" selection-start-line="118" selection-start-column="4" selection-end-line="126" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/arrival.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/main/model/entity/InventoryBaseEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1332,60 +1144,339 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/FactController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Const.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="153" column="84" selection-start-line="153" selection-start-column="84" selection-end-line="153" selection-end-column="84" />
+        <state relative-caret-position="374">
+          <caret line="22" column="41" lean-forward="true" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/new_arrival.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/JpaProductDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="23" column="80" selection-start-line="22" selection-start-column="11" selection-end-line="23" selection-end-column="80" />
+        <state relative-caret-position="272">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/JpaSaleDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/modalWindow/NewArrivalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/modalWindow/NewCustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/EntityManagerConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/JpaAddressDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/JpaArrivalDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/JpaCategoryDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/JpaConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/JpaConsumptionDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/JpaCustomerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/JpaDataAccessObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/JpaFactDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/JpaOrderDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/menu/AddressController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="98" column="8" selection-start-line="98" selection-start-column="8" selection-end-line="101" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/menu/SalesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/menu/ConsumptionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="52" column="27" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/menu/ArrivalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="807">
+          <caret line="157" selection-start-line="157" selection-end-line="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/menu/CategoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="82" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/menu/address.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="115" selection-start-line="15" selection-start-column="115" selection-end-line="15" selection-end-column="115" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/NewArrivalController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/menu/arrival.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="80" column="16" lean-forward="true" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
-          <folding>
-            <element signature="e#1696#1697#0" expanded="true" />
-            <element signature="e#1738#1739#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="19" column="70" selection-start-line="19" selection-start-column="70" selection-end-line="20" selection-end-column="93" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaFactDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/menu/categories.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#884#885#0" expanded="true" />
-            <element signature="e#932#933#0" expanded="true" />
-            <element signature="e#979#980#0" expanded="true" />
-            <element signature="e#1017#1018#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="289">
+          <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/database/jpa/JpaDataAccessObject.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/menu/consumption.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/ArrivalController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/modalWindow/new_customer.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="109" column="28" selection-start-line="109" selection-start-column="28" selection-end-line="109" selection-end-column="28" />
+        <state relative-caret-position="459">
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/modalWindow/new_arrival.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="102" selection-start-line="23" selection-start-column="102" selection-end-line="23" selection-end-column="102" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/menu/sales.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/menu/customers.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="57" lean-forward="true" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/menu/main.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="69" lean-forward="true" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/menu/products.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="33" column="8" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="44" selection-end-column="20" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/menu/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-43">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4477#4478#0" expanded="true" />
-            <element signature="e#4531#4532#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/menu/orders.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="42" lean-forward="true" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/modalWindow/new_order_from_inventory.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="17" column="98" selection-start-line="17" selection-start-column="98" selection-end-line="17" selection-end-column="98" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/menu/ProductsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="147" column="5" lean-forward="true" selection-start-line="130" selection-start-column="4" selection-end-line="147" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1911#1912#0" expanded="true" />
+            <element signature="e#1973#1974#0" expanded="true" />
+            <element signature="e#4878#4879#0" expanded="true" />
+            <element signature="e#4925#4926#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/modalWindow/NewOrderFromInventoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/menu/fact.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="8" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="42" selection-end-column="20" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/menu/CustomersController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="74" column="9" lean-forward="true" selection-start-line="66" selection-start-column="8" selection-end-line="74" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/menu/OrdersController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="63" column="37" lean-forward="true" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/modalWindow/new_order.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="19" column="86" selection-start-line="19" selection-start-column="86" selection-end-line="19" selection-end-column="86" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/menu/FactController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="144" selection-start-line="144" selection-end-line="161" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/controller/modalWindow/NewOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="65" column="66" selection-start-line="65" selection-start-column="66" selection-end-line="65" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4074#4075#0" expanded="true" />
+            <element signature="e#4144#4145#0" expanded="true" />
+            <element signature="e#4504#4505#0" expanded="true" />
+            <element signature="e#4574#4575#0" expanded="true" />
+            <element signature="e#4258#4259#0" expanded="true" />
+            <element signature="e#4336#4337#0" expanded="true" />
+            <element signature="e#4383#4384#0" expanded="true" />
+            <element signature="e#4449#4450#0" expanded="true" />
           </folding>
         </state>
       </provider>
