@@ -81,6 +81,10 @@ public class NewOrderController implements Initializable {
             displayOldEntityInfo ();
     }
 
+    private void displayOldEntityInfo () {
+        textFieldAmount.setText(String.valueOf(entityToChange.getAmount()));
+    }
+
     private void OnPress_Button_NewOrder(ActionEvent event) {
         if (entityToChange == null)
             createNewOrder();
@@ -119,10 +123,6 @@ public class NewOrderController implements Initializable {
                 MainController.showAlert(Alert.AlertType.ERROR, "Change Order", ex.getMessage());
             }
         }
-    }
-
-    private void displayOldEntityInfo () {
-        textFieldAmount.setText(String.valueOf(entityToChange.getAmount()));
     }
 
     private OrderEntity getOrderEntity() {

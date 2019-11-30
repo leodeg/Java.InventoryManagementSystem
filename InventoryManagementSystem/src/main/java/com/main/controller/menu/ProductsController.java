@@ -1,6 +1,7 @@
 package com.main.controller.menu;
 
 import com.main.database.JpaConnector;
+import com.main.model.entity.AddressEntity;
 import com.main.model.entity.CategoryEntity;
 import com.main.model.entity.ProductEntity;
 import javafx.collections.FXCollections;
@@ -54,6 +55,19 @@ public class ProductsController implements Initializable {
         buttonNewProduct.setOnAction(this::OnPress_Button_NewProduct);
         buttonRefreshChoice.setOnAction(this::OnPress_Button_RefreshChoice);
         buttonRefreshTable.setOnAction(this::OnPress_Button_RefreshTable);
+
+        tableView.getSelectionModel().selectedItemProperty().addListener(newSelection -> {
+            if (newSelection != null) {
+                displaySelectedInfo(tableView.getSelectionModel().getSelectedItem());
+            }
+        });
+    }
+
+    private void displaySelectedInfo (ProductEntity entity) {
+        textFieldName.setText(entity.getName());
+        textFieldPrice.setText(String.valueOf(entity.getPrice()));
+        textFieldDescription.setText(entity.getDescription());
+        choiceBoxCategory.setValue(JpaConnector.getCategory().get(entity.getIdCategory()).get().getTitle());
     }
 
     private boolean isSelectedItemsEmpty() {

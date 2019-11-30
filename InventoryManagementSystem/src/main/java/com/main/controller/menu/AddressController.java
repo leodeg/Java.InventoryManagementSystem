@@ -28,6 +28,8 @@ public class AddressController implements Initializable {
     public Button buttonNew;
     @FXML
     public Button buttonRefresh;
+    @FXML
+    public Button buttonChange;
 
     @FXML
     public TableView<AddressEntity> tableView;
@@ -47,40 +49,87 @@ public class AddressController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         buttonNew.setOnAction(this::OnPress_Button_New);
         buttonRefresh.setOnAction(this::OnPress_Button_Refresh);
+        buttonChange.setOnAction(this::OnPress_Button_Change);
         displayInformationToTableView();
+
+        tableView.getSelectionModel().selectedItemProperty().addListener(newSelection -> {
+            if (newSelection != null) {
+                displaySelectedInfo(tableView.getSelectionModel().getSelectedItem());
+            }
+        });
+    }
+
+    private void displaySelectedInfo (AddressEntity entity) {
+        textFieldAddress.setText(entity.getAddress());
+        textFieldAddress2.setText(entity.getAddress2());
+        textFieldCity.setText(entity.getCity());
+        textFieldRegion.setText(entity.getRegion());
     }
 
     @FXML
     private void OnPress_Button_New(ActionEvent event) {
-        AddressEntity addressEntity = getAddressEntity();
-        if (addressEntity != null) try {
-            JpaConnector.getAddress().save(addressEntity);
-            MainController.showAlert(Alert.AlertType.INFORMATION, "New Address", "Address successfully added.");
-            displayInformationToTableView();
-        } catch (Exception ex) {
-            MainController.showAlert(Alert.AlertType.ERROR, "New Address", ex.getMessage());
+        if (informationIsValid()) {
+            AddressEntity addressEntity = getAddressEntity();
+            if (addressEntity != null) try {
+                JpaConnector.getAddress().save(addressEntity);
+                MainController.showAlert(Alert.AlertType.INFORMATION, "New Address", "Address successfully added.");
+                displayInformationToTableView();
+            } catch (Exception ex) {
+                MainController.showAlert(Alert.AlertType.ERROR, "New Address", ex.getMessage());
+            }
         }
+    }
+
+    @FXML
+    private void OnPress_Button_Change(ActionEvent event) {
+        if (selectedItemsIsEmpty()) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Change Address", "Please select address from the table below.");
+            return;
+        }
+
+        if (informationIsValid()) {
+            AddressEntity addressEntity = getAddressEntity();
+            AddressEntity entityToChange = getSelectedItem();
+
+            try {
+                entityToChange.setAddress(addressEntity.getAddress());
+                entityToChange.setAddress2(addressEntity.getAddress2());
+                entityToChange.setCity(addressEntity.getCity());
+                entityToChange.setRegion(addressEntity.getRegion());
+
+                JpaConnector.getAddress().update(entityToChange);
+                MainController.showAlert(Alert.AlertType.INFORMATION, "Change Address", "Address successfully changed.");
+                displayInformationToTableView();
+            } catch (Exception ex) {
+                MainController.showAlert(Alert.AlertType.ERROR, "Change Address", ex.getMessage());
+            }
+        }
+    }
+
+    private AddressEntity getSelectedItem () {
+        return tableView.getSelectionModel().getSelectedItem();
+    }
+
+    private boolean selectedItemsIsEmpty () {
+        return tableView.getSelectionModel().isEmpty();
     }
 
     @Nullable
     private AddressEntity getAddressEntity() {
-        if (isInformationValid()) {
-            return new AddressEntity(
-                    textFieldAddress.getText(),
-                    textFieldAddress2.getText() != null ? textFieldAddress2.getText() : "Empty",
-                    textFieldCity.getText(),
-                    textFieldRegion.getText() != null ? textFieldRegion.getText() : "Empty");
-        }
-        return null;
+        return new AddressEntity(
+                textFieldAddress.getText(),
+                textFieldAddress2.getText() != null ? textFieldAddress2.getText() : "Empty",
+                textFieldCity.getText(),
+                textFieldRegion.getText() != null ? textFieldRegion.getText() : "Empty");
     }
 
-    private boolean isInformationValid() {
+    private boolean informationIsValid() {
         if (textFieldAddress.getText().length() < 1) {
-            MainController.showAlert(Alert.AlertType.ERROR, "New Address", "Please enter an address.");
+            MainController.showAlert(Alert.AlertType.ERROR, "Address", "Please enter an address.");
             return false;
         }
         if (textFieldCity.getText().length() < 1) {
-            MainController.showAlert(Alert.AlertType.ERROR, "New Address", "Please enter a city.");
+            MainController.showAlert(Alert.AlertType.ERROR, "Address", "Please enter a city.");
             return false;
         }
         return true;

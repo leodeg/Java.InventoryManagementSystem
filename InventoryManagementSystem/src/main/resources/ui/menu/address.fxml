@@ -18,7 +18,8 @@
             <TextField fx:id="textFieldAddress2" layoutX="185.0" layoutY="28.0" promptText="Address 2"/>
             <TextField fx:id="textFieldCity" layoutX="339.0" layoutY="28.0" promptText="City *"/>
             <TextField fx:id="textFieldRegion" layoutX="339.0" layoutY="28.0" promptText="Region"/>
-            <Button fx:id="buttonNew" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="New"/>
+            <Button fx:id="buttonNew" mnemonicParsing="false" prefHeight="25.0" text="New"/>
+            <Button fx:id="buttonChange" mnemonicParsing="false" prefHeight="25.0" text="Change"/>
         </HBox>
         <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
             <columns>

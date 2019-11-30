@@ -2,6 +2,7 @@ package com.main.controller.menu;
 
 import com.main.database.JpaConnector;
 import com.main.model.entity.CategoryEntity;
+import com.main.model.entity.ProductEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -40,6 +41,16 @@ public class CategoryController implements Initializable {
         buttonDelete.setOnAction(this::OnPress_Button_Delete);
         buttonRefresh.setOnAction(this::OnPress_Button_Refresh);
         buttonChange.setOnAction(this::OnPress_Button_Change);
+
+        tableView.getSelectionModel().selectedItemProperty().addListener(newSelection -> {
+            if (newSelection != null) {
+                displaySelectedInfo(tableView.getSelectionModel().getSelectedItem());
+            }
+        });
+    }
+
+    private void displaySelectedInfo (CategoryEntity entity) {
+        textFieldTitle.setText(entity.getTitle());
     }
 
     private void OnPress_Button_NewCategory(ActionEvent event) {
