@@ -14,6 +14,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
@@ -50,23 +52,75 @@ public class NewCustomerController implements Initializable {
     @FXML
     public TableColumn<AddressEntity, String> tableColumnRegion;
 
+    CustomerEntity customerToChange;
+
+    public NewCustomerController() {
+
+    }
+
+    public NewCustomerController(CustomerEntity customerToChange) {
+        this.customerToChange = customerToChange;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         buttonNew.setOnAction(this::OnPress_Button_New);
         buttonRefresh.setOnAction(this::OnPress_Button_RefreshTable);
         buttonNewAddress.setOnAction(this::OnPress_Button_NewAddress);
         displayInformationToTableView();
+
+        if (customerToChange != null)
+            displayInfoToTextFields ();
     }
 
     @FXML
     private void OnPress_Button_New(ActionEvent event) {
-        CustomerEntity customerEntity = getCustomerEntity();
-        if (customerEntity != null) try {
-            JpaConnector.getCustomer().save(customerEntity);
-            MainController.showAlert(Alert.AlertType.CONFIRMATION, "Customer added", "Customer was successfully added to database");
-        } catch (Exception ex) {
-            MainController.showAlert(Alert.AlertType.ERROR, "Customer Error", ex.getMessage());
+        if (customerToChange == null)
+            createNewCustomer();
+        else changeOldCustomer();
+    }
+
+    private void createNewCustomer() {
+        if (isInformationValid()) {
+            CustomerEntity customerEntity = getCustomerEntity();
+            try {
+                JpaConnector.getCustomer().save(customerEntity);
+                MainController.showAlert(Alert.AlertType.CONFIRMATION, "Customer added", "Customer was successfully added to database.");
+            } catch (Exception ex) {
+                MainController.showAlert(Alert.AlertType.ERROR, "Customer Error", ex.getMessage());
+            }
         }
+    }
+
+    private void changeOldCustomer() {
+        if (isInformationValid()) {
+            try {
+                CustomerEntity customerEntity = getCustomerEntity();
+                customerToChange.setIdAddress(customerEntity.getIdAddress());
+                customerToChange.setName(customerEntity.getName());
+                customerToChange.setPhone(customerEntity.getPhone());
+                customerToChange.setEmail(customerEntity.getEmail());
+                customerToChange.setDescription(customerEntity.getDescription());
+
+                JpaConnector.getCustomer().update(customerToChange);
+                MainController.showAlert(Alert.AlertType.CONFIRMATION, "Customer added", "Customer was successfully changed.");
+                closeWindow();
+            } catch (Exception ex) {
+                MainController.showAlert(Alert.AlertType.ERROR, "Customer Error", ex.getMessage());
+            }
+        }
+    }
+
+    private void displayInfoToTextFields () {
+        textFieldName.setText(customerToChange.getName());
+        textFieldPhone.setText(customerToChange.getPhone());
+        textFieldEmail.setText(customerToChange.getEmail());
+        textFieldDescription.setText(customerToChange.getDescription());
+    }
+
+    private void closeWindow() {
+        Stage stage = (Stage) buttonNew.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
@@ -89,9 +143,7 @@ public class NewCustomerController implements Initializable {
 
     @Nullable
     private CustomerEntity getCustomerEntity() {
-        if (isInformationValid())
-            return new CustomerEntity(getSelectedAddress().getIdAddress(), textFieldName.getText(), textFieldPhone.getText(), textFieldEmail.getText(), textFieldDescription.getText());
-        return null;
+        return new CustomerEntity(getSelectedAddress().getIdAddress(), textFieldName.getText(), textFieldPhone.getText(), textFieldEmail.getText(), textFieldDescription.getText());
     }
 
     private boolean isInformationValid() {

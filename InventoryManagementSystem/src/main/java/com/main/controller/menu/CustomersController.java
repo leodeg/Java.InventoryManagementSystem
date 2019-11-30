@@ -2,39 +2,34 @@ package com.main.controller.menu;
 
 import com.main.controller.modalWindow.NewCustomerController;
 import com.main.database.JpaConnector;
-import com.main.model.entity.AddressEntity;
 import com.main.model.entity.CustomerEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class CustomersController {
-    @FXML
-    public Button buttonRefreshChoices;
+public class CustomersController implements Initializable {
     @FXML
     public Button buttonNewCustomer;
     @FXML
-    public Button buttonRefresh;
+    public Button buttonChangeCustomer;
     @FXML
     public Button buttonNewAddress;
+    @FXML
+    public Button buttonRefresh;
 
-    @FXML
-    public ChoiceBox<String> choiceBoxAddress;
-    @FXML
-    public TextField textFieldName;
-    @FXML
-    public TextField textFieldPhone;
-    @FXML
-    public TextField textFieldEmail;
-    @FXML
-    public TextField textFieldDescription;
 
     @FXML
     public TableView<CustomerEntity> tableView;
@@ -52,27 +47,50 @@ public class CustomersController {
     public TableColumn<CustomerEntity, String> tableColumnDescription;
 
 
-    public void OnPress_Button_RefreshChoices(ActionEvent event) {
-        populateChoiceBox();
-    }
-
-    private void populateChoiceBox() {
-        ObservableList<String> data = FXCollections.observableArrayList();
-        for (AddressEntity entity : JpaConnector.getAddress().getAll())
-            data.add(entity.getAddress());
-        choiceBoxAddress.setItems(data);
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        buttonNewCustomer.setOnAction(this::OnPress_Button_NewCustomer);
+        buttonChangeCustomer.setOnAction(this::OnPress_Button_ChangeCustomer);
+        buttonNewAddress.setOnAction(this::OnPress_Button_NewAddress);
+        buttonRefresh.setOnAction(this::OnPress_Button_Refresh);
     }
 
     public void OnPress_Button_NewCustomer(ActionEvent event) {
+        createOrderModalWindow("New Customer", new NewCustomerController());
+    }
+
+    public void OnPress_Button_ChangeCustomer(ActionEvent event) {
+        if (informationIsValid()) {
+            createOrderModalWindow("Change Customer", new NewCustomerController(getSelectedCustomer()));
+        }
+    }
+
+    private void createOrderModalWindow(String title, NewCustomerController controller) {
         Parent root;
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/modalWindow/new_customer.fxml"));
-            fxmlLoader.setController(new NewCustomerController());
+            fxmlLoader.setController(controller);
             root = fxmlLoader.load();
-            MainController.showModalWindow("New Customer", root);
+            MainController.showModalWindow(title, root);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private boolean informationIsValid() {
+        if (selectedItemsIsEmpty()) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Change Customer", "Please select customer from the table below.");
+            return false;
+        }
+        return true;
+    }
+
+    private CustomerEntity getSelectedCustomer() {
+        return tableView.getSelectionModel().getSelectedItem();
+    }
+
+    private boolean selectedItemsIsEmpty() {
+        return tableView.getSelectionModel().isEmpty();
     }
 
     public void OnPress_Button_Refresh(ActionEvent event) {
@@ -109,4 +127,6 @@ public class CustomersController {
         tableColumnDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         tableView.setItems(data);
     }
+
+
 }

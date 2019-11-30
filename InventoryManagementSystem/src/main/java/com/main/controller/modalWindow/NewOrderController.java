@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class NewOrderController implements Initializable {
@@ -73,6 +74,11 @@ public class NewOrderController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         buttonRefresh.setOnAction(this::OnPress_Button_RefreshTable);
         buttonNewOrder.setOnAction(this::OnPress_Button_NewOrder);
+        displayCustomerInformationToTableView();
+        displayFactInformationToFactTableView();
+
+        if (entityToChange != null)
+            displayOldEntityInfo ();
     }
 
     private void OnPress_Button_NewOrder(ActionEvent event) {
@@ -113,6 +119,10 @@ public class NewOrderController implements Initializable {
                 MainController.showAlert(Alert.AlertType.ERROR, "Change Order", ex.getMessage());
             }
         }
+    }
+
+    private void displayOldEntityInfo () {
+        textFieldAmount.setText(String.valueOf(entityToChange.getAmount()));
     }
 
     private OrderEntity getOrderEntity() {

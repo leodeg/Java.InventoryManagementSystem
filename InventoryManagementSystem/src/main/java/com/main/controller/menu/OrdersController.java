@@ -90,7 +90,7 @@ public class OrdersController implements Initializable {
         return true;
     }
 
-    private OrderEntity getSelectedOrderEntity () {
+    private OrderEntity getSelectedOrderEntity() {
         return tableView.getSelectionModel().getSelectedItem();
     }
 
