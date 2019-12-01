@@ -2,6 +2,7 @@ package com.main.controller.menu;
 
 import com.main.controller.modalWindow.NewOrderFromInventoryController;
 import com.main.database.JpaConnector;
+import com.main.model.ExcelExport;
 import com.main.model.entity.ConsumptionEntity;
 import com.main.model.entity.FactEntity;
 import javafx.collections.FXCollections;
@@ -13,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -33,6 +35,8 @@ public class FactController implements Initializable {
     public Button buttonNewOrder;
     @FXML
     public Button buttonFactClearTable;
+    @FXML
+    public Button buttonExportToExcel;
 
     @FXML
     public TableView<FactEntity> tableFactView;
@@ -56,6 +60,14 @@ public class FactController implements Initializable {
         buttonFactRefreshTable.setOnAction(this::OnPress_Button_RefreshFactTable);
         buttonNewOrder.setOnAction(this::OnPress_Button_NewOrder);
         buttonFactClearTable.setOnAction(this::OnPress_Button_ClearFactTable);
+        buttonExportToExcel.setOnAction(this::OnPress_Button_ExportToExcel);
+    }
+
+    @FXML
+    public void OnPress_Button_ExportToExcel (ActionEvent event) {
+        Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
+        ExcelExport<FactEntity> excelExport = new ExcelExport<>();
+        excelExport.export("Fact", tableFactView, stage);
     }
 
     public void OnPress_Button_ClearFactTable(ActionEvent event) {

@@ -20,6 +20,8 @@
             <Button fx:id="buttonNew" mnemonicParsing="false" text="Добавить"/>
             <Button fx:id="buttonDelete" layoutX="209.0" layoutY="23.0" mnemonicParsing="false" text="Удалить категорию"/>
             <Button fx:id="buttonChange" layoutX="209.0" layoutY="23.0" mnemonicParsing="false" text="Изменить категорию"/>
+            <Button fx:id="buttonExportToExcel" mnemonicParsing="false" text="Экспорт Excel"/>
+
         </HBox>
         <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
             <columns>

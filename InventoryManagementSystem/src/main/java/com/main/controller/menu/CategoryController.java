@@ -1,8 +1,8 @@
 package com.main.controller.menu;
 
 import com.main.database.JpaConnector;
+import com.main.model.ExcelExport;
 import com.main.model.entity.CategoryEntity;
-import com.main.model.entity.ProductEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,6 +27,8 @@ public class CategoryController implements Initializable {
     public Button buttonChange;
     @FXML
     public Button buttonDelete;
+    @FXML
+    public Button buttonExportToExcel;
 
     @FXML
     public TableView<CategoryEntity> tableView;
@@ -41,12 +44,21 @@ public class CategoryController implements Initializable {
         buttonDelete.setOnAction(this::OnPress_Button_Delete);
         buttonRefresh.setOnAction(this::OnPress_Button_Refresh);
         buttonChange.setOnAction(this::OnPress_Button_Change);
+        buttonExportToExcel.setOnAction(this::OnPress_Button_ExportToExcel);
 
         tableView.getSelectionModel().selectedItemProperty().addListener(newSelection -> {
             if (newSelection != null) {
                 displaySelectedInfo(tableView.getSelectionModel().getSelectedItem());
             }
         });
+    }
+
+
+    @FXML
+    public void OnPress_Button_ExportToExcel (ActionEvent event) {
+        Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
+        ExcelExport<CategoryEntity> excelExport = new ExcelExport<>();
+        excelExport.export("Category", tableView, stage);
     }
 
     private void displaySelectedInfo (CategoryEntity entity) {

@@ -19,6 +19,8 @@
             </padding>
             <Button fx:id="buttonRefreshTable" layoutX="573.0" layoutY="23.0" mnemonicParsing="false"
                     text="Обновить таблицу"/>
+            <Button fx:id="buttonExportToExcel" mnemonicParsing="false" text="Экспорт Excel"/>
+
         </HBox>
         <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
             <columns>

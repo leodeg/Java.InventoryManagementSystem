@@ -2,6 +2,7 @@ package com.main.controller.menu;
 
 import com.main.controller.modalWindow.NewArrivalController;
 import com.main.database.JpaConnector;
+import com.main.model.ExcelExport;
 import com.main.model.entity.ArrivalEntity;
 import com.main.model.entity.FactEntity;
 import javafx.collections.FXCollections;
@@ -13,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -32,6 +34,8 @@ public class ArrivalController implements Initializable {
     public Button buttonArrivalChange;
     @FXML
     public Button buttonArrivalRefreshTable;
+    @FXML
+    public Button buttonExportToExcel;
 
     @FXML
     public TableView<ArrivalEntity> tableArrivalView;
@@ -54,6 +58,14 @@ public class ArrivalController implements Initializable {
         buttonArrivalRefreshTable.setOnAction(this::OnPress_Button_RefreshArrivalTable);
         buttonArrivalNew.setOnAction(this::OnPress_Button_NewArrival);
         buttonArrivalChange.setOnAction(this::OnPress_Button_ChangeInformation);
+        buttonExportToExcel.setOnAction(this::OnPress_Button_ExportToExcel);
+    }
+
+    @FXML
+    public void OnPress_Button_ExportToExcel (ActionEvent event) {
+        Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
+        ExcelExport<ArrivalEntity> excelExport = new ExcelExport<>();
+        excelExport.export("Arrival", tableArrivalView, stage);
     }
 
     @FXML

@@ -23,6 +23,8 @@
                 <DatePicker fx:id="datePickerArrival" promptText="Дата прихода *" />
                 <Button fx:id="buttonArrivalChange" mnemonicParsing="false" text="Изменить приход"/>
                 <Button fx:id="buttonArrivalNew" mnemonicParsing="false" text="Новый приход"/>
+                <Button fx:id="buttonExportToExcel" mnemonicParsing="false"
+                        text="Экспорт Excel"/>
             </HBox>
             <TableView fx:id="tableArrivalView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                 <columns>

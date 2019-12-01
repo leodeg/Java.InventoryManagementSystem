@@ -22,6 +22,7 @@
             <TextField fx:id="textFieldRegion" layoutX="339.0" layoutY="28.0" promptText="Регион"/>
             <Button fx:id="buttonNew" mnemonicParsing="false" prefHeight="25.0" text="Новый адрес"/>
             <Button fx:id="buttonChange" mnemonicParsing="false" prefHeight="25.0" text="Изменить адрес"/>
+            <Button fx:id="buttonExportToExcel" mnemonicParsing="false" text="Экспорт Excel"/>
         </HBox>
         <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
             <columns>

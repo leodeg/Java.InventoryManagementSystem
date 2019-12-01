@@ -1,6 +1,7 @@
 package com.main.controller.menu;
 
 import com.main.database.JpaConnector;
+import com.main.model.ExcelExport;
 import com.main.model.entity.CategoryEntity;
 import com.main.model.entity.ProductEntity;
 import javafx.collections.FXCollections;
@@ -10,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -34,6 +36,8 @@ public class ProductsController implements Initializable {
     public Button buttonChangeProduct;
     @FXML
     public Button buttonRefreshTable;
+    @FXML
+    public Button buttonExportToExcel;
 
     @FXML
     public TableView<ProductEntity> tableView;
@@ -54,7 +58,7 @@ public class ProductsController implements Initializable {
         buttonNewProduct.setOnAction(this::OnPress_Button_NewProduct);
         buttonRefreshChoice.setOnAction(this::OnPress_Button_RefreshChoice);
         buttonRefreshTable.setOnAction(this::OnPress_Button_RefreshTable);
-
+        buttonExportToExcel.setOnAction(this::OnPress_Button_ExportToExcel);
         tableView.getSelectionModel().selectedItemProperty().addListener(newSelection -> {
             if (newSelection != null) {
                 displaySelectedInfo(tableView.getSelectionModel().getSelectedItem());
@@ -85,6 +89,13 @@ public class ProductsController implements Initializable {
                 MainController.showAlert(Alert.AlertType.ERROR, "Product Error", ex.getMessage());
             }
         }
+    }
+
+    @FXML
+    public void OnPress_Button_ExportToExcel (ActionEvent event) {
+        Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
+        ExcelExport<ProductEntity> excelExport = new ExcelExport<>();
+        excelExport.export("Products", tableView, stage);
     }
 
     @Nullable

@@ -2,6 +2,7 @@ package com.main.controller.menu;
 
 import com.main.controller.modalWindow.NewCustomerController;
 import com.main.database.JpaConnector;
+import com.main.model.ExcelExport;
 import com.main.model.entity.CustomerEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -29,7 +31,8 @@ public class CustomersController implements Initializable {
     public Button buttonNewAddress;
     @FXML
     public Button buttonRefresh;
-
+    @FXML
+    public Button buttonExportToExcel;
 
     @FXML
     public TableView<CustomerEntity> tableView;
@@ -53,6 +56,7 @@ public class CustomersController implements Initializable {
         buttonChangeCustomer.setOnAction(this::OnPress_Button_ChangeCustomer);
         buttonNewAddress.setOnAction(this::OnPress_Button_NewAddress);
         buttonRefresh.setOnAction(this::OnPress_Button_Refresh);
+        buttonExportToExcel.setOnAction(this::OnPress_Button_ExportToExcel);
     }
 
     public void OnPress_Button_NewCustomer(ActionEvent event) {
@@ -63,6 +67,14 @@ public class CustomersController implements Initializable {
         if (informationIsValid()) {
             createOrderModalWindow("Change Customer", new NewCustomerController(getSelectedCustomer()));
         }
+    }
+
+
+    @FXML
+    public void OnPress_Button_ExportToExcel (ActionEvent event) {
+        Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
+        ExcelExport<CustomerEntity> excelExport = new ExcelExport<>();
+        excelExport.export("Customer", tableView, stage);
     }
 
     private void createOrderModalWindow(String title, NewCustomerController controller) {

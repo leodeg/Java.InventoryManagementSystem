@@ -1,6 +1,7 @@
 package com.main.controller.menu;
 
 import com.main.database.JpaConnector;
+import com.main.model.ExcelExport;
 import com.main.model.entity.AddressEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import org.jetbrains.annotations.Nullable;
 
 import java.net.URL;
@@ -31,6 +33,8 @@ public class AddressController implements Initializable {
     public Button buttonRefresh;
     @FXML
     public Button buttonChange;
+    @FXML
+    public Button buttonExportToExcel;
 
     @FXML
     public TableView<AddressEntity> tableView;
@@ -53,6 +57,8 @@ public class AddressController implements Initializable {
         buttonNew.setOnAction(this::OnPress_Button_New);
         buttonRefresh.setOnAction(this::OnPress_Button_Refresh);
         buttonChange.setOnAction(this::OnPress_Button_Change);
+        buttonExportToExcel.setOnAction(this::OnPress_Button_ExportToExcel);
+
         displayInformationToTableView();
 
         tableView.getSelectionModel().selectedItemProperty().addListener(newSelection -> {
@@ -67,6 +73,13 @@ public class AddressController implements Initializable {
         textFieldAddress2.setText(entity.getAddress2());
         textFieldCity.setText(entity.getCity());
         textFieldRegion.setText(entity.getRegion());
+    }
+
+    @FXML
+    public void OnPress_Button_ExportToExcel (ActionEvent event) {
+        Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
+        ExcelExport<AddressEntity> excelExport = new ExcelExport<>();
+        excelExport.export("Address", tableView, stage);
     }
 
     @FXML

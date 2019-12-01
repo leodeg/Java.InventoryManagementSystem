@@ -30,6 +30,8 @@
                     text="Добавить"/>
             <Button fx:id="buttonChangeProduct" mnemonicParsing="false" onAction="#OnPress_Button_NewProduct"
                     text="Изменить информацию"/>
+            <Button fx:id="buttonExportToExcel" mnemonicParsing="false" onAction="#OnPress_Button_NewProduct"
+                    text="Экспорт Excel"/>
         </HBox>
         <TableView fx:id="tableView" prefWidth="614.0" VBox.vgrow="ALWAYS">
             <columns>

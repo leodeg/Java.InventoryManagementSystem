@@ -2,6 +2,7 @@ package com.main.controller.menu;
 
 import com.main.controller.modalWindow.NewOrderController;
 import com.main.database.JpaConnector;
+import com.main.model.ExcelExport;
 import com.main.model.entity.OrderEntity;
 import com.main.model.entity.SaleEntity;
 import javafx.collections.FXCollections;
@@ -16,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,6 +33,8 @@ public class OrdersController implements Initializable {
     public Button buttonChangeOrder;
     @FXML
     public Button buttonToSales;
+    @FXML
+    public Button buttonExportToExcel;
 
     @FXML
     public TableView<OrderEntity> tableView;
@@ -56,6 +60,14 @@ public class OrdersController implements Initializable {
         buttonRefreshTable.setOnAction(this::OnPress_Button_RefreshTable);
         buttonToSales.setOnAction(this::OnPress_Button_ToSales);
         buttonChangeOrder.setOnAction(this::OnPress_Button_ChangeOrder);
+        buttonExportToExcel.setOnAction(this::OnPress_Button_ExportToExcel);
+    }
+
+    @FXML
+    public void OnPress_Button_ExportToExcel (ActionEvent event) {
+        Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
+        ExcelExport<OrderEntity> excelExport = new ExcelExport<>();
+        excelExport.export("Orders", tableView, stage);
     }
 
     @FXML
