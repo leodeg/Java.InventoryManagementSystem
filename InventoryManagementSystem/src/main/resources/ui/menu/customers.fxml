@@ -16,9 +16,10 @@
             <padding>
             </padding>
             <Button fx:id="buttonRefresh" layoutX="715.0" layoutY="23.0" mnemonicParsing="false" onAction="#OnPress_Button_Refresh" prefHeight="25.0" text="Обновить таблицу" />
-            <Button fx:id="buttonNewCustomer" mnemonicParsing="false" onAction="#OnPress_Button_NewCustomer" prefHeight="25.0" text="Добавить покупателя" />
-            <Button fx:id="buttonChangeCustomer" mnemonicParsing="false" onAction="#OnPress_Button_NewCustomer" prefHeight="25.0" text="Изменить информацию" />
             <Button fx:id="buttonNewAddress" mnemonicParsing="false" onAction="#OnPress_Button_NewAddress" prefHeight="25.0" text="Новый адрес" />
+            <Button fx:id="buttonNewCustomer" mnemonicParsing="false" onAction="#OnPress_Button_NewCustomer" prefHeight="25.0" text="Добавить покупателя" />
+            <Button fx:id="buttonChangeCustomer" mnemonicParsing="false" onAction="#OnPress_Button_NewCustomer" prefHeight="25.0" text="Изменить" />
+            <Button fx:id="buttonDeleteCustomer" mnemonicParsing="false" onAction="#OnPress_Button_NewAddress" prefHeight="25.0" text="Удалить" />
             <Button fx:id="buttonExportToExcel" mnemonicParsing="false" text="Экспорт Excel"/>
 
         </HBox>

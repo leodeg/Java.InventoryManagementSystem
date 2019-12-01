@@ -49,7 +49,7 @@ public class SalesController implements Initializable {
     }
 
     @FXML
-    public void OnPress_Button_ExportToExcel (ActionEvent event) {
+    public void OnPress_Button_ExportToExcel(ActionEvent event) {
         Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
         ExcelExport<SaleEntity> excelExport = new ExcelExport<>();
         excelExport.export("Sales", tableView, stage);

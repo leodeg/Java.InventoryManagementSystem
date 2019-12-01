@@ -118,7 +118,7 @@ public class DashboardController implements Initializable {
 
     private void updateToolTipForProductPieChart(PieChart chart, String ending) {
         for (final PieChart.Data data : chart.getData()) {
-            data.setName(data.getName() + " " + String.valueOf(data.getPieValue()) + ending);
+            data.setName(data.getName() + " " + data.getPieValue() + ending);
         }
     }
 

@@ -68,7 +68,7 @@ public class AddressController implements Initializable {
         });
     }
 
-    private void displaySelectedInfo (AddressEntity entity) {
+    private void displaySelectedInfo(AddressEntity entity) {
         textFieldAddress.setText(entity.getAddress());
         textFieldAddress2.setText(entity.getAddress2());
         textFieldCity.setText(entity.getCity());
@@ -76,7 +76,7 @@ public class AddressController implements Initializable {
     }
 
     @FXML
-    public void OnPress_Button_ExportToExcel (ActionEvent event) {
+    public void OnPress_Button_ExportToExcel(ActionEvent event) {
         Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
         ExcelExport<AddressEntity> excelExport = new ExcelExport<>();
         excelExport.export("Address", tableView, stage);
@@ -122,11 +122,11 @@ public class AddressController implements Initializable {
         }
     }
 
-    private AddressEntity getSelectedItem () {
+    private AddressEntity getSelectedItem() {
         return tableView.getSelectionModel().getSelectedItem();
     }
 
-    private boolean selectedItemsIsEmpty () {
+    private boolean selectedItemsIsEmpty() {
         return tableView.getSelectionModel().isEmpty();
     }
 

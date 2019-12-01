@@ -33,6 +33,8 @@ public class OrdersController implements Initializable {
     @FXML
     public Button buttonChangeOrder;
     @FXML
+    public Button buttonDeleteOrder;
+    @FXML
     public Button buttonToSales;
     @FXML
     public Button buttonExportToExcel;
@@ -62,6 +64,16 @@ public class OrdersController implements Initializable {
         buttonToSales.setOnAction(this::OnPress_Button_ToSales);
         buttonChangeOrder.setOnAction(this::OnPress_Button_ChangeOrder);
         buttonExportToExcel.setOnAction(this::OnPress_Button_ExportToExcel);
+        buttonDeleteOrder.setOnAction(this::OnPress_Button_DeleteOrder);
+    }
+
+    @FXML
+    public void OnPress_Button_DeleteOrder(ActionEvent event) {
+        if (informationIsValid()) {
+            JpaConnector.getOrder().delete(getSelectedOrderEntity());
+            MainController.showAlert(Alert.AlertType.INFORMATION, "Delete Order", "Information was deleted from the database.");
+            displayInformationToTableView();
+        }
     }
 
     @FXML

@@ -16,7 +16,6 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class NewOrderController implements Initializable {
@@ -78,10 +77,10 @@ public class NewOrderController implements Initializable {
         displayFactInformationToFactTableView();
 
         if (entityToChange != null)
-            displayOldEntityInfo ();
+            displayOldEntityInfo();
     }
 
-    private void displayOldEntityInfo () {
+    private void displayOldEntityInfo() {
         textFieldAmount.setText(String.valueOf(entityToChange.getAmount()));
     }
 

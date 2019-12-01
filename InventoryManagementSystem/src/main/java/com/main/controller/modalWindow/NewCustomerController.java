@@ -15,7 +15,6 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
@@ -70,7 +69,7 @@ public class NewCustomerController implements Initializable {
         displayInformationToTableView();
 
         if (customerToChange != null)
-            displayInfoToTextFields ();
+            displayInfoToTextFields();
     }
 
     @FXML
@@ -111,7 +110,7 @@ public class NewCustomerController implements Initializable {
         }
     }
 
-    private void displayInfoToTextFields () {
+    private void displayInfoToTextFields() {
         textFieldName.setText(customerToChange.getName());
         textFieldPhone.setText(customerToChange.getPhone());
         textFieldEmail.setText(customerToChange.getEmail());

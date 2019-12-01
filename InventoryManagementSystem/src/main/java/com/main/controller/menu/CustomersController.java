@@ -30,6 +30,8 @@ public class CustomersController implements Initializable {
     @FXML
     public Button buttonNewAddress;
     @FXML
+    public Button buttonDeleteCustomer;
+    @FXML
     public Button buttonRefresh;
     @FXML
     public Button buttonExportToExcel;
@@ -57,6 +59,15 @@ public class CustomersController implements Initializable {
         buttonNewAddress.setOnAction(this::OnPress_Button_NewAddress);
         buttonRefresh.setOnAction(this::OnPress_Button_Refresh);
         buttonExportToExcel.setOnAction(this::OnPress_Button_ExportToExcel);
+        buttonDeleteCustomer.setOnAction(this::OnPress_Button_DeleteCustomer);
+    }
+
+    public void OnPress_Button_DeleteCustomer(ActionEvent event) {
+        if (informationIsValid()) {
+            JpaConnector.getCustomer().delete(getSelectedCustomer());
+            MainController.showAlert(Alert.AlertType.INFORMATION, "Delete Address", "Information was deleted from the database.");
+            displayInformationToTableView();
+        }
     }
 
     public void OnPress_Button_NewCustomer(ActionEvent event) {
@@ -71,7 +82,7 @@ public class CustomersController implements Initializable {
 
 
     @FXML
-    public void OnPress_Button_ExportToExcel (ActionEvent event) {
+    public void OnPress_Button_ExportToExcel(ActionEvent event) {
         Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
         ExcelExport<CustomerEntity> excelExport = new ExcelExport<>();
         excelExport.export("Customer", tableView, stage);

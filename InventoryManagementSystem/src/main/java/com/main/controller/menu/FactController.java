@@ -64,7 +64,7 @@ public class FactController implements Initializable {
     }
 
     @FXML
-    public void OnPress_Button_ExportToExcel (ActionEvent event) {
+    public void OnPress_Button_ExportToExcel(ActionEvent event) {
         Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
         ExcelExport<FactEntity> excelExport = new ExcelExport<>();
         excelExport.export("Fact", tableFactView, stage);

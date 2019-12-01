@@ -55,13 +55,13 @@ public class CategoryController implements Initializable {
 
 
     @FXML
-    public void OnPress_Button_ExportToExcel (ActionEvent event) {
+    public void OnPress_Button_ExportToExcel(ActionEvent event) {
         Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
         ExcelExport<CategoryEntity> excelExport = new ExcelExport<>();
         excelExport.export("Category", tableView, stage);
     }
 
-    private void displaySelectedInfo (CategoryEntity entity) {
+    private void displaySelectedInfo(CategoryEntity entity) {
         textFieldTitle.setText(entity.getTitle());
     }
 

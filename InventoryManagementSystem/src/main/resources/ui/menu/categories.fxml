@@ -18,8 +18,8 @@
             <Button fx:id="buttonRefresh" mnemonicParsing="false" text="Обновить таблицу"/>
             <TextField fx:id="textFieldTitle" promptText="Название"/>
             <Button fx:id="buttonNew" mnemonicParsing="false" text="Добавить"/>
-            <Button fx:id="buttonDelete" layoutX="209.0" layoutY="23.0" mnemonicParsing="false" text="Удалить категорию"/>
-            <Button fx:id="buttonChange" layoutX="209.0" layoutY="23.0" mnemonicParsing="false" text="Изменить категорию"/>
+            <Button fx:id="buttonDelete" layoutX="209.0" layoutY="23.0" mnemonicParsing="false" text="Удалить"/>
+            <Button fx:id="buttonChange" layoutX="209.0" layoutY="23.0" mnemonicParsing="false" text="Изменить"/>
             <Button fx:id="buttonExportToExcel" mnemonicParsing="false" text="Экспорт Excel"/>
 
         </HBox>

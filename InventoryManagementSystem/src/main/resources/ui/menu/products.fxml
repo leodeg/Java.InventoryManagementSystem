@@ -10,23 +10,19 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="918.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.controller.menu.ProductsController">
+<AnchorPane fx:id="anchorPane" minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="918.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.controller.menu.ProductsController">
     <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" spacing="5.0" VBox.vgrow="ALWAYS">
             <Button fx:id="buttonRefreshTable" layoutX="627.0" layoutY="23.0" mnemonicParsing="false" onAction="#OnPress_Button_RefreshTable" text="Обновить таблицу" />
-            <Button fx:id="buttonExportToExcel" mnemonicParsing="false" onAction="#OnPress_Button_NewProduct" text="Экспорт Excel" />
-            <VBox.margin>
-            </VBox.margin>
-            <padding>
-            </padding>
-
             <Button fx:id="buttonRefreshChoice" mnemonicParsing="false" onAction="#OnPress_Button_RefreshChoice" text="Обновить категории" />
             <ChoiceBox fx:id="choiceBoxCategory" prefHeight="25.0" prefWidth="89.0" />
             <TextField fx:id="textFieldName" promptText="Имя *" />
             <TextField fx:id="textFieldPrice" layoutX="185.0" layoutY="28.0" prefHeight="25.0" promptText="Цена *" />
             <TextField fx:id="textFieldDescription" layoutX="339.0" layoutY="28.0" promptText="Описание" />
             <Button fx:id="buttonNewProduct" mnemonicParsing="false" onAction="#OnPress_Button_NewProduct" text="Добавить" />
-            <Button fx:id="buttonChangeProduct" mnemonicParsing="false" onAction="#OnPress_Button_NewProduct" text="Изменить информацию" />
+            <Button fx:id="buttonChangeProduct" mnemonicParsing="false" onAction="#OnPress_Button_NewProduct" text="Изменить" />
+            <Button fx:id="buttonDeleteProduct" mnemonicParsing="false" onAction="#OnPress_Button_NewProduct" text="Удалить" />
+            <Button fx:id="buttonExportToExcel" mnemonicParsing="false" onAction="#OnPress_Button_NewProduct" text="Экспорт Excel" />
         </HBox>
         <TableView fx:id="tableView" prefWidth="614.0" VBox.vgrow="ALWAYS">
             <columns>

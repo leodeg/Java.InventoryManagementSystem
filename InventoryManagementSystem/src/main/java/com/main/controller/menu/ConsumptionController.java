@@ -23,6 +23,10 @@ public class ConsumptionController implements Initializable {
     @FXML
     public Button buttonConsumptionRefreshTable;
     @FXML
+    public Button buttonChange;
+    @FXML
+    public Button buttonDelete;
+    @FXML
     public Button buttonExportToExcel;
 
     @FXML
@@ -40,10 +44,15 @@ public class ConsumptionController implements Initializable {
     @FXML
     public TableColumn<ConsumptionEntity, Date> tableConsumptionColumnDate;
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         buttonConsumptionRefreshTable.setOnAction(this::OnPress_Button_RefreshConsumptionTable);
         buttonExportToExcel.setOnAction(this::OnPress_Button_ExportToExcel);
+
+        // TODO: uncomment when will be added the login system
+//        buttonChange.setOnAction(this::OnPress_Button_Change);
+//        buttonDelete.setOnAction(this::OnPress_Button_Delete);
     }
 
     @FXML
@@ -52,10 +61,20 @@ public class ConsumptionController implements Initializable {
     }
 
     @FXML
-    public void OnPress_Button_ExportToExcel (ActionEvent event) {
+    public void OnPress_Button_ExportToExcel(ActionEvent event) {
         Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
         ExcelExport<ConsumptionEntity> excelExport = new ExcelExport<>();
         excelExport.export("Consumption", tableConsumptionView, stage);
+    }
+
+    @FXML
+    public void OnPress_Button_Change(ActionEvent event) {
+        // TODO:: make when will be added the login system
+    }
+
+    @FXML
+    public void OnPress_Button_Delete(ActionEvent event) {
+        // TODO:: make when will be added the login system
     }
 
     private void displayInformationToConsumptionTableView() {
