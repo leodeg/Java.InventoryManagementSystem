@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import org.jetbrains.annotations.Nullable;
 
 import java.net.URL;
@@ -43,6 +44,8 @@ public class AddressController implements Initializable {
     public TableColumn<AddressEntity, String> tableColumnCity;
     @FXML
     public TableColumn<AddressEntity, String> tableColumnRegion;
+    @FXML
+    public AnchorPane anchorPane;
 
     @FXML
     @Override

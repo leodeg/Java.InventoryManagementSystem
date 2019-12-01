@@ -35,9 +35,6 @@
                 </TabPane>
             </AnchorPane>
         </Tab>
-        <Tab text="Адреса">
-            <fx:include fx:id="address" source="address.fxml"/>
-        </Tab>
         <Tab text="Покупатели">
             <fx:include fx:id="customers" source="customers.fxml"/>
         </Tab>
