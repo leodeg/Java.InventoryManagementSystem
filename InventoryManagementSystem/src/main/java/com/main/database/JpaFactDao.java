@@ -18,8 +18,27 @@ public class JpaFactDao extends JpaDataAccessObject<FactEntity> {
         return EntityManagerConnector.entityManager.createQuery("SELECT e FROM FactEntity e", FactEntity.class).getResultList();
     }
 
+    public List<FactEntity> getAllByDate(Date date) {
+        String query = "SELECT e FROM FactEntity e WHERE e.date = :date";
+        return EntityManagerConnector.entityManager.createQuery(query, FactEntity.class).setParameter("date", date).getResultList();
+    }
+
+    public List<FactEntity> getAllByPrice(double price) {
+        String query = "SELECT e FROM FactEntity e WHERE e.price = :price";
+        return EntityManagerConnector.entityManager.createQuery(query, FactEntity.class).setParameter("price", price).getResultList();
+    }
+
+    public List<FactEntity> getAllByIdProduct(int idProduct) {
+        String query = "SELECT e FROM FactEntity e WHERE e.idProduct = :idProduct";
+        return EntityManagerConnector.entityManager.createQuery(query, FactEntity.class).setParameter("idProduct", idProduct).getResultList();
+    }
+
     public List<FactEntity> getByIdProduct(int id) {
         return EntityManagerConnector.entityManager.createQuery("SELECT e FROM FactEntity e WHERE e.idProduct = :id", FactEntity.class).setParameter("id", id).getResultList();
+    }
+
+    public FactEntity getSingleByIdProduct(int id) {
+        return EntityManagerConnector.entityManager.createQuery("SELECT e FROM FactEntity e WHERE e.idProduct = :id", FactEntity.class).setParameter("id", id).getSingleResult();
     }
 
     public Long getCount(int idProduct) {
@@ -27,22 +46,22 @@ public class JpaFactDao extends JpaDataAccessObject<FactEntity> {
         return EntityManagerConnector.entityManager.createQuery(query, Long.class).setParameter("idProduct", idProduct).getSingleResult();
     }
 
-    public Integer getAmountBy (int idProduct) {
+    public Integer getAmountBy(int idProduct) {
         String query = "SELECT e.amount FROM FactEntity e WHERE e.idProduct = :idProduct";
         return EntityManagerConnector.entityManager.createQuery(query, Integer.class).setParameter("idProduct", idProduct).getSingleResult();
     }
 
-    public Double getPriceByProduct (int idProduct) {
+    public Double getPriceByProduct(int idProduct) {
         String query = "SELECT DISTINCT e.price FROM FactEntity e WHERE e.idProduct = :idProduct";
         return EntityManagerConnector.entityManager.createQuery(query, Double.class).setParameter("idProduct", idProduct).getSingleResult();
     }
 
-    public Double getTotalPriceByProduct (int idProduct) {
+    public Double getTotalPriceByProduct(int idProduct) {
         String query = "SELECT DISTINCT e.totalPrice FROM FactEntity e WHERE e.idProduct = :idProduct";
         return EntityManagerConnector.entityManager.createQuery(query, Double.class).setParameter("idProduct", idProduct).getSingleResult();
     }
 
-    public Double getTotalPriceByDate (Date date) {
+    public Double getTotalPriceByDate(Date date) {
         String query = "SELECT COUNT (e.totalPrice) FROM FactEntity e WHERE e.date = :date";
         return EntityManagerConnector.entityManager.createQuery(query, Double.class).setParameter("date", date).getSingleResult();
     }

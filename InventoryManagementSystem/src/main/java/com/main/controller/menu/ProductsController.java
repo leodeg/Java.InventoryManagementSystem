@@ -59,9 +59,16 @@ public class ProductsController implements Initializable {
         buttonRefreshChoice.setOnAction(this::OnPress_Button_RefreshChoice);
         buttonRefreshTable.setOnAction(this::OnPress_Button_RefreshTable);
         buttonExportToExcel.setOnAction(this::OnPress_Button_ExportToExcel);
+
         tableView.getSelectionModel().selectedItemProperty().addListener(newSelection -> {
             if (newSelection != null) {
                 displaySelectedInfo(tableView.getSelectionModel().getSelectedItem());
+            }
+        });
+
+        choiceBoxCategory.setOnMouseClicked(event -> {
+            if (choiceBoxCategory.getItems().size() < 1) {
+                MainController.showAlert(Alert.AlertType.WARNING, "Choice Box", "Please refresh choice box.");
             }
         });
     }
@@ -92,7 +99,7 @@ public class ProductsController implements Initializable {
     }
 
     @FXML
-    public void OnPress_Button_ExportToExcel (ActionEvent event) {
+    public void OnPress_Button_ExportToExcel(ActionEvent event) {
         Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
         ExcelExport<ProductEntity> excelExport = new ExcelExport<>();
         excelExport.export("Products", tableView, stage);

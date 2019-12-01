@@ -17,6 +17,21 @@ public class JpaOrderDao extends JpaDataAccessObject<OrderEntity> {
         return EntityManagerConnector.entityManager.createQuery("SELECT e FROM OrderEntity e", OrderEntity.class).getResultList();
     }
 
+    public List<OrderEntity> getAllByDate(java.sql.Date date) {
+        String query = "SELECT e FROM OrderEntity e WHERE e.date = :date";
+        return EntityManagerConnector.entityManager.createQuery(query, OrderEntity.class).setParameter("date", date).getResultList();
+    }
+
+    public List<OrderEntity> getAllByPrice(double price) {
+        String query = "SELECT e FROM OrderEntity e WHERE e.price = :price";
+        return EntityManagerConnector.entityManager.createQuery(query, OrderEntity.class).setParameter("price", price).getResultList();
+    }
+
+    public List<OrderEntity> getAllByIdProduct(int idProduct) {
+        String query = "SELECT e FROM OrderEntity e WHERE e.idProduct = :idProduct";
+        return EntityManagerConnector.entityManager.createQuery(query, OrderEntity.class).setParameter("idProduct", idProduct).getResultList();
+    }
+
     public Double getSumTotalPriceByDate(Date date) {
         String query = "SELECT SUM (e.totalPrice) FROM OrderEntity e WHERE e.date = :date";
         return EntityManagerConnector.entityManager.createQuery(query, Double.class).setParameter("date", date).getSingleResult();

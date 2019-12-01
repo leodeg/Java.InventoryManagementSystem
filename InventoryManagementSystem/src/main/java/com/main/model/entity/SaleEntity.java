@@ -75,6 +75,7 @@ public class SaleEntity implements ParentEntity {
 
     public void setPrice(double price) {
         this.price = price;
+        this.totalPrice = this.amount * this.price;
     }
 
     public int getAmount() {
@@ -83,6 +84,7 @@ public class SaleEntity implements ParentEntity {
 
     public void setAmount(int amount) {
         this.amount = amount;
+        this.totalPrice = this.amount * this.price;
     }
 
     public double getTotalPrice() {

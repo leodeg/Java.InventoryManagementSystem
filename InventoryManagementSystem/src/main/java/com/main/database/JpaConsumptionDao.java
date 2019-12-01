@@ -18,6 +18,21 @@ public class JpaConsumptionDao extends JpaDataAccessObject<ConsumptionEntity> {
         return EntityManagerConnector.entityManager.createQuery("SELECT e FROM ConsumptionEntity e", ConsumptionEntity.class).getResultList();
     }
 
+    public List<ConsumptionEntity> getAllByDate(java.sql.Date date) {
+        String query = "SELECT e FROM ConsumptionEntity e WHERE e.date = :date";
+        return EntityManagerConnector.entityManager.createQuery(query, ConsumptionEntity.class).setParameter("date", date).getResultList();
+    }
+
+    public List<ConsumptionEntity> getAllByPrice(double price) {
+        String query = "SELECT e FROM ConsumptionEntity e WHERE e.price = :price";
+        return EntityManagerConnector.entityManager.createQuery(query, ConsumptionEntity.class).setParameter("price", price).getResultList();
+    }
+
+    public List<ConsumptionEntity> getAllByProductName(String productName) {
+        String query = "SELECT e FROM ConsumptionEntity e WHERE e.productName = :productName";
+        return EntityManagerConnector.entityManager.createQuery(query, ConsumptionEntity.class).setParameter("productName", productName).getResultList();
+    }
+
     public Double getSumTotalPriceByDate(Date date) {
         String query = "SELECT SUM (e.totalPrice) FROM ConsumptionEntity e WHERE e.date = :date";
         return EntityManagerConnector.entityManager.createQuery(query, Double.class).setParameter("date", date).getSingleResult();

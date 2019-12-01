@@ -2,7 +2,6 @@ package com.main.database;
 
 import com.main.model.entity.ProductEntity;
 
-import javax.management.Query;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,6 +14,16 @@ public class JpaProductDao extends JpaDataAccessObject<ProductEntity> {
     @Override
     public List<ProductEntity> getAll() {
         return EntityManagerConnector.entityManager.createQuery("SELECT e FROM ProductEntity e", ProductEntity.class).getResultList();
+    }
+
+    public List<ProductEntity> getAllByName(String name) {
+        String query = "SELECT e FROM ProductEntity e WHERE e.name = :name";
+        return EntityManagerConnector.entityManager.createQuery(query, ProductEntity.class).setParameter("name", name).getResultList();
+    }
+
+    public List<ProductEntity> getAllByPrice(double price) {
+        String query = "SELECT e FROM ProductEntity e WHERE e.price = :price";
+        return EntityManagerConnector.entityManager.createQuery(query, ProductEntity.class).setParameter("price", price).getResultList();
     }
 
     public Long getCount(int idCategory) {
@@ -42,7 +51,7 @@ public class JpaProductDao extends JpaDataAccessObject<ProductEntity> {
         return EntityManagerConnector.entityManager.createQuery(query, Long.class).setParameter("name", name).getSingleResult();
     }
 
-    public Double getPriceByName (String name) {
+    public Double getPriceByName(String name) {
         String query = "SELECT DISTINCT e.price FROM ProductEntity e WHERE e.name = :name";
         return EntityManagerConnector.entityManager.createQuery(query, Double.class).setParameter("name", name).getSingleResult();
     }

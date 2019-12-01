@@ -3,6 +3,7 @@ package com.main.controller.menu;
 import com.main.controller.modalWindow.NewOrderController;
 import com.main.database.JpaConnector;
 import com.main.model.ExcelExport;
+import com.main.model.entity.FactEntity;
 import com.main.model.entity.OrderEntity;
 import com.main.model.entity.SaleEntity;
 import javafx.collections.FXCollections;
@@ -64,7 +65,7 @@ public class OrdersController implements Initializable {
     }
 
     @FXML
-    public void OnPress_Button_ExportToExcel (ActionEvent event) {
+    public void OnPress_Button_ExportToExcel(ActionEvent event) {
         Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
         ExcelExport<OrderEntity> excelExport = new ExcelExport<>();
         excelExport.export("Orders", tableView, stage);
@@ -117,22 +118,36 @@ public class OrdersController implements Initializable {
 
     @FXML
     private void OnPress_Button_ToSales(ActionEvent event) {
-        OrderEntity selectedItem = tableView.getSelectionModel().getSelectedItem();
-        if (selectedItem == null) {
+        if (tableView.getItems().isEmpty()) {
             MainController.showAlert(Alert.AlertType.ERROR, "To Sale", "Please choose order from table below.");
             return;
         }
 
+        OrderEntity selectedItem = tableView.getSelectionModel().getSelectedItem();
         SaleEntity saleEntity = getSaleEntity(selectedItem);
         try {
+            FactEntity factEntity = JpaConnector.getFact().getSingleByIdProduct(selectedItem.getIdProduct());
+            if (factEntity.getAmount() < selectedItem.getAmount()) {
+                MainController.showAlert(Alert.AlertType.ERROR, "To Sale", "Inventory has only: " + factEntity.getAmount());
+                return;
+            }
+
+            factEntity.setAmount(factEntity.getAmount() - selectedItem.getAmount());
+            JpaConnector.getFact().update(factEntity);
             JpaConnector.getSale().save(saleEntity);
-            OrderEntity orderEntity = JpaConnector.getOrder().get(selectedItem.getIdOrder()).get();
-            JpaConnector.getOrder().delete(orderEntity);
+            JpaConnector.getOrder().delete(selectedItem);
+
             MainController.showAlert(Alert.AlertType.CONFIRMATION, "To Sale", "Complete");
             displayInformationToTableView();
         } catch (Exception ex) {
             MainController.showAlert(Alert.AlertType.ERROR, "To Sale", ex.getMessage());
         }
+    }
+
+    private SaleEntity getSaleEntity(OrderEntity selectedItem) {
+        String productName = JpaConnector.getProduct().get(selectedItem.getIdProduct()).get().getName();
+        String customerName = JpaConnector.getCustomer().get(selectedItem.getIdCustomer()).get().getName();
+        return new SaleEntity(productName, customerName, selectedItem.getPrice(), selectedItem.getAmount(), selectedItem.getDate());
     }
 
     private void displayInformationToTableView() {
@@ -153,11 +168,5 @@ public class OrdersController implements Initializable {
         tableColumnTotalPrice.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
         tableColumnDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         tableView.setItems(data);
-    }
-
-    private SaleEntity getSaleEntity(OrderEntity selectedItem) {
-        String productName = JpaConnector.getProduct().get(selectedItem.getIdProduct()).get().getName();
-        String customerName = JpaConnector.getCustomer().get(selectedItem.getIdCustomer()).get().getName();
-        return new SaleEntity(productName, customerName, selectedItem.getPrice(), selectedItem.getAmount(), selectedItem.getDate());
     }
 }

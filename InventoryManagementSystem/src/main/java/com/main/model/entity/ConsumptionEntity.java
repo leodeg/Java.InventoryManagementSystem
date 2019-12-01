@@ -63,6 +63,7 @@ public class ConsumptionEntity implements ParentEntity {
 
     public void setPrice(Double price) {
         this.price = price;
+        this.totalPrice = this.amount * this.price;
     }
 
     public int getAmount() {
@@ -71,6 +72,7 @@ public class ConsumptionEntity implements ParentEntity {
 
     public void setAmount(int amount) {
         this.amount = amount;
+        this.totalPrice = this.amount * this.price;
     }
 
     public Double getTotalPrice() {

@@ -47,6 +47,7 @@ public class InventoryBaseEntity implements ParentEntity {
 
     public void setAmount(int amount) {
         this.amount = amount;
+        this.totalPrice = this.amount * this.price;
     }
 
     public Double getPrice() {
@@ -55,6 +56,7 @@ public class InventoryBaseEntity implements ParentEntity {
 
     public void setPrice(Double price) {
         this.price = price;
+        this.totalPrice = this.amount * this.price;
     }
 
     public Date getDate() {
