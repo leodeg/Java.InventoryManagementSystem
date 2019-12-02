@@ -54,15 +54,15 @@ public class JpaDataAccessObject<T extends ParentEntity> implements DataAccessOb
     }
 
     public void executeInsideTransaction(Consumer<EntityManager> action) throws NullPointerException {
-        if (EntityManagerConnector.entityManager == null) {
+        if (EntityManagerConnector.getEntityManager() == null) {
             System.err.print("\nError::Transaction::executeInsideTransaction::Entity manager is null pointer.");
             return;
         }
 
-        EntityTransaction transaction = EntityManagerConnector.entityManager.getTransaction();
+        EntityTransaction transaction = EntityManagerConnector.getEntityManager().getTransaction();
         try {
             transaction.begin();
-            action.accept(EntityManagerConnector.entityManager);
+            action.accept(EntityManagerConnector.getEntityManager());
             transaction.commit();
         } catch (RuntimeException e) {
             transaction.rollback();
