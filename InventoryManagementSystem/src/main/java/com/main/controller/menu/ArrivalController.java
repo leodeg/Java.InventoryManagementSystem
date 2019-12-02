@@ -72,27 +72,35 @@ public class ArrivalController implements Initializable {
     public void OnPress_Button_NewArrival(ActionEvent event) {
         Parent root;
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/modalWindow/new_arrival.fxml"));
-            fxmlLoader.setController(new NewArrivalController());
-            root = fxmlLoader.load();
-            MainController.showModalWindow("New Arrival", root);
+            openNewWindow();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    private void openNewWindow() throws IOException {
+        Parent root;
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/modalWindow/new_arrival.fxml"));
+        fxmlLoader.setController(new NewArrivalController());
+        root = fxmlLoader.load();
+        MainController.showModalWindow("New Arrival", root);
+    }
+
     @FXML
     public void OnPress_Button_ChangeInformation(ActionEvent event) {
         if (informationIsValid()) try {
-            ArrivalEntity arrivalEntity = getChangedArrivalEntity();
-            JpaConnector.getArrival().update(arrivalEntity);
-            updateFactDatabaseTable(arrivalEntity);
-
-            MainController.showAlert(Alert.AlertType.INFORMATION, "Change Information", "Product information was changed.");
-            displayInformationToArrivalTableView();
+            saveChangedInformationToDatabase();
         } catch (Exception ex) {
             MainController.showAlert(Alert.AlertType.ERROR, "Change Information Error", ex.getMessage());
         }
+    }
+
+    private void saveChangedInformationToDatabase() {
+        ArrivalEntity arrivalEntity = getChangedArrivalEntity();
+        JpaConnector.getArrival().update(arrivalEntity);
+        updateFactDatabaseTable(arrivalEntity);
+        MainController.showAlert(Alert.AlertType.INFORMATION, "Change Information", "Product information was changed.");
+        displayInformationToArrivalTableView();
     }
 
     private boolean informationIsValid() {
@@ -124,24 +132,27 @@ public class ArrivalController implements Initializable {
         return selectedItem;
     }
 
-    public void updateFactDatabaseTable(ArrivalEntity newEntity) {
+    private void updateFactDatabaseTable(ArrivalEntity newEntity) {
         ArrivalEntity oldEntity = getSelectedItem();
         FactEntity factEntity = JpaConnector.getFact().getFirstByIdProduct(newEntity.getIdProduct());
 
-        int difference;
-        boolean amountBecomeLower = newEntity.getAmount() < oldEntity.getAmount();
-        if (amountBecomeLower) {
-            difference = oldEntity.getAmount() - newEntity.getAmount();
-            factEntity.setAmount(factEntity.getAmount() - difference);
-        } else {
-            difference = newEntity.getAmount() - oldEntity.getAmount();
-            factEntity.setAmount(newEntity.getAmount() + difference);
-        }
-
+        setFactEntityAmount(factEntity, newEntity.getAmount(), oldEntity.getAmount());
         factEntity.setPrice(newEntity.getPrice());
         factEntity.setTotalPrice(factEntity.getAmount() * factEntity.getPrice());
         factEntity.setDate(newEntity.getDate());
         JpaConnector.getFact().update(factEntity);
+    }
+
+    private void setFactEntityAmount(FactEntity factEntity, int newEntityAmount, int oldEntityAmount) {
+        int difference;
+        boolean amountBecomeLower = newEntityAmount < oldEntityAmount;
+        if (amountBecomeLower) {
+            difference = oldEntityAmount - newEntityAmount;
+            factEntity.setAmount(factEntity.getAmount() - difference);
+        } else {
+            difference = newEntityAmount - oldEntityAmount;
+            factEntity.setAmount(newEntityAmount + difference);
+        }
     }
 
     @FXML
@@ -150,15 +161,22 @@ public class ArrivalController implements Initializable {
     }
 
     private void displayInformationToArrivalTableView() {
+        clearTableView();
         ObservableList<ArrivalEntity> list = FXCollections.observableArrayList(JpaConnector.getArrival().getAll());
-        if (tableArrivalView.getItems().size() > 0)
-            tableArrivalView.getItems().clear();
-
         if (list.size() < 1) {
             MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
             return;
         }
+        assignInformationToTableView(list);
+    }
 
+    private void clearTableView() {
+        if (tableArrivalView.getItems().size() > 0) {
+            tableArrivalView.getItems().clear();
+        }
+    }
+
+    private void assignInformationToTableView(ObservableList<ArrivalEntity> list) {
         tableArrivalColumnId.setCellValueFactory(new PropertyValueFactory<>("idArrival"));
         tableArrivalColumnIdProduct.setCellValueFactory(new PropertyValueFactory<>("idProduct"));
         tableArrivalColumnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));

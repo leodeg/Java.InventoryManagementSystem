@@ -108,18 +108,25 @@ public class AddressController implements Initializable {
             AddressEntity entityToChange = getSelectedItem();
 
             try {
-                entityToChange.setAddress(addressEntity.getAddress());
-                entityToChange.setAddress2(addressEntity.getAddress2());
-                entityToChange.setCity(addressEntity.getCity());
-                entityToChange.setRegion(addressEntity.getRegion());
-
-                JpaConnector.getAddress().update(entityToChange);
-                MainController.showAlert(Alert.AlertType.INFORMATION, "Change Address", "Address successfully changed.");
-                displayInformationToTableView();
+                assignNewInformation(addressEntity, entityToChange);
+                saveNewInformationToDatabase(entityToChange);
             } catch (Exception ex) {
                 MainController.showAlert(Alert.AlertType.ERROR, "Change Address", ex.getMessage());
             }
         }
+    }
+
+    private void saveNewInformationToDatabase(AddressEntity entityToChange) {
+        JpaConnector.getAddress().update(entityToChange);
+        MainController.showAlert(Alert.AlertType.INFORMATION, "Change Address", "Address successfully changed.");
+        displayInformationToTableView();
+    }
+
+    private void assignNewInformation(AddressEntity newAddressInfo, AddressEntity entityToChange) {
+        entityToChange.setAddress(newAddressInfo.getAddress());
+        entityToChange.setAddress2(newAddressInfo.getAddress2());
+        entityToChange.setCity(newAddressInfo.getCity());
+        entityToChange.setRegion(newAddressInfo.getRegion());
     }
 
     private AddressEntity getSelectedItem() {
@@ -157,15 +164,21 @@ public class AddressController implements Initializable {
     }
 
     private void displayInformationToTableView() {
-        if (tableView.getItems().size() > 0)
-            tableView.getItems().clear();
-
+        clearTableView();
         ObservableList<AddressEntity> data = FXCollections.observableArrayList(JpaConnector.getAddress().getAll());
         if (data.size() < 1) {
             MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
             return;
         }
+        assignDataToTableView(data);
+    }
 
+    private void clearTableView() {
+        if (tableView.getItems().size() > 0)
+            tableView.getItems().clear();
+    }
+
+    private void assignDataToTableView(ObservableList<AddressEntity> data) {
         tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idAddress"));
         tableColumnAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         tableColumnAddress2.setCellValueFactory(new PropertyValueFactory<>("address2"));

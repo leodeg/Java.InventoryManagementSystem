@@ -77,15 +77,21 @@ public class NewArrivalController implements Initializable {
     }
 
     public void updateFactDatabaseTable(@NotNull ArrivalEntity entity) {
-        if (!JpaConnector.getFact().isExists(entity.getIdProduct())) {
-            JpaConnector.getFact().save(new FactEntity(entity.getIdProduct(), entity.getAmount(), entity.getPrice(), entity.getDate()));
-        } else {
-            FactEntity factEntity = JpaConnector.getFact().get(entity.getIdProduct()).get();
-            factEntity.setAmount(factEntity.getAmount() + entity.getAmount());
-            factEntity.setPrice(entity.getPrice());
-            factEntity.setDate(entity.getDate());
-            JpaConnector.getFact().update(factEntity);
-        }
+        if (!JpaConnector.getFact().isExists(entity.getIdProduct()))
+            createNewFactEntity(entity);
+        else updateOldFactEntity(entity);
+    }
+
+    private void createNewFactEntity(@NotNull ArrivalEntity entity) {
+        JpaConnector.getFact().save(new FactEntity(entity.getIdProduct(), entity.getAmount(), entity.getPrice(), entity.getDate()));
+    }
+
+    private void updateOldFactEntity(@NotNull ArrivalEntity entity) {
+        FactEntity factEntity = JpaConnector.getFact().get(entity.getIdProduct()).get();
+        factEntity.setAmount(factEntity.getAmount() + entity.getAmount());
+        factEntity.setPrice(entity.getPrice());
+        factEntity.setDate(entity.getDate());
+        JpaConnector.getFact().update(factEntity);
     }
 
     private boolean checkArrivalInformation() {
@@ -114,10 +120,21 @@ public class NewArrivalController implements Initializable {
     }
 
     private void displayInformationToTableView() {
+        clearTableView();
+        ObservableList<ProductEntity> data = FXCollections.observableArrayList(JpaConnector.getProduct().getAll());
+        if (data.size() < 1) {
+            MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
+            return;
+        }
+        assignInformationToTableView(data);
+    }
+
+    private void clearTableView() {
         if (tableView.getItems().size() > 0)
             tableView.getItems().clear();
+    }
 
-        ObservableList<ProductEntity> data = FXCollections.observableArrayList(JpaConnector.getProduct().getAll());
+    private void assignInformationToTableView(ObservableList<ProductEntity> data) {
         tableColumnIdProduct.setCellValueFactory(new PropertyValueFactory<>("idProduct"));
         tableColumnIdCategory.setCellValueFactory(new PropertyValueFactory<>("idCategory"));
         tableColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));

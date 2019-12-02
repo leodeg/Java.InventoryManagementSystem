@@ -61,15 +61,21 @@ public class SalesController implements Initializable {
     }
 
     private void displayInformationToTableView() {
-        if (tableView.getItems().size() > 0)
-            tableView.getItems().clear();
-
+        clearTableView();
         ObservableList<SaleEntity> data = FXCollections.observableArrayList(JpaConnector.getSale().getAll());
         if (data.size() < 1) {
             MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
             return;
         }
+        assignInformationToTableView(data);
+    }
 
+    private void clearTableView() {
+        if (tableView.getItems().size() > 0)
+            tableView.getItems().clear();
+    }
+
+    private void assignInformationToTableView(ObservableList<SaleEntity> data) {
         tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idSale"));
         tableColumnProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
         tableColumnCustomerName.setCellValueFactory(new PropertyValueFactory<>("customerName"));

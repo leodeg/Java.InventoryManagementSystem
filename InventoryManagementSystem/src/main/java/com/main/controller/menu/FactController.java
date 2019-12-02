@@ -78,17 +78,21 @@ public class FactController implements Initializable {
     public void OnPress_Button_NewOrder(ActionEvent event) {
         FactEntity factEntity = getSelectedItem();
         if (factEntity != null) {
-            Parent root;
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/modalWindow/new_order_from_inventory.fxml"));
-                fxmlLoader.setController(new NewOrderFromInventoryController(factEntity));
-                root = fxmlLoader.load();
-                MainController.showModalWindow("New Order", root);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            openNewOrderWindow(factEntity);
         } else {
             MainController.showAlert(Alert.AlertType.ERROR, "New Order", "Please select a product from table below.");
+        }
+    }
+
+    private void openNewOrderWindow(FactEntity factEntity) {
+        Parent root;
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/modalWindow/new_order_from_inventory.fxml"));
+            fxmlLoader.setController(new NewOrderFromInventoryController(factEntity));
+            root = fxmlLoader.load();
+            MainController.showModalWindow("New Order", root);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -99,25 +103,35 @@ public class FactController implements Initializable {
 
     @FXML
     public void OnPress_Button_NewConsumption(ActionEvent event) {
+        if (checkIsSelectionEmpty()) return;
+
         FactEntity selectedItem = getSelectedItem();
-
-        if (selectedItem == null) {
-            MainController.showAlert(Alert.AlertType.ERROR, "New Consumption", "Please select a product from table below.");
-            return;
-        }
-
         ConsumptionEntity consumptionEntity = getConsumptionEntity(selectedItem);
         if (consumptionEntity != null) try {
-            JpaConnector.getConsumption().save(consumptionEntity);
-
-            FactEntity factEntity = JpaConnector.getFact().get(selectedItem.getIdFact()).get();
-            factEntity.setAmount(factEntity.getAmount() - Integer.parseInt(textFieldConsumptionAmount.getText()));
-            JpaConnector.getFact().update(factEntity);
-
-            MainController.showAlert(Alert.AlertType.INFORMATION, "New Consumption", "Consumption was successfully added.");
+            saveConsumptionToDatabase(selectedItem, consumptionEntity);
         } catch (Exception ex) {
             MainController.showAlert(Alert.AlertType.ERROR, "New Consumption", ex.getMessage());
         }
+    }
+
+    private boolean checkIsSelectionEmpty() {
+        if (selectionIsEmpty()) {
+            MainController.showAlert(Alert.AlertType.ERROR, "New Consumption", "Please select a product from table below.");
+            return true;
+        }
+        return false;
+    }
+
+    private void saveConsumptionToDatabase(FactEntity selectedItem, ConsumptionEntity consumptionEntity) {
+        JpaConnector.getConsumption().save(consumptionEntity);
+        FactEntity factEntity = JpaConnector.getFact().get(selectedItem.getIdFact()).get();
+        factEntity.setAmount(factEntity.getAmount() - Integer.parseInt(textFieldConsumptionAmount.getText()));
+        JpaConnector.getFact().update(factEntity);
+        MainController.showAlert(Alert.AlertType.INFORMATION, "New Consumption", "Consumption was successfully added.");
+    }
+
+    private boolean selectionIsEmpty() {
+        return tableFactView.getSelectionModel().isEmpty();
     }
 
     private FactEntity getSelectedItem() {
@@ -155,15 +169,21 @@ public class FactController implements Initializable {
     }
 
     private void displayInformationToFactTableView() {
+        clearTableView();
         ObservableList<FactEntity> list = FXCollections.observableArrayList(JpaConnector.getFact().getAll());
-        if (tableFactView.getItems().size() > 0)
-            tableFactView.getItems().clear();
-
         if (list.size() < 1) {
             MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
             return;
         }
+        assignInformationToTableView(list);
+    }
 
+    private void clearTableView() {
+        if (tableFactView.getItems().size() > 0)
+            tableFactView.getItems().clear();
+    }
+
+    private void assignInformationToTableView(ObservableList<FactEntity> list) {
         tableFactColumnId.setCellValueFactory(new PropertyValueFactory<>("idFact"));
         tableFactColumnIdProduct.setCellValueFactory(new PropertyValueFactory<>("idProduct"));
         tableFactColumnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));

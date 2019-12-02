@@ -68,14 +68,11 @@ public class ProductsController implements Initializable {
         buttonRefreshTable.setOnAction(this::OnPress_Button_RefreshTable);
         buttonExportToExcel.setOnAction(this::OnPress_Button_ExportToExcel);
         buttonDeleteProduct.setOnAction(this::OnPress_Button_DeleteProduct);
-
-
-
-        displaySelectedInfoToTextFields();
-        handleChoiceBoxEmptyState();
+        displaySelectedInfoToTextFieldsForChanges();
+        showErrorWhenCategoryChoiceBoxIsEmpty();
     }
 
-    private void displaySelectedInfoToTextFields() {
+    private void displaySelectedInfoToTextFieldsForChanges() {
         tableView.getSelectionModel().selectedItemProperty().addListener(newSelection -> {
             if (newSelection != null) {
                 displaySelectedInfo(tableView.getSelectionModel().getSelectedItem());
@@ -83,7 +80,7 @@ public class ProductsController implements Initializable {
         });
     }
 
-    private void handleChoiceBoxEmptyState() {
+    private void showErrorWhenCategoryChoiceBoxIsEmpty() {
         choiceBoxCategory.setOnMouseClicked(event -> {
             if (choiceBoxCategory.getItems().size() < 1) {
                 MainController.showAlert(Alert.AlertType.WARNING, "Choice Box", "Please refresh choice box.");
@@ -91,14 +88,14 @@ public class ProductsController implements Initializable {
         });
     }
 
+    @FXML
     private void OnPress_TableView_ShowAdditionalInfo(MouseEvent event) {
         tableView.getSelectionModel().selectedItemProperty().addListener(newSelection -> {
             if (newSelection != null) {
-
+                // TODO: show additional information for identifiers
             }
         });
     }
-
 
     @FXML
     public void OnPress_Button_RefreshTable(ActionEvent event) {
@@ -133,7 +130,7 @@ public class ProductsController implements Initializable {
 
     @FXML
     public void OnPress_Button_ChangeInformation(ActionEvent event) {
-        if (checkSelectionItems()) return;
+        if (checkIsSelectionItemsEmpty()) return;
 
         try {
             JpaConnector.getProduct().update(getChangedProductEntity());
@@ -146,7 +143,7 @@ public class ProductsController implements Initializable {
 
     @FXML
     public void OnPress_Button_DeleteProduct(ActionEvent event) {
-        if (checkSelectionItems()) {
+        if (checkIsSelectionItemsEmpty()) {
             JpaConnector.getProduct().delete(getSelectedProduct());
             MainController.showAlert(Alert.AlertType.INFORMATION, "Delete Product", "Information was deleted from the database.");
             displayInformationToTableView();
@@ -167,11 +164,7 @@ public class ProductsController implements Initializable {
         choiceBoxCategory.setValue(JpaConnector.getCategory().get(entity.getIdCategory()).get().getTitle());
     }
 
-    private void displaySelectedCategoryInfo(ProductEntity entity) {
-        Tooltip tooltip = new Tooltip(JpaConnector.getCategory().get(entity.getIdCategory()).get().getTitle());
-    }
-
-    private boolean checkSelectionItems() {
+    private boolean checkIsSelectionItemsEmpty() {
         if (isSelectedItemsEmpty()) {
             MainController.showAlert(Alert.AlertType.ERROR, "Change Information Error", "Please select product from the table below.");
             return true;
@@ -225,6 +218,7 @@ public class ProductsController implements Initializable {
     }
 
     private void displayInformationToTableView() {
+        clearTableView();
         ObservableList<ProductEntity> data = FXCollections.observableArrayList(JpaConnector.getProduct().getAll());
         if (data.size() < 1) {
             MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
@@ -233,10 +227,12 @@ public class ProductsController implements Initializable {
         assignInformationToTableView(data);
     }
 
-    private void assignInformationToTableView(ObservableList<ProductEntity> data) {
+    private void clearTableView() {
         if (tableView.getItems().size() > 0)
             tableView.getItems().clear();
+    }
 
+    private void assignInformationToTableView(ObservableList<ProductEntity> data) {
         tableColumnIdProduct.setCellValueFactory(new PropertyValueFactory<>("idProduct"));
         tableColumnIdCategory.setCellValueFactory(new PropertyValueFactory<>("idCategory"));
         tableColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));

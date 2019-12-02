@@ -51,7 +51,7 @@ public class NewCustomerController implements Initializable {
     @FXML
     public TableColumn<AddressEntity, String> tableColumnRegion;
 
-    CustomerEntity customerToChange;
+    private CustomerEntity customerToChange;
 
     public NewCustomerController() {
 
@@ -70,6 +70,13 @@ public class NewCustomerController implements Initializable {
 
         if (customerToChange != null)
             displayInfoToTextFields();
+    }
+
+    private void displayInfoToTextFields() {
+        textFieldName.setText(customerToChange.getName());
+        textFieldPhone.setText(customerToChange.getPhone());
+        textFieldEmail.setText(customerToChange.getEmail());
+        textFieldDescription.setText(customerToChange.getDescription());
     }
 
     @FXML
@@ -94,13 +101,8 @@ public class NewCustomerController implements Initializable {
     private void changeOldCustomer() {
         if (isInformationValid()) {
             try {
-                CustomerEntity customerEntity = getCustomerEntity();
-                customerToChange.setIdAddress(customerEntity.getIdAddress());
-                customerToChange.setName(customerEntity.getName());
-                customerToChange.setPhone(customerEntity.getPhone());
-                customerToChange.setEmail(customerEntity.getEmail());
-                customerToChange.setDescription(customerEntity.getDescription());
-
+                CustomerEntity changedInformation = getCustomerEntity();
+                assignChangedInformation(changedInformation);
                 JpaConnector.getCustomer().update(customerToChange);
                 MainController.showAlert(Alert.AlertType.CONFIRMATION, "Customer added", "Customer was successfully changed.");
                 closeWindow();
@@ -110,11 +112,12 @@ public class NewCustomerController implements Initializable {
         }
     }
 
-    private void displayInfoToTextFields() {
-        textFieldName.setText(customerToChange.getName());
-        textFieldPhone.setText(customerToChange.getPhone());
-        textFieldEmail.setText(customerToChange.getEmail());
-        textFieldDescription.setText(customerToChange.getDescription());
+    private void assignChangedInformation(CustomerEntity changedEntity) {
+        customerToChange.setIdAddress(changedEntity.getIdAddress());
+        customerToChange.setName(changedEntity.getName());
+        customerToChange.setPhone(changedEntity.getPhone());
+        customerToChange.setEmail(changedEntity.getEmail());
+        customerToChange.setDescription(changedEntity.getDescription());
     }
 
     private void closeWindow() {
@@ -129,15 +132,19 @@ public class NewCustomerController implements Initializable {
 
     @FXML
     public void OnPress_Button_NewAddress(ActionEvent event) {
-        Parent root;
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/menu/address.fxml"));
-            fxmlLoader.setController(new AddressController());
-            root = fxmlLoader.load();
-            MainController.showModalWindow("Addresses", root);
+            openNewAddressWindow();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void openNewAddressWindow() throws IOException {
+        Parent root;
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/menu/address.fxml"));
+        fxmlLoader.setController(new AddressController());
+        root = fxmlLoader.load();
+        MainController.showModalWindow("Addresses", root);
     }
 
     @Nullable
@@ -146,7 +153,7 @@ public class NewCustomerController implements Initializable {
     }
 
     private boolean isInformationValid() {
-        if (tableView.getSelectionModel().isEmpty()) {
+        if (selectionIsEmpty()) {
             MainController.showAlert(Alert.AlertType.ERROR, "New Customer Error", "Please select address from the table below.");
             return false;
         }
@@ -157,23 +164,36 @@ public class NewCustomerController implements Initializable {
         return true;
     }
 
+    private boolean selectionIsEmpty() {
+        return tableView.getSelectionModel().isEmpty();
+    }
+
     private AddressEntity getSelectedAddress() {
         return tableView.getSelectionModel().getSelectedItem();
     }
 
     private void displayInformationToTableView() {
+        clearTableView();
+        ObservableList<AddressEntity> data = FXCollections.observableArrayList(JpaConnector.getAddress().getAll());
+        if (data.size() < 1) {
+            MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
+            return;
+        }
+        assignInformationToTableView(data);
+    }
+
+    private void clearTableView() {
         if (tableView.getItems().size() > 0)
             tableView.getItems().clear();
+    }
 
-        ObservableList<AddressEntity> data = FXCollections.observableArrayList(JpaConnector.getAddress().getAll());
-        if (data.size() > 0) {
-            tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idAddress"));
-            tableColumnAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
-            tableColumnAddress2.setCellValueFactory(new PropertyValueFactory<>("address2"));
-            tableColumnCity.setCellValueFactory(new PropertyValueFactory<>("city"));
-            tableColumnRegion.setCellValueFactory(new PropertyValueFactory<>("region"));
-            tableView.setItems(data);
-        }
+    private void assignInformationToTableView(ObservableList<AddressEntity> data) {
+        tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idAddress"));
+        tableColumnAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        tableColumnAddress2.setCellValueFactory(new PropertyValueFactory<>("address2"));
+        tableColumnCity.setCellValueFactory(new PropertyValueFactory<>("city"));
+        tableColumnRegion.setCellValueFactory(new PropertyValueFactory<>("region"));
+        tableView.setItems(data);
     }
 
 }

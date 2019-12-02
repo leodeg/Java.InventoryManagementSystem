@@ -34,7 +34,6 @@ public class DashboardController implements Initializable {
     @FXML
     public BarChart barCharFact;
 
-
     @FXML
     public Button buttonUpdateArrival;
     @FXML
@@ -54,7 +53,6 @@ public class DashboardController implements Initializable {
     public Button buttonUpdateSales;
     @FXML
     public LineChart<String, Double> lineChartSales;
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

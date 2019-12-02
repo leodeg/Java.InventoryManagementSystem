@@ -62,33 +62,41 @@ public class CustomersController implements Initializable {
         buttonDeleteCustomer.setOnAction(this::OnPress_Button_DeleteCustomer);
     }
 
+    @FXML
     public void OnPress_Button_DeleteCustomer(ActionEvent event) {
         if (informationIsValid()) {
-            JpaConnector.getCustomer().delete(getSelectedCustomer());
-            MainController.showAlert(Alert.AlertType.INFORMATION, "Delete Address", "Information was deleted from the database.");
-            displayInformationToTableView();
+            deleteCustomerFromDatabase();
         }
     }
 
+    private void deleteCustomerFromDatabase() {
+        JpaConnector.getCustomer().delete(getSelectedCustomer());
+        MainController.showAlert(Alert.AlertType.INFORMATION, "Delete Address", "Information was deleted from the database.");
+        displayInformationToTableView();
+    }
+
     public void OnPress_Button_NewCustomer(ActionEvent event) {
-        createOrderModalWindow("New Customer", new NewCustomerController());
+        openNewOrderModalWindow("New Customer", new NewCustomerController());
     }
 
     public void OnPress_Button_ChangeCustomer(ActionEvent event) {
         if (informationIsValid()) {
-            createOrderModalWindow("Change Customer", new NewCustomerController(getSelectedCustomer()));
+            openNewOrderModalWindow("Change Customer", new NewCustomerController(getSelectedCustomer()));
         }
     }
 
-
     @FXML
     public void OnPress_Button_ExportToExcel(ActionEvent event) {
+        exportTableViewToExcel();
+    }
+
+    private void exportTableViewToExcel() {
         Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
         ExcelExport<CustomerEntity> excelExport = new ExcelExport<>();
         excelExport.export("Customer", tableView, stage);
     }
 
-    private void createOrderModalWindow(String title, NewCustomerController controller) {
+    private void openNewOrderModalWindow(String title, NewCustomerController controller) {
         Parent root;
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/modalWindow/new_customer.fxml"));
@@ -116,10 +124,12 @@ public class CustomersController implements Initializable {
         return tableView.getSelectionModel().isEmpty();
     }
 
+    @FXML
     public void OnPress_Button_Refresh(ActionEvent event) {
         displayInformationToTableView();
     }
 
+    @FXML
     public void OnPress_Button_NewAddress(ActionEvent event) {
         Parent root;
         try {
@@ -133,15 +143,21 @@ public class CustomersController implements Initializable {
     }
 
     private void displayInformationToTableView() {
-        if (tableView.getItems().size() > 0)
-            tableView.getItems().clear();
-
+        clearTableView();
         ObservableList<CustomerEntity> data = FXCollections.observableArrayList(JpaConnector.getCustomer().getAll());
         if (data.size() < 1) {
             MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
             return;
         }
+        assignInformationToTableView(data);
+    }
 
+    private void clearTableView() {
+        if (tableView.getItems().size() > 0)
+            tableView.getItems().clear();
+    }
+
+    private void assignInformationToTableView(ObservableList<CustomerEntity> data) {
         tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idCustomer"));
         tableColumnAddress.setCellValueFactory(new PropertyValueFactory<>("idAddress"));
         tableColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -150,6 +166,4 @@ public class CustomersController implements Initializable {
         tableColumnDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         tableView.setItems(data);
     }
-
-
 }

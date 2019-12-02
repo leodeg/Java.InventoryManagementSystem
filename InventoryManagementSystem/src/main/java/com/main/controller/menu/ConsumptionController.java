@@ -78,15 +78,21 @@ public class ConsumptionController implements Initializable {
     }
 
     private void displayInformationToConsumptionTableView() {
-        if (tableConsumptionView.getItems().size() > 0)
-            tableConsumptionView.getItems().clear();
-
+        clearTableView();
         ObservableList<ConsumptionEntity> data = FXCollections.observableArrayList(JpaConnector.getConsumption().getAll());
         if (data.size() < 1) {
             MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
             return;
         }
+        assignInformationToTableView(data);
+    }
 
+    private void clearTableView() {
+        if (tableConsumptionView.getItems().size() > 0)
+            tableConsumptionView.getItems().clear();
+    }
+
+    private void assignInformationToTableView(ObservableList<ConsumptionEntity> data) {
         tableConsumptionColumnId.setCellValueFactory(new PropertyValueFactory<>("idConsumption"));
         tableConsumptionColumnProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
         tableConsumptionColumnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));

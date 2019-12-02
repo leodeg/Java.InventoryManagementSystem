@@ -76,6 +76,10 @@ public class OrdersController implements Initializable {
         }
     }
 
+    private OrderEntity getSelectedOrderEntity() {
+        return tableView.getSelectionModel().getSelectedItem();
+    }
+
     @FXML
     public void OnPress_Button_ExportToExcel(ActionEvent event) {
         Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
@@ -115,10 +119,6 @@ public class OrdersController implements Initializable {
         return true;
     }
 
-    private OrderEntity getSelectedOrderEntity() {
-        return tableView.getSelectionModel().getSelectedItem();
-    }
-
     private boolean selectedItemsIsEmpty() {
         return tableView.getSelectionModel().isEmpty();
     }
@@ -130,30 +130,37 @@ public class OrdersController implements Initializable {
 
     @FXML
     private void OnPress_Button_ToSales(ActionEvent event) {
-        if (tableView.getItems().isEmpty()) {
-            MainController.showAlert(Alert.AlertType.ERROR, "To Sale", "Please choose order from table below.");
-            return;
-        }
-
+        if (checkIsSelectionEmpty()) return;
         OrderEntity selectedItem = tableView.getSelectionModel().getSelectedItem();
         SaleEntity saleEntity = getSaleEntity(selectedItem);
         try {
-            FactEntity factEntity = JpaConnector.getFact().getSingleByIdProduct(selectedItem.getIdProduct());
-            if (factEntity.getAmount() < selectedItem.getAmount()) {
-                MainController.showAlert(Alert.AlertType.ERROR, "To Sale", "Inventory has only: " + factEntity.getAmount());
-                return;
-            }
-
-            factEntity.setAmount(factEntity.getAmount() - selectedItem.getAmount());
-            JpaConnector.getFact().update(factEntity);
-            JpaConnector.getSale().save(saleEntity);
-            JpaConnector.getOrder().delete(selectedItem);
-
-            MainController.showAlert(Alert.AlertType.CONFIRMATION, "To Sale", "Complete");
-            displayInformationToTableView();
+            saveInformationToDatabase(selectedItem, saleEntity);
         } catch (Exception ex) {
             MainController.showAlert(Alert.AlertType.ERROR, "To Sale", ex.getMessage());
         }
+    }
+
+    private boolean checkIsSelectionEmpty() {
+        if (tableView.getItems().isEmpty()) {
+            MainController.showAlert(Alert.AlertType.ERROR, "To Sale", "Please choose order from table below.");
+            return true;
+        }
+        return false;
+    }
+
+    private void saveInformationToDatabase(OrderEntity selectedItem, SaleEntity saleEntity) {
+        FactEntity factEntity = JpaConnector.getFact().getSingleByIdProduct(selectedItem.getIdProduct());
+        if (factEntity.getAmount() < selectedItem.getAmount()) {
+            MainController.showAlert(Alert.AlertType.ERROR, "To Sale", "Inventory has only: " + factEntity.getAmount());
+        }
+
+        factEntity.setAmount(factEntity.getAmount() - selectedItem.getAmount());
+        JpaConnector.getFact().update(factEntity);
+        JpaConnector.getSale().save(saleEntity);
+        JpaConnector.getOrder().delete(selectedItem);
+
+        MainController.showAlert(Alert.AlertType.CONFIRMATION, "To Sale", "Complete");
+        displayInformationToTableView();
     }
 
     private SaleEntity getSaleEntity(OrderEntity selectedItem) {
@@ -163,15 +170,21 @@ public class OrdersController implements Initializable {
     }
 
     private void displayInformationToTableView() {
-        if (tableView.getItems().size() > 0)
-            tableView.getItems().clear();
-
+        clearTableView();
         ObservableList<OrderEntity> data = FXCollections.observableArrayList(JpaConnector.getOrder().getAll());
         if (data.size() < 1) {
             MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
             return;
         }
+        assignInformationToTableView(data);
+    }
 
+    private void clearTableView() {
+        if (tableView.getItems().size() > 0)
+            tableView.getItems().clear();
+    }
+
+    private void assignInformationToTableView(ObservableList<OrderEntity> data) {
         tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idOrder"));
         tableColumnProductId.setCellValueFactory(new PropertyValueFactory<>("idProduct"));
         tableColumnCustomerId.setCellValueFactory(new PropertyValueFactory<>("idCustomer"));

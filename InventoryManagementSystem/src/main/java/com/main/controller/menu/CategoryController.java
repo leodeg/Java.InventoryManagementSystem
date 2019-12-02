@@ -45,7 +45,10 @@ public class CategoryController implements Initializable {
         buttonRefresh.setOnAction(this::OnPress_Button_Refresh);
         buttonChange.setOnAction(this::OnPress_Button_Change);
         buttonExportToExcel.setOnAction(this::OnPress_Button_ExportToExcel);
+        handleTableViewSelection();
+    }
 
+    private void handleTableViewSelection() {
         tableView.getSelectionModel().selectedItemProperty().addListener(newSelection -> {
             if (newSelection != null) {
                 displaySelectedInfo(tableView.getSelectionModel().getSelectedItem());
@@ -53,27 +56,31 @@ public class CategoryController implements Initializable {
         });
     }
 
+    private void displaySelectedInfo(CategoryEntity entity) {
+        textFieldTitle.setText(entity.getTitle());
+    }
 
     @FXML
-    public void OnPress_Button_ExportToExcel(ActionEvent event) {
+    private void OnPress_Button_ExportToExcel(ActionEvent event) {
         Stage stage = (Stage) buttonExportToExcel.getScene().getWindow();
         ExcelExport<CategoryEntity> excelExport = new ExcelExport<>();
         excelExport.export("Category", tableView, stage);
     }
 
-    private void displaySelectedInfo(CategoryEntity entity) {
-        textFieldTitle.setText(entity.getTitle());
-    }
-
+    @FXML
     private void OnPress_Button_NewCategory(ActionEvent event) {
         CategoryEntity categoryEntity = getCategoryEntity();
         if (categoryEntity != null) try {
-            JpaConnector.getCategory().save(categoryEntity);
-            MainController.showAlert(Alert.AlertType.CONFIRMATION, "Category added", "Category was successfully added to database");
-            displayInformationToTableView();
+            saveNewCategoryToDatabase(categoryEntity);
         } catch (Exception ex) {
             MainController.showAlert(Alert.AlertType.ERROR, "Category Error", ex.getMessage());
         }
+    }
+
+    private void saveNewCategoryToDatabase(CategoryEntity categoryEntity) {
+        JpaConnector.getCategory().save(categoryEntity);
+        MainController.showAlert(Alert.AlertType.CONFIRMATION, "Category added", "Category was successfully added to database");
+        displayInformationToTableView();
     }
 
     private CategoryEntity getCategoryEntity() {
@@ -90,48 +97,65 @@ public class CategoryController implements Initializable {
         return true;
     }
 
+    @FXML
     private void OnPress_Button_Refresh(ActionEvent event) {
         displayInformationToTableView();
     }
 
     private void displayInformationToTableView() {
-        if (tableView.getItems().size() > 0)
-            tableView.getItems().clear();
-
-
+        clearTableView();
         ObservableList<CategoryEntity> data = FXCollections.observableArrayList(JpaConnector.getCategory().getAll());
         if (data.size() < 1) {
             MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
             return;
         }
+        assignInformationToTableView(data);
+    }
+
+    private void clearTableView() {
+        if (tableView.getItems().size() > 0)
+            tableView.getItems().clear();
+    }
+
+    private void assignInformationToTableView(ObservableList<CategoryEntity> data) {
         tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idCategory"));
         tableColumnTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         tableView.setItems(data);
     }
 
+    @FXML
     private void OnPress_Button_Delete(ActionEvent event) {
         if (selectedItemsIsEmpty()) return;
         CategoryEntity selectedItem = tableView.getSelectionModel().getSelectedItem();
         try {
-            CategoryEntity entity = JpaConnector.getCategory().get(selectedItem.getIdCategory()).get();
-            JpaConnector.getCategory().delete(entity);
-            displayInformationToTableView();
+            deleteCategoryFromDatabase(selectedItem);
         } catch (Exception ex) {
             MainController.showAlert(Alert.AlertType.ERROR, "Error", ex.getMessage());
         }
 
     }
 
+    private void deleteCategoryFromDatabase(CategoryEntity selectedItem) {
+        CategoryEntity entity = JpaConnector.getCategory().get(selectedItem.getIdCategory()).get();
+        JpaConnector.getCategory().delete(entity);
+        displayInformationToTableView();
+    }
+
+    @FXML
     private void OnPress_Button_Change(ActionEvent event) {
         if (selectedItemsIsEmpty()) return;
         if (informationIsValid()) {
-            CategoryEntity selectedItem = tableView.getSelectionModel().getSelectedItem();
-            selectedItem.setTitle(textFieldTitle.getText());
-            JpaConnector.getCategory().update(selectedItem);
-
-            MainController.showAlert(Alert.AlertType.INFORMATION, "Change", "Category was changed");
-            displayInformationToTableView();
+            saveChangedInformationToDatabase();
         }
+    }
+
+    private void saveChangedInformationToDatabase() {
+        CategoryEntity selectedItem = tableView.getSelectionModel().getSelectedItem();
+        selectedItem.setTitle(textFieldTitle.getText());
+        JpaConnector.getCategory().update(selectedItem);
+
+        MainController.showAlert(Alert.AlertType.INFORMATION, "Change", "Category was changed");
+        displayInformationToTableView();
     }
 
     private boolean selectedItemsIsEmpty() {

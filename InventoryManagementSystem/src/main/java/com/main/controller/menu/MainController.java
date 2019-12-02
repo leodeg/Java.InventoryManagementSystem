@@ -33,12 +33,16 @@ public class MainController implements Initializable {
     @FXML
     public AnchorPane sales;
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+
     public static void showAlert(Alert.AlertType type, String title, String message) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
         alert.setContentText(message);
         alert.show();
-
     }
 
     public static boolean hasOnlyNumbers(String text) {
@@ -59,12 +63,5 @@ public class MainController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
-
-
 }
 

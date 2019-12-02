@@ -71,7 +71,7 @@ public class NewOrderController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        buttonRefresh.setOnAction(this::OnPress_Button_RefreshTable);
+        buttonRefresh.setOnAction(this::OnPress_Button_RefreshTables);
         buttonNewOrder.setOnAction(this::OnPress_Button_NewOrder);
         displayCustomerInformationToTableView();
         displayFactInformationToFactTableView();
@@ -84,6 +84,7 @@ public class NewOrderController implements Initializable {
         textFieldAmount.setText(String.valueOf(entityToChange.getAmount()));
     }
 
+    @FXML
     private void OnPress_Button_NewOrder(ActionEvent event) {
         if (entityToChange == null)
             createNewOrder();
@@ -96,8 +97,7 @@ public class NewOrderController implements Initializable {
             if (orderEntity != null) try {
                 JpaConnector.getOrder().save(getOrderEntity());
                 MainController.showAlert(Alert.AlertType.CONFIRMATION, "New Order", "Order was successfully added.");
-                Stage stage = (Stage) buttonNewOrder.getScene().getWindow();
-                stage.close();
+                closeCurrentWindow();
             } catch (Exception ex) {
                 MainController.showAlert(Alert.AlertType.ERROR, "New Order", ex.getMessage());
             }
@@ -106,31 +106,16 @@ public class NewOrderController implements Initializable {
 
     private void changeOldOrder() {
         if (checkValidation()) {
-            OrderEntity changedEntity = getOrderEntity();
             try {
-                entityToChange.setIdCustomer(changedEntity.getIdCustomer());
-                entityToChange.setIdProduct(changedEntity.getIdProduct());
-                entityToChange.setPrice(changedEntity.getPrice());
-                entityToChange.setAmount(changedEntity.getAmount());
-                entityToChange.setTotalPrice(entityToChange.getPrice() * entityToChange.getAmount());
-
+                OrderEntity changedEntity = getOrderEntity();
+                assignChangedInformation(changedEntity);
                 JpaConnector.getOrder().update(entityToChange);
                 MainController.showAlert(Alert.AlertType.CONFIRMATION, "Change Order", "Order was successfully changed.");
-                Stage stage = (Stage) buttonNewOrder.getScene().getWindow();
-                stage.close();
+                closeCurrentWindow();
             } catch (Exception ex) {
                 MainController.showAlert(Alert.AlertType.ERROR, "Change Order", ex.getMessage());
             }
         }
-    }
-
-    private OrderEntity getOrderEntity() {
-        CustomerEntity customerEntity = getCustomerSelectedItem();
-        return new OrderEntity(getFactSelectedEntity().getIdProduct(),
-                customerEntity.getIdCustomer(),
-                getFactSelectedEntity().getPrice(),
-                Integer.parseInt(textFieldAmount.getText()),
-                Date.valueOf(datePicker.getValue()));
     }
 
     private boolean checkValidation() {
@@ -158,6 +143,28 @@ public class NewOrderController implements Initializable {
         return true;
     }
 
+    private void closeCurrentWindow() {
+        Stage stage = (Stage) buttonNewOrder.getScene().getWindow();
+        stage.close();
+    }
+
+    private OrderEntity getOrderEntity() {
+        CustomerEntity customerEntity = getCustomerSelectedItem();
+        return new OrderEntity(getFactSelectedEntity().getIdProduct(),
+                customerEntity.getIdCustomer(),
+                getFactSelectedEntity().getPrice(),
+                Integer.parseInt(textFieldAmount.getText()),
+                Date.valueOf(datePicker.getValue()));
+    }
+
+    private void assignChangedInformation(OrderEntity changedEntity) {
+        entityToChange.setIdCustomer(changedEntity.getIdCustomer());
+        entityToChange.setIdProduct(changedEntity.getIdProduct());
+        entityToChange.setPrice(changedEntity.getPrice());
+        entityToChange.setAmount(changedEntity.getAmount());
+        entityToChange.setTotalPrice(entityToChange.getPrice() * entityToChange.getAmount());
+    }
+
     private CustomerEntity getCustomerSelectedItem() {
         return tableCustomerView.getSelectionModel().getSelectedItem();
     }
@@ -174,21 +181,28 @@ public class NewOrderController implements Initializable {
         return tableFactView.getSelectionModel().isEmpty();
     }
 
-    public void OnPress_Button_RefreshTable(ActionEvent event) {
+    @FXML
+    public void OnPress_Button_RefreshTables(ActionEvent event) {
         displayCustomerInformationToTableView();
         displayFactInformationToFactTableView();
     }
 
     private void displayCustomerInformationToTableView() {
-        if (tableCustomerView.getItems().size() > 0)
-            tableCustomerView.getItems().clear();
-
+        clearCustomerTableView();
         ObservableList<CustomerEntity> data = FXCollections.observableArrayList(JpaConnector.getCustomer().getAll());
         if (data.size() < 1) {
             MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
             return;
         }
+        assignInformationToCustomerTableView(data);
+    }
 
+    private void clearCustomerTableView() {
+        if (tableCustomerView.getItems().size() > 0)
+            tableCustomerView.getItems().clear();
+    }
+
+    private void assignInformationToCustomerTableView(ObservableList<CustomerEntity> data) {
         tableCustomerColumnId.setCellValueFactory(new PropertyValueFactory<>("idCustomer"));
         tableCustomerColumnAddress.setCellValueFactory(new PropertyValueFactory<>("idAddress"));
         tableCustomerColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -199,15 +213,21 @@ public class NewOrderController implements Initializable {
     }
 
     private void displayFactInformationToFactTableView() {
+        clearFactTableView();
         ObservableList<FactEntity> list = FXCollections.observableArrayList(JpaConnector.getFact().getAll());
-        if (tableFactView.getItems().size() > 0)
-            tableFactView.getItems().clear();
-
         if (list.size() < 1) {
             MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
             return;
         }
+        assignInformationToFactTableView(list);
+    }
 
+    private void clearFactTableView() {
+        if (tableFactView.getItems().size() > 0)
+            tableFactView.getItems().clear();
+    }
+
+    private void assignInformationToFactTableView(ObservableList<FactEntity> list) {
         tableFactColumnId.setCellValueFactory(new PropertyValueFactory<>("idFact"));
         tableFactColumnIdProduct.setCellValueFactory(new PropertyValueFactory<>("idProduct"));
         tableFactColumnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));

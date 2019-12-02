@@ -64,11 +64,15 @@ public class NewOrderFromInventoryController implements Initializable {
         if (orderEntity != null) try {
             JpaConnector.getOrder().save(getOrderEntity());
             MainController.showAlert(Alert.AlertType.CONFIRMATION, "New Order", "Order was successfully added.");
-            Stage stage = (Stage) buttonNewOrder.getScene().getWindow();
-            stage.close();
+            closeCurrentWindow();
         } catch (Exception ex) {
             MainController.showAlert(Alert.AlertType.ERROR, "New Order", ex.getMessage());
         }
+    }
+
+    private void closeCurrentWindow() {
+        Stage stage = (Stage) buttonNewOrder.getScene().getWindow();
+        stage.close();
     }
 
     private OrderEntity getOrderEntity() {
@@ -114,10 +118,21 @@ public class NewOrderFromInventoryController implements Initializable {
     }
 
     private void displayInformationToTableView() {
+        clearTableView();
+        ObservableList<CustomerEntity> data = FXCollections.observableArrayList(JpaConnector.getCustomer().getAll());
+        if (data.size() < 1) {
+            MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
+            return;
+        }
+        assignInformationToTableView(data);
+    }
+
+    private void clearTableView() {
         if (tableView.getItems().size() > 0)
             tableView.getItems().clear();
+    }
 
-        ObservableList<CustomerEntity> data = FXCollections.observableArrayList(JpaConnector.getCustomer().getAll());
+    private void assignInformationToTableView(ObservableList<CustomerEntity> data) {
         tableColumnId.setCellValueFactory(new PropertyValueFactory<>("idCustomer"));
         tableColumnAddress.setCellValueFactory(new PropertyValueFactory<>("idAddress"));
         tableColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -126,6 +141,4 @@ public class NewOrderFromInventoryController implements Initializable {
         tableColumnDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         tableView.setItems(data);
     }
-
-
 }
