@@ -130,7 +130,7 @@ public class ProductsController implements Initializable {
 
     @FXML
     public void OnPress_Button_ChangeInformation(ActionEvent event) {
-        if (checkIsSelectionItemsEmpty()) return;
+        if (selectionItemsIsEmpty()) return;
 
         try {
             JpaConnector.getProduct().update(getChangedProductEntity());
@@ -143,7 +143,7 @@ public class ProductsController implements Initializable {
 
     @FXML
     public void OnPress_Button_DeleteProduct(ActionEvent event) {
-        if (checkIsSelectionItemsEmpty()) {
+        if (!selectionItemsIsEmpty()) {
             JpaConnector.getProduct().delete(getSelectedProduct());
             MainController.showAlert(Alert.AlertType.INFORMATION, "Delete Product", "Information was deleted from the database.");
             displayInformationToTableView();
@@ -164,7 +164,7 @@ public class ProductsController implements Initializable {
         choiceBoxCategory.setValue(JpaConnector.getCategory().get(entity.getIdCategory()).get().getTitle());
     }
 
-    private boolean checkIsSelectionItemsEmpty() {
+    private boolean selectionItemsIsEmpty() {
         if (isSelectedItemsEmpty()) {
             MainController.showAlert(Alert.AlertType.ERROR, "Change Information Error", "Please select product from the table below.");
             return true;

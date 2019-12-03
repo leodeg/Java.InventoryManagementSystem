@@ -9,32 +9,32 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 
 public class EntityManagerConnector {
-    private static EntityManagerFactory managerFactory;
     @PersistenceContext
     private static EntityManager entityManager;
+    private static EntityManagerFactory managerFactory;
 
-    static {
+    public static boolean initialize () throws NullPointerException {
         try {
             managerFactory = Persistence.createEntityManagerFactory("jpa");
             entityManager = managerFactory.createEntityManager();
-        } catch (NullPointerException ex) {
-            MainController.showAlert(Alert.AlertType.ERROR, "Database", "Can't create connection to the database. \nError::NullPointerException:: " + ex.getMessage());
+            return true;
         } catch (Exception ex) {
-            MainController.showAlert(Alert.AlertType.ERROR, "Database", "Can't create connection to the database. \nError: " + ex.getMessage());
+            MainController.showAlert(Alert.AlertType.ERROR,
+                    "Database",
+                    "Can't create connection to the database. \nError: " + ex.getMessage());
         }
+        return false;
     }
 
     public static void close() {
-        if (getEntityManager() != null)
-            getEntityManager().close();
+        if (entityManager != null)
+            entityManager.close();
         if (managerFactory != null)
             managerFactory.close();
     }
 
     public static EntityManager getEntityManager() throws NullPointerException {
-        if (entityManager == null) {
-            MainController.showAlert(Alert.AlertType.ERROR, "Database", "Can't create connection to the database. Entity manager is empty.");
-        }
+        if (entityManager == null) initialize();
         return entityManager;
     }
 }

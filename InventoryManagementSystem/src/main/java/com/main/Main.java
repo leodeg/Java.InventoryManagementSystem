@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class Main extends Application {
     public static void main(String[] args) {
@@ -17,24 +18,37 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        connectToDatabase();
+        openMainWindow(primaryStage);
+    }
+
+    private void connectToDatabase() {
+        try {
+            EntityManagerConnector.initialize();
+        } catch (NullPointerException ex) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Database connection", ex.getMessage());
+        }
+    }
+
+    private void openMainWindow(Stage primaryStage) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/ui/menu/main.fxml"));
-            primaryStage.setTitle("Inventory management system");
-
             Scene scene = new Scene(root, 1280, 720);
             scene.getStylesheets().add(Main.class.getResource("/ui/themes/bootstrap.css").toExternalForm());
 
-            primaryStage.setOnCloseRequest(windowEvent -> {
-                EntityManagerConnector.close();
-                Platform.exit();
-                System.exit(0);
-            });
-
+            primaryStage.setOnCloseRequest(this::handleOnCloseApplicationRequest);
+            primaryStage.setTitle("Inventory management system");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (Exception ex) {
             MainController.showAlert(Alert.AlertType.ERROR, "Main window", "Database is not running.");
             EntityManagerConnector.close();
         }
+    }
+
+    private void handleOnCloseApplicationRequest(WindowEvent event) {
+        EntityManagerConnector.close();
+        Platform.exit();
+        System.exit(0);
     }
 }
