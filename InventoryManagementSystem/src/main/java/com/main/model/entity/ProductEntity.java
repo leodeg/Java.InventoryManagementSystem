@@ -1,33 +1,32 @@
 package com.main.model.entity;
 
 import javax.persistence.*;
-import java.text.DecimalFormat;
 import java.util.Objects;
 
 @Entity
 @Table(name = "products")
-public class ProductEntity implements ParentEntity{
-    @Column (name = "idType")
-    private int idType;
+public class ProductEntity implements ParentEntity {
+    @Column(name = "idCategory")
+    private int idCategory;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idProduct;
-    @Column (name = "name")
+    @Column(name = "name")
     private String name;
-    @Column (name = "price")
+    @Column(name = "price")
     private Double price;
-    @Column (name = "description")
+    @Column(name = "description")
     private String description;
 
-    public ProductEntity(int idType, String name, Double price) {
-        this.idType = idType;
+    public ProductEntity(int idCategory, String name, Double price) {
+        this.idCategory = idCategory;
         this.name = name;
         this.price = price;
         this.description = "Empty";
     }
 
-    public ProductEntity(int idType, String name, Double price, String description) {
-        this.idType = idType;
+    public ProductEntity(int idCategory, String name, Double price, String description) {
+        this.idCategory = idCategory;
         this.name = name;
         this.price = price;
         this.description = description;
@@ -36,12 +35,12 @@ public class ProductEntity implements ParentEntity{
     public ProductEntity() {
     }
 
-    public int getIdType() {
-        return idType;
+    public int getIdCategory() {
+        return idCategory;
     }
 
-    public void setIdType(int idType) {
-        this.idType = idType;
+    public void setIdCategory(int idType) {
+        this.idCategory = idType;
     }
 
     public int getIdProduct() {
@@ -77,10 +76,10 @@ public class ProductEntity implements ParentEntity{
     }
 
     @Override
-    public String toString () {
+    public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("Id: ").append(idProduct);
-        builder.append("; IdType: ").append(idType);
+        builder.append("; IdType: ").append(idCategory);
         builder.append("; Name: ").append(name);
         builder.append("; Price: ").append(price);
         builder.append("; Description: ").append(description);
@@ -89,7 +88,7 @@ public class ProductEntity implements ParentEntity{
 
     @Override
     public void assignEntity(String[] params) {
-        setIdType(Integer.parseInt(params[0]));
+        setIdCategory(Integer.parseInt(params[0]));
         setName(Objects.requireNonNull(params[1], "Name cannot be null"));
         setPrice(Double.parseDouble(params[2]));
         setDescription(params[2] != null ? params[3] : "Empty");

@@ -1,56 +1,54 @@
 package com.main;
 
-import com.main.model.entity.BeginEntity;
-import com.main.model.entity.ProductEntity;
-import com.main.model.jpa.JpaBeginDao;
-import com.main.model.jpa.JpaProductDao;
+import com.main.controller.menu.MainController;
+import com.main.database.EntityManagerConnector;
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
-import java.util.Date;
-import java.util.TimeZone;
-
-//public class Main extends Application {
-//    @Override
-//    public void start(Stage primaryStage) throws Exception {
-//        Parent root = FXMLLoader.load(getClass().getResource("/main.fxml"));
-//        primaryStage.setTitle("Hello World");
-//        primaryStage.setScene(new Scene(root, 300, 275));
-//        primaryStage.show();
-//    }
-//
-//    public static void main(String[] args) {
-//        launch(args);
-//    }
-//}
-
-public class Main {
+public class Main extends Application {
     public static void main(String[] args) {
-        CreateBeginEntity();
-//        UpdateProduct();
+        launch(args);
     }
 
-
-
-    private static void CreateBeginEntity() {
-        JpaBeginDao beginDao = new JpaBeginDao();
-        BeginEntity beginEntity = new BeginEntity(37, 10, 15.00, new Date());
-        System.out.print(beginEntity.toString());
-        beginDao.save(beginEntity);
-        beginDao.close();
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        connectToDatabase();
+        openMainWindow(primaryStage);
     }
 
-    private static void UpdateProduct () {
-        JpaProductDao productDao = new JpaProductDao();
+    private void connectToDatabase() {
+        try {
+            EntityManagerConnector.initialize();
+        } catch (NullPointerException ex) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Database connection", ex.getMessage());
+        }
+    }
 
-        ProductEntity productEntity = productDao.get(36).get();
-        System.out.print("\n\n");
-        System.out.print(productEntity.toString());
-        System.out.print("\n\n");
-        productDao.update(productEntity, new String[] {"1", "Computer", "15.0", "Computer"});
+    private void openMainWindow(Stage primaryStage) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/ui/menu/main.fxml"));
+            Scene scene = new Scene(root, 1280, 720);
+            scene.getStylesheets().add(Main.class.getResource("/ui/themes/bootstrap.css").toExternalForm());
 
-        productEntity = productDao.get(36).get();
-        System.out.print("\n\n");
-        System.out.print(productEntity.toString());
-        System.out.print("\n\n");
-        productDao.close();
+            primaryStage.setOnCloseRequest(this::handleOnCloseApplicationRequest);
+            primaryStage.setTitle("Inventory management system");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception ex) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Main window", "Database is not running.");
+            EntityManagerConnector.close();
+        }
+    }
+
+    private void handleOnCloseApplicationRequest(WindowEvent event) {
+        EntityManagerConnector.close();
+        Platform.exit();
+        System.exit(0);
     }
 }

@@ -8,30 +8,16 @@
     <persistence-unit name="jpa" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
+        <class>com.main.model.entity.CategoryEntity</class>
+        <class>com.main.model.entity.ProductEntity</class>
+        <class>com.main.model.entity.FactEntity</class>
+        <class>com.main.model.entity.ArrivalEntity</class>
+        <class>com.main.model.entity.ConsumptionEntity</class>
+
         <class>com.main.model.entity.AddressEntity</class>
         <class>com.main.model.entity.CustomerEntity</class>
-        <!--<class>com.main.model.entity.InventoryBaseEntitytity</class>-->
-        <!--<class>com.main.model.entity.OrderEntity</class>-->
-        <!--<class>com.main.model.entity.ProductEntity</class>-->
-        <!--<class>com.main.model.entity.SaleEntity</class>-->
-        <class>com.main.model.entity.TypeEntity</class>
-
-        <!--<properties>-->
-            <!--<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>-->
-            <!--<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>-->
-            <!--<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/inventory_management_system?useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>-->
-            <!--<property name="javax.persistence.jdbc.user" value="root"/>-->
-            <!--<property name="javax.persistence.jdbc.password" value="root"/>-->
-            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>-->
-        <!--</properties>-->
-
-        <!--<properties>-->
-            <!--<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/inventory_management_system"/>-->
-            <!--<property name="hibernate.connection.driver_class" value="org.mysql.Driver"/>-->
-            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>-->
-            <!--<property name="hibernate.connection.username" value="root"/>-->
-            <!--<property name="hibernate.connection.password" value="root"/>-->
-        <!--</properties>-->
+        <class>com.main.model.entity.OrderEntity</class>
+        <class>com.main.model.entity.SaleEntity</class>
 
         <properties>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>

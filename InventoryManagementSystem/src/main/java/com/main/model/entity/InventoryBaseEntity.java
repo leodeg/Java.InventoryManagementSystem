@@ -1,17 +1,22 @@
 package com.main.model.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.util.Date;
 import java.util.Objects;
 
 @MappedSuperclass
 public class InventoryBaseEntity implements ParentEntity {
-    @Column (name = "idProduct")
+    @Column(name = "idProduct")
     private int idProduct;
-    @Column (name = "amount")
+    @Column(name = "amount")
     private int amount;
-    @Column (name = "price")
+    @Column(name = "price")
     private Double price;
+    @Column(name = "totalPrice")
+    private Double totalPrice;
     @Temporal(TemporalType.DATE)
     private Date date;
 
@@ -20,6 +25,11 @@ public class InventoryBaseEntity implements ParentEntity {
         this.amount = amount;
         this.price = price;
         this.date = date;
+        this.totalPrice = amount * price;
+    }
+
+    public InventoryBaseEntity() {
+
     }
 
 
@@ -37,6 +47,7 @@ public class InventoryBaseEntity implements ParentEntity {
 
     public void setAmount(int amount) {
         this.amount = amount;
+        this.totalPrice = this.amount * this.price;
     }
 
     public Double getPrice() {
@@ -45,6 +56,7 @@ public class InventoryBaseEntity implements ParentEntity {
 
     public void setPrice(Double price) {
         this.price = price;
+        this.totalPrice = this.amount * this.price;
     }
 
     public Date getDate() {
@@ -61,6 +73,14 @@ public class InventoryBaseEntity implements ParentEntity {
         setAmount(Objects.requireNonNull(Integer.parseInt(params[1]), "id cannot be null"));
         setPrice(Objects.requireNonNull(Double.parseDouble(params[2]), "Price cannot be null"));
         setDate(Objects.requireNonNull(java.sql.Date.valueOf(params[3]), "Date Date be null"));
+    }
+
+    public Double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 }
 
