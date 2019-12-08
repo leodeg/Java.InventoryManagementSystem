@@ -12,15 +12,24 @@ public class JpaConnector {
     private static JpaSaleDao sale;
 
     static {
-        address = new JpaAddressDao();
-        arrival = new JpaArrivalDao();
-        category = new JpaCategoryDao();
-        consumption = new JpaConsumptionDao();
-        customer = new JpaCustomerDao();
-        fact = new JpaFactDao();
-        order = new JpaOrderDao();
-        product = new JpaProductDao();
-        sale = new JpaSaleDao();
+        initialize();
+    }
+
+    public static void initialize() {
+        try {
+            address = new JpaAddressDao();
+            arrival = new JpaArrivalDao();
+            category = new JpaCategoryDao();
+            consumption = new JpaConsumptionDao();
+            customer = new JpaCustomerDao();
+            fact = new JpaFactDao();
+            order = new JpaOrderDao();
+            product = new JpaProductDao();
+            sale = new JpaSaleDao();
+        } catch (NullPointerException ex) {
+            System.err.print("\nError::Connector::initialize::Some JPA class(es) is null pointer.");
+            throw ex;
+        }
     }
 
 

@@ -1,7 +1,7 @@
 package com.main.controller.menu;
 
 import com.main.database.JpaConnector;
-import com.main.model.ExcelExport;
+import com.main.model.export.ExcelExport;
 import com.main.model.entity.ConsumptionEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -51,8 +51,8 @@ public class ConsumptionController implements Initializable {
         buttonExportToExcel.setOnAction(this::OnPress_Button_ExportToExcel);
 
         // TODO: uncomment when will be added the login system
-//        buttonChange.setOnAction(this::OnPress_Button_Change);
-//        buttonDelete.setOnAction(this::OnPress_Button_Delete);
+        // buttonChange.setOnAction(this::OnPress_Button_Change);
+        // buttonDelete.setOnAction(this::OnPress_Button_Delete);
     }
 
     @FXML
@@ -80,8 +80,8 @@ public class ConsumptionController implements Initializable {
     private void displayInformationToConsumptionTableView() {
         clearTableView();
         ObservableList<ConsumptionEntity> data = FXCollections.observableArrayList(JpaConnector.getConsumption().getAll());
-        if (data.size() < 1) {
-            MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
+        if (data.isEmpty()) {
+            MainController.showAlert(Alert.AlertType.WARNING, "Table View", "Table is empty.");
             return;
         }
         assignInformationToTableView(data);

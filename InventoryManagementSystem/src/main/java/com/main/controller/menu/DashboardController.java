@@ -11,6 +11,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import org.jetbrains.annotations.NotNull;
 
@@ -99,12 +100,13 @@ public class DashboardController implements Initializable {
     }
 
     private void updateProductPiChartInformation() {
+        List<CategoryEntity> categoryEntityList = JpaConnector.getCategory().getAll();
+        if (tableIsEmpty(categoryEntityList.isEmpty())) return;
+
         if (pieChartProducts.getData().size() > 0)
             pieChartProducts.getData().clear();
 
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
-        List<CategoryEntity> categoryEntityList = JpaConnector.getCategory().getAll();
-
         for (CategoryEntity entity : categoryEntityList) {
             long productsCount = JpaConnector.getProduct().getCount(entity.getIdCategory());
             pieChartData.add(new PieChart.Data(entity.getTitle(), productsCount));
@@ -121,11 +123,13 @@ public class DashboardController implements Initializable {
     }
 
     private void updateProductsBarChar() {
+        List<String> names = JpaConnector.getProduct().getAllNames();
+        if (tableIsEmpty(names.isEmpty())) return;
+
         if (barCharProducts.getData().size() > 0)
             barCharProducts.getData().clear();
 
         XYChart.Series<String, Double> series = new XYChart.Series<>();
-        List<String> names = JpaConnector.getProduct().getAllNames();
         for (String name : names) {
             double price = JpaConnector.getProduct().getPriceByName(name);
             series.getData().add(new XYChart.Data<>(name, price));
@@ -136,12 +140,13 @@ public class DashboardController implements Initializable {
     }
 
     private void updateFactPiChartInformation() {
+        List<FactEntity> factEntityList = JpaConnector.getFact().getAll();
+        if (tableIsEmpty(factEntityList.isEmpty())) return;
+
         if (pieChartFact.getData().size() > 0)
             pieChartFact.getData().clear();
 
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
-        List<FactEntity> factEntityList = JpaConnector.getFact().getAll();
-
         for (FactEntity entity : factEntityList) {
             String productName = JpaConnector.getProduct().get(entity.getIdProduct()).get().getName();
             pieChartData.add(new PieChart.Data(productName, entity.getTotalPrice()));
@@ -152,11 +157,12 @@ public class DashboardController implements Initializable {
     }
 
     private void updateFactBarChar() {
+        List<FactEntity> entityList = JpaConnector.getFact().getAll();
+        if (tableIsEmpty(entityList.isEmpty())) return;
+
         if (barCharFact.getData().size() > 0)
             barCharFact.getData().clear();
-
         XYChart.Series<String, Integer> series = new XYChart.Series<>();
-        List<FactEntity> entityList = JpaConnector.getFact().getAll();
         for (FactEntity entity : entityList) {
             String name = JpaConnector.getProduct().get(entity.getIdProduct()).get().getName();
             series.getData().add(new XYChart.Data<>(name, entity.getAmount()));
@@ -167,12 +173,13 @@ public class DashboardController implements Initializable {
     }
 
     private void updateArrivalLineChartInformation() {
+        List<ArrivalEntity> arrivalEntityList = JpaConnector.getArrival().getAll();
+        if (tableIsEmpty(arrivalEntityList.isEmpty())) return;
+
         if (lineChartArrival.getData().size() > 0)
             lineChartArrival.getData().clear();
 
         XYChart.Series<String, Double> series = new XYChart.Series<>();
-        List<ArrivalEntity> arrivalEntityList = JpaConnector.getArrival().getAll();
-
         for (ArrivalEntity entity : arrivalEntityList) {
             Double totalPrice = JpaConnector.getArrival().getSumTotalPriceByDate(entity.getDate());
             Long totalAmount = JpaConnector.getArrival().getSumAmountByDate(entity.getDate());
@@ -184,12 +191,13 @@ public class DashboardController implements Initializable {
     }
 
     private void updateConsumptionLineChartInformation() {
+        List<ConsumptionEntity> consumptionEntityList = JpaConnector.getConsumption().getAll();
+        if (tableIsEmpty(consumptionEntityList.isEmpty())) return;
+
         if (lineChartConsumption.getData().size() > 0)
             lineChartConsumption.getData().clear();
 
         XYChart.Series<String, Double> series = new XYChart.Series<>();
-        List<ConsumptionEntity> consumptionEntityList = JpaConnector.getConsumption().getAll();
-
         for (ConsumptionEntity entity : consumptionEntityList) {
             Double totalPrice = JpaConnector.getConsumption().getSumTotalPriceByDate(entity.getDate());
             Long totalAmount = JpaConnector.getConsumption().getSumAmountByDate(entity.getDate());
@@ -201,12 +209,13 @@ public class DashboardController implements Initializable {
     }
 
     private void updateOrdersLineChartInformation() {
+        List<OrderEntity> list = JpaConnector.getOrder().getAll();
+        if (tableIsEmpty(list.isEmpty())) return;
+
         if (lineChartOrders.getData().size() > 0)
             lineChartOrders.getData().clear();
 
         XYChart.Series<String, Double> series = new XYChart.Series<>();
-        List<OrderEntity> list = JpaConnector.getOrder().getAll();
-
         for (OrderEntity entity : list) {
             Double totalPrice = JpaConnector.getOrder().getSumTotalPriceByDate(entity.getDate());
             Long totalAmount = JpaConnector.getOrder().getSumAmountByDate(entity.getDate());
@@ -218,12 +227,13 @@ public class DashboardController implements Initializable {
     }
 
     private void updateSalesLineChartInformation() {
+        List<SaleEntity> list = JpaConnector.getSale().getAll();
+        if (tableIsEmpty(list.isEmpty())) return;
+
         if (lineChartSales.getData().size() > 0)
             lineChartSales.getData().clear();
 
         XYChart.Series<String, Double> series = new XYChart.Series<>();
-        List<SaleEntity> list = JpaConnector.getSale().getAll();
-
         for (SaleEntity entity : list) {
             Double totalPrice = JpaConnector.getSale().getSumTotalPriceByDate(entity.getDate());
             Long totalAmount = JpaConnector.getSale().getSumAmountByDate(entity.getDate());
@@ -232,6 +242,14 @@ public class DashboardController implements Initializable {
 
         lineChartSales.getData().setAll(series);
         lineChartSales.setTitle("Дата и сумма");
+    }
+
+    private boolean tableIsEmpty(boolean empty) {
+        if (empty) {
+            MainController.showAlert(Alert.AlertType.WARNING, "Table is empty", "No data in database.");
+            return true;
+        }
+        return false;
     }
 
     @NotNull

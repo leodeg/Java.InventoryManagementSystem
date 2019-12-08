@@ -2,7 +2,7 @@ package com.main.controller.menu;
 
 import com.main.controller.modalWindow.NewOrderController;
 import com.main.database.JpaConnector;
-import com.main.model.ExcelExport;
+import com.main.model.export.ExcelExport;
 import com.main.model.entity.FactEntity;
 import com.main.model.entity.OrderEntity;
 import com.main.model.entity.SaleEntity;
@@ -92,13 +92,6 @@ public class OrdersController implements Initializable {
         createOrderModalWindow("New Order", new NewOrderController());
     }
 
-    @FXML
-    private void OnPress_Button_ChangeOrder(ActionEvent event) {
-        if (!informationIsValid()) return;
-
-        createOrderModalWindow("Change Order", new NewOrderController(getSelectedOrderEntity()));
-    }
-
     private void createOrderModalWindow(String title, NewOrderController controller) {
         Parent root;
         try {
@@ -109,6 +102,13 @@ public class OrdersController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void OnPress_Button_ChangeOrder(ActionEvent event) {
+        if (!informationIsValid()) return;
+
+        createOrderModalWindow("Change Order", new NewOrderController(getSelectedOrderEntity()));
     }
 
     private boolean informationIsValid() {
@@ -173,7 +173,7 @@ public class OrdersController implements Initializable {
         clearTableView();
         ObservableList<OrderEntity> data = FXCollections.observableArrayList(JpaConnector.getOrder().getAll());
         if (data.size() < 1) {
-            MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
+            MainController.showAlert(Alert.AlertType.WARNING, "Table View", "Table is empty.");
             return;
         }
         assignInformationToTableView(data);

@@ -95,9 +95,8 @@ public class NewOrderController implements Initializable {
         if (checkValidation()) {
             OrderEntity orderEntity = getOrderEntity();
             if (orderEntity != null) try {
-                JpaConnector.getOrder().save(getOrderEntity());
+                JpaConnector.getOrder().save(orderEntity);
                 MainController.showAlert(Alert.AlertType.CONFIRMATION, "New Order", "Order was successfully added.");
-                closeCurrentWindow();
             } catch (Exception ex) {
                 MainController.showAlert(Alert.AlertType.ERROR, "New Order", ex.getMessage());
             }
@@ -143,11 +142,6 @@ public class NewOrderController implements Initializable {
         return true;
     }
 
-    private void closeCurrentWindow() {
-        Stage stage = (Stage) buttonNewOrder.getScene().getWindow();
-        stage.close();
-    }
-
     private OrderEntity getOrderEntity() {
         CustomerEntity customerEntity = getCustomerSelectedItem();
         return new OrderEntity(getFactSelectedEntity().getIdProduct(),
@@ -163,6 +157,11 @@ public class NewOrderController implements Initializable {
         entityToChange.setPrice(changedEntity.getPrice());
         entityToChange.setAmount(changedEntity.getAmount());
         entityToChange.setTotalPrice(entityToChange.getPrice() * entityToChange.getAmount());
+    }
+
+    private void closeCurrentWindow() {
+        Stage stage = (Stage) buttonNewOrder.getScene().getWindow();
+        stage.close();
     }
 
     private CustomerEntity getCustomerSelectedItem() {
@@ -190,8 +189,8 @@ public class NewOrderController implements Initializable {
     private void displayCustomerInformationToTableView() {
         clearCustomerTableView();
         ObservableList<CustomerEntity> data = FXCollections.observableArrayList(JpaConnector.getCustomer().getAll());
-        if (data.size() < 1) {
-            MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
+        if (data.isEmpty()) {
+            MainController.showAlert(Alert.AlertType.WARNING, "Table View", "Table is empty.");
             return;
         }
         assignInformationToCustomerTableView(data);
@@ -215,8 +214,8 @@ public class NewOrderController implements Initializable {
     private void displayFactInformationToFactTableView() {
         clearFactTableView();
         ObservableList<FactEntity> list = FXCollections.observableArrayList(JpaConnector.getFact().getAll());
-        if (list.size() < 1) {
-            MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
+        if (list.isEmpty()) {
+            MainController.showAlert(Alert.AlertType.WARNING, "Table View", "Table is empty.");
             return;
         }
         assignInformationToFactTableView(list);

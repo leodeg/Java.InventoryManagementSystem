@@ -1,7 +1,7 @@
 package com.main.controller.menu;
 
 import com.main.database.JpaConnector;
-import com.main.model.ExcelExport;
+import com.main.model.export.ExcelExport;
 import com.main.model.entity.CategoryEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -105,8 +105,8 @@ public class CategoryController implements Initializable {
     private void displayInformationToTableView() {
         clearTableView();
         ObservableList<CategoryEntity> data = FXCollections.observableArrayList(JpaConnector.getCategory().getAll());
-        if (data.size() < 1) {
-            MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
+        if (data.isEmpty()) {
+            MainController.showAlert(Alert.AlertType.WARNING, "Table View", "Table is empty.");
             return;
         }
         assignInformationToTableView(data);

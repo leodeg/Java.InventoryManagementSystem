@@ -2,7 +2,7 @@ package com.main.controller.menu;
 
 import com.main.controller.modalWindow.NewCustomerController;
 import com.main.database.JpaConnector;
-import com.main.model.ExcelExport;
+import com.main.model.export.ExcelExport;
 import com.main.model.entity.CustomerEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -145,8 +145,8 @@ public class CustomersController implements Initializable {
     private void displayInformationToTableView() {
         clearTableView();
         ObservableList<CustomerEntity> data = FXCollections.observableArrayList(JpaConnector.getCustomer().getAll());
-        if (data.size() < 1) {
-            MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
+        if (data.isEmpty()) {
+            MainController.showAlert(Alert.AlertType.WARNING, "Table View", "Table is empty.");
             return;
         }
         assignInformationToTableView(data);

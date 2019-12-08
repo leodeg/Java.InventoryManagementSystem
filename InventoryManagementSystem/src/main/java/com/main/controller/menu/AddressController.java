@@ -1,7 +1,7 @@
 package com.main.controller.menu;
 
 import com.main.database.JpaConnector;
-import com.main.model.ExcelExport;
+import com.main.model.export.ExcelExport;
 import com.main.model.entity.AddressEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -166,8 +166,8 @@ public class AddressController implements Initializable {
     private void displayInformationToTableView() {
         clearTableView();
         ObservableList<AddressEntity> data = FXCollections.observableArrayList(JpaConnector.getAddress().getAll());
-        if (data.size() < 1) {
-            MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
+        if (data.isEmpty()) {
+            MainController.showAlert(Alert.AlertType.WARNING, "Table View", "Table is empty.");
             return;
         }
         assignDataToTableView(data);

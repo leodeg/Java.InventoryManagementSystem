@@ -1139,6 +1139,7 @@
     <column id="291" parent="279" name="address2">
       <Position>3</Position>
       <DataType>varchar(45)|0s</DataType>
+      <DefaultExpression>&apos;Empty&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="292" parent="279" name="city">
@@ -1151,6 +1152,7 @@
     <column id="293" parent="279" name="region">
       <Position>5</Position>
       <DataType>varchar(20)|0s</DataType>
+      <DefaultExpression>&apos;Empty&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="294" parent="279" name="idAddresses_UNIQUE">
@@ -1321,7 +1323,6 @@
     <column id="324" parent="283" name="idAddress">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="325" parent="283" name="idCustomer">
@@ -1339,16 +1340,19 @@
     <column id="327" parent="283" name="phone">
       <Position>4</Position>
       <DataType>varchar(25)|0s</DataType>
+      <DefaultExpression>&apos;Empty&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="328" parent="283" name="email">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
+      <DefaultExpression>&apos;Empty&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="329" parent="283" name="description">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
+      <DefaultExpression>&apos;Empty&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="330" parent="283" name="idCustomersAddresses_idx">
