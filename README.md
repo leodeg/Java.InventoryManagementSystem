@@ -26,3 +26,5 @@
   - Run MySQL server
   - Run "run_project.cmd" from the downloaded archive
    
+![Statistics](img/01.png)
+![Statistics](img/02.png)
