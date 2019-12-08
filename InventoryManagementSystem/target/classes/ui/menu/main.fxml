@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="uiMainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.controller.menu.MainController" stylesheets="/ui/themes/bootstrap.css">
+    <TabPane tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+             AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Tab text="Статистика">
+            <fx:include fx:id="dashboard" source="dashboard.fxml"/>
+        </Tab>
+        <Tab text="Категории Товара">
+            <fx:include fx:id="categories" source="categories.fxml"/>
+        </Tab>
+        <Tab text="Продукция">
+            <fx:include fx:id="products" source="products.fxml"/>
+        </Tab>
+        <Tab text="Склад">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE"
+                         AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                         AnchorPane.topAnchor="0.0">
+                    <Tab text="Текущий склад">
+                        <fx:include fx:id="fact" source="fact.fxml"/>
+                    </Tab>
+                    <Tab text="Приход">
+                        <fx:include fx:id="arrival" source="arrival.fxml"/>
+                    </Tab>
+                    <Tab text="Расход">
+                        <fx:include fx:id="consumption" source="consumption.fxml"/>
+                    </Tab>
+                </TabPane>
+            </AnchorPane>
+        </Tab>
+        <Tab text="Покупатели">
+            <fx:include fx:id="customers" source="customers.fxml"/>
+        </Tab>
+        <Tab text="Заказы">
+            <fx:include fx:id="orders" source="orders.fxml"/>
+        </Tab>
+        <Tab text="Продажи">
+            <fx:include fx:id="sales" source="sales.fxml"/>
+        </Tab>
+    </TabPane>
+</AnchorPane>
