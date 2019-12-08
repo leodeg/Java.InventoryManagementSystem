@@ -1,4 +1,4 @@
-package com.main.model;
+package com.main.model.export;
 
 import com.main.controller.menu.MainController;
 import javafx.scene.control.Alert;

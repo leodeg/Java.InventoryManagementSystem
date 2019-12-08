@@ -122,8 +122,8 @@ public class NewArrivalController implements Initializable {
     private void displayInformationToTableView() {
         clearTableView();
         ObservableList<ProductEntity> data = FXCollections.observableArrayList(JpaConnector.getProduct().getAll());
-        if (data.size() < 1) {
-            MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
+        if (data.isEmpty()) {
+            MainController.showAlert(Alert.AlertType.WARNING, "Table View", "Table is empty.");
             return;
         }
         assignInformationToTableView(data);

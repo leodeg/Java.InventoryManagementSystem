@@ -2,7 +2,7 @@ package com.main.controller.menu;
 
 import com.main.controller.modalWindow.NewOrderFromInventoryController;
 import com.main.database.JpaConnector;
-import com.main.model.ExcelExport;
+import com.main.model.export.ExcelExport;
 import com.main.model.entity.ConsumptionEntity;
 import com.main.model.entity.FactEntity;
 import javafx.collections.FXCollections;
@@ -172,7 +172,7 @@ public class FactController implements Initializable {
         clearTableView();
         ObservableList<FactEntity> list = FXCollections.observableArrayList(JpaConnector.getFact().getAll());
         if (list.size() < 1) {
-            MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
+            MainController.showAlert(Alert.AlertType.WARNING, "Table View", "Table is empty.");
             return;
         }
         assignInformationToTableView(list);

@@ -1,7 +1,7 @@
 package com.main.controller.menu;
 
 import com.main.database.JpaConnector;
-import com.main.model.ExcelExport;
+import com.main.model.export.ExcelExport;
 import com.main.model.entity.CategoryEntity;
 import com.main.model.entity.ProductEntity;
 import javafx.collections.FXCollections;
@@ -109,6 +109,10 @@ public class ProductsController implements Initializable {
 
     private void populateChoiceBox() {
         ObservableList<String> data = FXCollections.observableArrayList();
+        if (data.isEmpty()) {
+            MainController.showAlert(Alert.AlertType.WARNING, "Choice box", "Categories is empty.");
+            return;
+        }
         for (CategoryEntity entity : JpaConnector.getCategory().getAll())
             data.add(entity.getTitle());
         choiceBoxCategory.setItems(data);
@@ -220,8 +224,8 @@ public class ProductsController implements Initializable {
     private void displayInformationToTableView() {
         clearTableView();
         ObservableList<ProductEntity> data = FXCollections.observableArrayList(JpaConnector.getProduct().getAll());
-        if (data.size() < 1) {
-            MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
+        if (data.isEmpty()) {
+            MainController.showAlert(Alert.AlertType.WARNING, "Table View", "Table is empty.");
             return;
         }
         assignInformationToTableView(data);

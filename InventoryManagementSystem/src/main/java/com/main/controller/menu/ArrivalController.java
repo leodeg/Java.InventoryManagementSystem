@@ -2,7 +2,7 @@ package com.main.controller.menu;
 
 import com.main.controller.modalWindow.NewArrivalController;
 import com.main.database.JpaConnector;
-import com.main.model.ExcelExport;
+import com.main.model.export.ExcelExport;
 import com.main.model.entity.ArrivalEntity;
 import com.main.model.entity.FactEntity;
 import javafx.collections.FXCollections;
@@ -163,8 +163,8 @@ public class ArrivalController implements Initializable {
     private void displayInformationToArrivalTableView() {
         clearTableView();
         ObservableList<ArrivalEntity> list = FXCollections.observableArrayList(JpaConnector.getArrival().getAll());
-        if (list.size() < 1) {
-            MainController.showAlert(Alert.AlertType.INFORMATION, "Table View", "Table is empty.");
+        if (list.isEmpty()) {
+            MainController.showAlert(Alert.AlertType.WARNING, "Table View", "Table is empty.");
             return;
         }
         assignInformationToTableView(list);

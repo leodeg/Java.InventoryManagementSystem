@@ -25,7 +25,7 @@ public class JpaCategoryDao extends JpaDataAccessObject<CategoryEntity> {
     }
 
     public void delete(String title) {
-        EntityManagerConnector.getEntityManager().createQuery("DELETE FROM CategoryEntity e WHERE e.title = :title").setParameter("title", title);
+        executeInsideTransaction(entityManager -> entityManager.createQuery("DELETE FROM CategoryEntity e WHERE e.title = :title").setParameter("title", title));
     }
 
     public int getIdByTitle(String title) {
