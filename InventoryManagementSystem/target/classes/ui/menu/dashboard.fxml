@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane prefHeight="545.0" prefWidth="817.0" stylesheets="/ui/themes/bootstrap.css"
+            xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.main.controller.menu.DashboardController">
+    <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <TabPane tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                 AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS">
+            <Tab text="Продукция">
+                <AnchorPane>
+                    <VBox alignment="CENTER_LEFT" minHeight="-Infinity" spacing="5.0" AnchorPane.bottomAnchor="0.0"
+                          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+                          VBox.vgrow="ALWAYS">
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0"
+                              spacing="5.0" VBox.vgrow="ALWAYS">
+                            <Button fx:id="buttonUpdateProducts" layoutX="715.0" layoutY="23.0" mnemonicParsing="false"
+                                    prefHeight="25.0" text="Обновить статистику"/>
+                        </HBox>
+                        <HBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                            <PieChart fx:id="pieChartProducts" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS"/>
+                            <BarChart fx:id="barCharProducts" animated="false" HBox.hgrow="ALWAYS">
+                                <xAxis>
+                                    <CategoryAxis label="Название" side="BOTTOM"/>
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis label="Цена" side="LEFT"/>
+                                </yAxis>
+                            </BarChart>
+                        </HBox>
+                        <padding>
+                            <Insets left="5.0" right="5.0"/>
+                        </padding>
+                    </VBox>
+                </AnchorPane>
+            </Tab>
+            <Tab text="Склад">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE"
+                             AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                             AnchorPane.topAnchor="0.0">
+
+                        <Tab text="Текущий склад">
+                            <AnchorPane>
+                                <VBox alignment="CENTER_LEFT" minHeight="-Infinity" spacing="5.0"
+                                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS">
+                                    <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity"
+                                          prefHeight="40.0" spacing="5.0">
+                                        <Button fx:id="buttonUpdateFact" layoutX="715.0" layoutY="23.0"
+                                                mnemonicParsing="false" prefHeight="25.0"
+                                                text="Обновить статистику"/>
+                                    </HBox>
+                                    <HBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                                        <PieChart fx:id="pieChartFact" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS"/>
+                                        <BarChart fx:id="barCharFact" animated="false" HBox.hgrow="ALWAYS">
+                                            <xAxis>
+                                                <CategoryAxis label="Название" side="BOTTOM"/>
+                                            </xAxis>
+                                            <yAxis>
+                                                <NumberAxis label="Количество на складе" side="LEFT"/>
+                                            </yAxis>
+                                        </BarChart>
+                                    </HBox>
+                                    <padding>
+                                        <Insets left="5.0" right="5.0"/>
+                                    </padding>
+                                </VBox>
+                            </AnchorPane>
+
+                        </Tab>
+                        <Tab text="Приход">
+                            <AnchorPane>
+                                <VBox alignment="CENTER_LEFT" minHeight="-Infinity" spacing="5.0"
+                                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS">
+                                    <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity"
+                                          prefHeight="40.0" spacing="5.0">
+                                        <Button fx:id="buttonUpdateArrival" layoutX="715.0" layoutY="23.0"
+                                                mnemonicParsing="false" prefHeight="25.0" text="Обновить статистику"/>
+                                    </HBox>
+                                    <LineChart fx:id="lineChartArrival" animated="false" HBox.hgrow="ALWAYS"
+                                               VBox.vgrow="ALWAYS">
+                                        <xAxis>
+                                            <CategoryAxis label="Дата" side="BOTTOM"/>
+                                        </xAxis>
+                                        <yAxis>
+                                            <NumberAxis label="Сумма" side="LEFT"/>
+                                        </yAxis>
+                                    </LineChart>
+                                    <padding>
+                                        <Insets left="5.0" right="5.0"/>
+                                    </padding>
+                                </VBox>
+                            </AnchorPane>
+
+                        </Tab>
+                        <Tab text="Расход">
+                            <AnchorPane>
+                                <VBox alignment="CENTER_LEFT" minHeight="-Infinity" spacing="5.0"
+                                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS">
+                                    <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity"
+                                          prefHeight="40.0">
+                                        <Button fx:id="buttonUpdateConsumption" mnemonicParsing="false"
+                                                prefHeight="25.0" text="Обновить статистику" HBox.hgrow="ALWAYS"/>
+                                    </HBox>
+                                    <LineChart fx:id="lineChartConsumption" animated="false" VBox.vgrow="ALWAYS">
+                                        <xAxis>
+                                            <CategoryAxis label="Дата" side="BOTTOM"/>
+                                        </xAxis>
+                                        <yAxis>
+                                            <NumberAxis label="Сумма" side="LEFT"/>
+                                        </yAxis>
+                                    </LineChart>
+                                    <padding>
+                                        <Insets left="5.0" right="5.0"/>
+                                    </padding>
+                                </VBox>
+                            </AnchorPane>
+                        </Tab>
+                    </TabPane>
+                </AnchorPane>
+            </Tab>
+            <Tab text="Заказы">
+                <AnchorPane>
+                    <VBox alignment="CENTER_LEFT" minHeight="-Infinity" spacing="5.0" AnchorPane.bottomAnchor="0.0"
+                          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+                          VBox.vgrow="ALWAYS">
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0"
+                              spacing="5.0">
+                            <Button fx:id="buttonUpdateOrders" layoutX="715.0" layoutY="23.0" mnemonicParsing="false"
+                                    prefHeight="25.0" text="Обновить статистику"/>
+                        </HBox>
+                        <LineChart fx:id="lineChartOrders" animated="false" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                            <xAxis>
+                                <CategoryAxis label="Дата" side="BOTTOM"/>
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis label="Сумма" side="LEFT"/>
+                            </yAxis>
+                        </LineChart>
+                        <padding>
+                            <Insets left="5.0" right="5.0"/>
+                        </padding>
+                    </VBox>
+                </AnchorPane>
+            </Tab>
+            <Tab text="Продажи">
+                <AnchorPane>
+                    <VBox alignment="CENTER_LEFT" minHeight="-Infinity" spacing="5.0" AnchorPane.bottomAnchor="0.0"
+                          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+                          VBox.vgrow="ALWAYS">
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0"
+                              spacing="5.0">
+                            <Button fx:id="buttonUpdateSales" layoutX="715.0" layoutY="23.0" mnemonicParsing="false"
+                                    prefHeight="25.0" text="Обновить статистику"/>
+                        </HBox>
+                        <LineChart fx:id="lineChartSales" animated="false" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                            <xAxis>
+                                <CategoryAxis label="Дата" side="BOTTOM"/>
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis label="Сумма" side="LEFT"/>
+                            </yAxis>
+                        </LineChart>
+                        <padding>
+                            <Insets left="5.0" right="5.0"/>
+                        </padding>
+                    </VBox>
+                </AnchorPane>
+            </Tab>
+        </TabPane>
+
+    </VBox>
+</AnchorPane>
