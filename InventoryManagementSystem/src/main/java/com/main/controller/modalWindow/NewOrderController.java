@@ -97,7 +97,6 @@ public class NewOrderController implements Initializable {
             if (orderEntity != null) try {
                 JpaConnector.getOrder().save(orderEntity);
                 MainController.showAlert(Alert.AlertType.CONFIRMATION, "New Order", "Order was successfully added.");
-                closeCurrentWindow();
             } catch (Exception ex) {
                 MainController.showAlert(Alert.AlertType.ERROR, "New Order", ex.getMessage());
             }

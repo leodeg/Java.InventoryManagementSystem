@@ -109,10 +109,6 @@ public class ProductsController implements Initializable {
 
     private void populateChoiceBox() {
         ObservableList<String> data = FXCollections.observableArrayList();
-        if (data.isEmpty()) {
-            MainController.showAlert(Alert.AlertType.WARNING, "Choice box", "Categories is empty.");
-            return;
-        }
         for (CategoryEntity entity : JpaConnector.getCategory().getAll())
             data.add(entity.getTitle());
         choiceBoxCategory.setItems(data);

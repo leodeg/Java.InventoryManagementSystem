@@ -101,10 +101,7 @@ public class DashboardController implements Initializable {
 
     private void updateProductPiChartInformation() {
         List<CategoryEntity> categoryEntityList = JpaConnector.getCategory().getAll();
-        if (categoryEntityList.isEmpty()) {
-            MainController.showAlert(Alert.AlertType.WARNING, "Table is empty", "No data in database.");
-            return;
-        }
+        if (tableIsEmpty(categoryEntityList.isEmpty())) return;
 
         if (pieChartProducts.getData().size() > 0)
             pieChartProducts.getData().clear();
@@ -127,10 +124,7 @@ public class DashboardController implements Initializable {
 
     private void updateProductsBarChar() {
         List<String> names = JpaConnector.getProduct().getAllNames();
-        if (names.isEmpty()) {
-            MainController.showAlert(Alert.AlertType.WARNING, "Table is empty", "No data in database.");
-            return;
-        }
+        if (tableIsEmpty(names.isEmpty())) return;
 
         if (barCharProducts.getData().size() > 0)
             barCharProducts.getData().clear();
@@ -147,10 +141,7 @@ public class DashboardController implements Initializable {
 
     private void updateFactPiChartInformation() {
         List<FactEntity> factEntityList = JpaConnector.getFact().getAll();
-        if (factEntityList.isEmpty()) {
-            MainController.showAlert(Alert.AlertType.WARNING, "Table is empty", "No data in database.");
-            return;
-        }
+        if (tableIsEmpty(factEntityList.isEmpty())) return;
 
         if (pieChartFact.getData().size() > 0)
             pieChartFact.getData().clear();
@@ -167,10 +158,7 @@ public class DashboardController implements Initializable {
 
     private void updateFactBarChar() {
         List<FactEntity> entityList = JpaConnector.getFact().getAll();
-        if (entityList.isEmpty()) {
-            MainController.showAlert(Alert.AlertType.WARNING, "Table is empty", "No data in database.");
-            return;
-        }
+        if (tableIsEmpty(entityList.isEmpty())) return;
 
         if (barCharFact.getData().size() > 0)
             barCharFact.getData().clear();
@@ -186,10 +174,7 @@ public class DashboardController implements Initializable {
 
     private void updateArrivalLineChartInformation() {
         List<ArrivalEntity> arrivalEntityList = JpaConnector.getArrival().getAll();
-        if (arrivalEntityList.isEmpty()) {
-            MainController.showAlert(Alert.AlertType.WARNING, "Table is empty", "No data in database.");
-            return;
-        }
+        if (tableIsEmpty(arrivalEntityList.isEmpty())) return;
 
         if (lineChartArrival.getData().size() > 0)
             lineChartArrival.getData().clear();
@@ -207,10 +192,7 @@ public class DashboardController implements Initializable {
 
     private void updateConsumptionLineChartInformation() {
         List<ConsumptionEntity> consumptionEntityList = JpaConnector.getConsumption().getAll();
-        if (consumptionEntityList.isEmpty()) {
-            MainController.showAlert(Alert.AlertType.WARNING, "Table is empty", "No data in database.");
-            return;
-        }
+        if (tableIsEmpty(consumptionEntityList.isEmpty())) return;
 
         if (lineChartConsumption.getData().size() > 0)
             lineChartConsumption.getData().clear();
@@ -228,10 +210,7 @@ public class DashboardController implements Initializable {
 
     private void updateOrdersLineChartInformation() {
         List<OrderEntity> list = JpaConnector.getOrder().getAll();
-        if (list.isEmpty()) {
-            MainController.showAlert(Alert.AlertType.WARNING, "Table is empty", "No data in database.");
-            return;
-        }
+        if (tableIsEmpty(list.isEmpty())) return;
 
         if (lineChartOrders.getData().size() > 0)
             lineChartOrders.getData().clear();
@@ -249,10 +228,7 @@ public class DashboardController implements Initializable {
 
     private void updateSalesLineChartInformation() {
         List<SaleEntity> list = JpaConnector.getSale().getAll();
-        if (list.isEmpty()) {
-            MainController.showAlert(Alert.AlertType.WARNING, "Table is empty", "No data in database.");
-            return;
-        }
+        if (tableIsEmpty(list.isEmpty())) return;
 
         if (lineChartSales.getData().size() > 0)
             lineChartSales.getData().clear();
@@ -266,6 +242,14 @@ public class DashboardController implements Initializable {
 
         lineChartSales.getData().setAll(series);
         lineChartSales.setTitle("Дата и сумма");
+    }
+
+    private boolean tableIsEmpty(boolean empty) {
+        if (empty) {
+            MainController.showAlert(Alert.AlertType.WARNING, "Table is empty", "No data in database.");
+            return true;
+        }
+        return false;
     }
 
     @NotNull

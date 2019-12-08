@@ -99,6 +99,10 @@ public class NewArrivalController implements Initializable {
             MainController.showAlert(Alert.AlertType.ERROR, "Arrival Error", "Please select a product from the table below.");
             return false;
         }
+        if (textFieldArrivalAmount.getText().length() < 1) {
+            MainController.showAlert(Alert.AlertType.ERROR, "Arrival Error", "Please enter amount.");
+            return false;
+        }
         if (!MainController.hasOnlyNumbers(textFieldArrivalAmount.getText())) {
             MainController.showAlert(Alert.AlertType.ERROR, "Arrival Error", "Amount must contain only numbers.");
             return false;

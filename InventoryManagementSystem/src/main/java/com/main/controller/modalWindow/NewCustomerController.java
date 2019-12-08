@@ -154,7 +154,7 @@ public class NewCustomerController implements Initializable {
 
     private boolean isInformationValid() {
         if (selectionIsEmpty()) {
-            MainController.showAlert(Alert.AlertType.ERROR, "New Customer Error", "Please select address from the table below.");
+            MainController.showAlert(Alert.AlertType.ERROR, "New Customer Error", "Please choose the address from the table below.");
             return false;
         }
         if (textFieldName.getText().length() < 1) {
